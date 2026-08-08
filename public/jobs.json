@@ -1,0 +1,5198 @@
+[
+  {
+    "id": 1,
+    "category_id": 1,
+    "title": "Frontend Developer",
+    "company": {
+      "name": "TechNova Solutions Ltd.",
+      "logo": "https://example.com/logos/company-1.png",
+      "website": "https://technovasolutionsltd.example.com",
+      "industry": "Software & Technology",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "TechNova Solutions Ltd. is looking for a Frontend Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Frontend Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of HTML, CSS, JavaScript.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with React.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-1"
+    },
+    "posted_date": "2026-08-07",
+    "status": "Open"
+  },
+  {
+    "id": 2,
+    "category_id": 1,
+    "title": "React Developer",
+    "company": {
+      "name": "CodeCraft Technologies",
+      "logo": "https://example.com/logos/company-2.png",
+      "website": "https://codecrafttechnologies.example.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 70000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CodeCraft Technologies is looking for a React Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the React Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of JavaScript, React, React Router.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with REST API.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "React",
+      "React Router",
+      "REST API",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-2"
+    },
+    "posted_date": "2026-08-06",
+    "status": "Open"
+  },
+  {
+    "id": 3,
+    "category_id": 1,
+    "title": "Frontend Engineer",
+    "company": {
+      "name": "Creative Pixel Studio",
+      "logo": "https://example.com/logos/company-3.png",
+      "website": "https://creativepixelstudio.example.com",
+      "industry": "Design & Digital Agency",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 60000,
+      "maximum": 90000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Creative Pixel Studio is looking for a Frontend Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Frontend Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of JavaScript, TypeScript, React.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Next.js.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-3"
+    },
+    "posted_date": "2026-08-05",
+    "status": "Open"
+  },
+  {
+    "id": 4,
+    "category_id": 1,
+    "title": "Junior Web Developer",
+    "company": {
+      "name": "DataVision Analytics",
+      "logo": "https://example.com/logos/company-4.png",
+      "website": "https://datavisionanalytics.example.com",
+      "industry": "Data & Analytics",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DataVision Analytics is looking for a Junior Web Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Junior Web Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of HTML, CSS, JavaScript.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Bootstrap.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-4"
+    },
+    "posted_date": "2026-08-04",
+    "status": "Open"
+  },
+  {
+    "id": 5,
+    "category_id": 1,
+    "title": "Full Stack Web Developer",
+    "company": {
+      "name": "GrowthHub Digital",
+      "logo": "https://example.com/logos/company-5.png",
+      "website": "https://growthhubdigital.example.com",
+      "industry": "Digital Marketing",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 55000,
+      "maximum": 90000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "GrowthHub Digital is looking for a Full Stack Web Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Full Stack Web Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of JavaScript, React, Node.js.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Express.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-5"
+    },
+    "posted_date": "2026-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 6,
+    "category_id": 1,
+    "title": "WordPress Developer",
+    "company": {
+      "name": "Global Finance Ltd.",
+      "logo": "https://example.com/logos/company-6.png",
+      "website": "https://globalfinanceltd.example.com",
+      "industry": "Financial Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Global Finance Ltd. is looking for a WordPress Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the WordPress Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of WordPress, PHP, HTML.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with CSS.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "WordPress",
+      "PHP",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-6"
+    },
+    "posted_date": "2026-08-02",
+    "status": "Open"
+  },
+  {
+    "id": 7,
+    "category_id": 1,
+    "title": "Web Application Developer",
+    "company": {
+      "name": "PeopleFirst Ltd.",
+      "logo": "https://example.com/logos/company-7.png",
+      "website": "https://peoplefirstltd.example.com",
+      "industry": "Human Resources",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 80000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "PeopleFirst Ltd. is looking for a Web Application Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Web Application Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of JavaScript, React, REST API.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with SQL.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "React",
+      "REST API",
+      "SQL",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-7"
+    },
+    "posted_date": "2026-08-01",
+    "status": "Open"
+  },
+  {
+    "id": 8,
+    "category_id": 1,
+    "title": "UI Developer",
+    "company": {
+      "name": "ServicePro Bangladesh",
+      "logo": "https://example.com/logos/company-8.png",
+      "website": "https://serviceprobangladesh.example.com",
+      "industry": "Customer Service",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 1,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ServicePro Bangladesh is looking for a UI Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the UI Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of HTML, CSS, JavaScript.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Figma.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Figma",
+      "Tailwind CSS"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-8"
+    },
+    "posted_date": "2026-07-31",
+    "status": "Open"
+  },
+  {
+    "id": 9,
+    "category_id": 2,
+    "title": "Software Engineer",
+    "company": {
+      "name": "CloudPeak Systems",
+      "logo": "https://example.com/logos/company-9.png",
+      "website": "https://cloudpeaksystems.example.com",
+      "industry": "Cloud & IT Services",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 55000,
+      "maximum": 90000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CloudPeak Systems is looking for a Software Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Software Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of JavaScript, Python, REST API.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with SQL.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "Python",
+      "REST API",
+      "SQL",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-9"
+    },
+    "posted_date": "2026-07-30",
+    "status": "Open"
+  },
+  {
+    "id": 10,
+    "category_id": 2,
+    "title": "Junior Software Engineer",
+    "company": {
+      "name": "NextGen Innovations",
+      "logo": "https://example.com/logos/company-10.png",
+      "website": "https://nextgeninnovations.example.com",
+      "industry": "Technology",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "NextGen Innovations is looking for a Junior Software Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Junior Software Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of JavaScript, Python, Git.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with SQL.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "Python",
+      "Git",
+      "SQL"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-10"
+    },
+    "posted_date": "2026-07-29",
+    "status": "Open"
+  },
+  {
+    "id": 11,
+    "category_id": 2,
+    "title": "Backend Developer",
+    "company": {
+      "name": "ByteBridge Ltd.",
+      "logo": "https://example.com/logos/company-11.png",
+      "website": "https://bytebridgeltd.example.com",
+      "industry": "Software & IT",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 80000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ByteBridge Ltd. is looking for a Backend Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Backend Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Node.js, Express.js, MongoDB.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with REST API.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-11"
+    },
+    "posted_date": "2026-07-28",
+    "status": "Open"
+  },
+  {
+    "id": 12,
+    "category_id": 2,
+    "title": "Python Developer",
+    "company": {
+      "name": "DigitalEdge Solutions",
+      "logo": "https://example.com/logos/company-12.png",
+      "website": "https://digitaledgesolutions.example.com",
+      "industry": "IT Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DigitalEdge Solutions is looking for a Python Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Python Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Python, Django, REST API.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with PostgreSQL.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Python",
+      "Django",
+      "REST API",
+      "PostgreSQL",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-26",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-12"
+    },
+    "posted_date": "2026-07-27",
+    "status": "Open"
+  },
+  {
+    "id": 13,
+    "category_id": 2,
+    "title": "Node.js Developer",
+    "company": {
+      "name": "TechNova Solutions Ltd.",
+      "logo": "https://example.com/logos/company-1.png",
+      "website": "https://technovasolutionsltd.example.com",
+      "industry": "Software & Technology",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 80000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "TechNova Solutions Ltd. is looking for a Node.js Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Node.js Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Node.js, Express.js, MongoDB.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with JWT.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-09-07",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-13"
+    },
+    "posted_date": "2026-08-07",
+    "status": "Open"
+  },
+  {
+    "id": 14,
+    "category_id": 2,
+    "title": "Java Software Developer",
+    "company": {
+      "name": "CodeCraft Technologies",
+      "logo": "https://example.com/logos/company-2.png",
+      "website": "https://codecrafttechnologies.example.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 55000,
+      "maximum": 85000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CodeCraft Technologies is looking for a Java Software Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Java Software Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Java, Spring Boot, MySQL.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with REST API.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "REST API",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-14"
+    },
+    "posted_date": "2026-08-06",
+    "status": "Open"
+  },
+  {
+    "id": 15,
+    "category_id": 2,
+    "title": "Software QA Engineer",
+    "company": {
+      "name": "Creative Pixel Studio",
+      "logo": "https://example.com/logos/company-3.png",
+      "website": "https://creativepixelstudio.example.com",
+      "industry": "Design & Digital Agency",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 60000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Creative Pixel Studio is looking for a Software QA Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Software QA Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Manual Testing, Automation, Selenium.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with API Testing.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Manual Testing",
+      "Automation",
+      "Selenium",
+      "API Testing",
+      "Jira"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-15"
+    },
+    "posted_date": "2026-08-05",
+    "status": "Open"
+  },
+  {
+    "id": 16,
+    "category_id": 2,
+    "title": "DevOps Engineer",
+    "company": {
+      "name": "DataVision Analytics",
+      "logo": "https://example.com/logos/company-4.png",
+      "website": "https://datavisionanalytics.example.com",
+      "industry": "Data & Analytics",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 60000,
+      "maximum": 100000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DataVision Analytics is looking for a DevOps Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the DevOps Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Linux, Docker, AWS.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with CI/CD.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Linux",
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-16"
+    },
+    "posted_date": "2026-08-04",
+    "status": "Open"
+  },
+  {
+    "id": 17,
+    "category_id": 3,
+    "title": "UI/UX Designer",
+    "company": {
+      "name": "GrowthHub Digital",
+      "logo": "https://example.com/logos/company-5.png",
+      "website": "https://growthhubdigital.example.com",
+      "industry": "Digital Marketing",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "GrowthHub Digital is looking for a UI/UX Designer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the UI/UX Designer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Figma, UI Design, UX Design.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Wireframing.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Figma",
+      "UI Design",
+      "UX Design",
+      "Wireframing",
+      "Prototyping"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-17"
+    },
+    "posted_date": "2026-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 18,
+    "category_id": 3,
+    "title": "Product Designer",
+    "company": {
+      "name": "Global Finance Ltd.",
+      "logo": "https://example.com/logos/company-6.png",
+      "website": "https://globalfinanceltd.example.com",
+      "industry": "Financial Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 85000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Global Finance Ltd. is looking for a Product Designer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Product Designer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Figma, UX Research, Design Systems.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Prototyping.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Figma",
+      "UX Research",
+      "Design Systems",
+      "Prototyping"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-18"
+    },
+    "posted_date": "2026-08-02",
+    "status": "Open"
+  },
+  {
+    "id": 19,
+    "category_id": 3,
+    "title": "Visual Designer",
+    "company": {
+      "name": "PeopleFirst Ltd.",
+      "logo": "https://example.com/logos/company-7.png",
+      "website": "https://peoplefirstltd.example.com",
+      "industry": "Human Resources",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 28000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "PeopleFirst Ltd. is looking for a Visual Designer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Visual Designer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Figma, Adobe Photoshop, Illustrator.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Branding.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Figma",
+      "Adobe Photoshop",
+      "Illustrator",
+      "Branding"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-19"
+    },
+    "posted_date": "2026-08-01",
+    "status": "Open"
+  },
+  {
+    "id": 20,
+    "category_id": 3,
+    "title": "UX Researcher",
+    "company": {
+      "name": "ServicePro Bangladesh",
+      "logo": "https://example.com/logos/company-8.png",
+      "website": "https://serviceprobangladesh.example.com",
+      "industry": "Customer Service",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Contract",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 70000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ServicePro Bangladesh is looking for a UX Researcher to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the UX Researcher role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of User Research, Usability Testing, Figma.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Analytics.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "User Research",
+      "Usability Testing",
+      "Figma",
+      "Analytics"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-20"
+    },
+    "posted_date": "2026-07-31",
+    "status": "Open"
+  },
+  {
+    "id": 21,
+    "category_id": 3,
+    "title": "Graphic Designer",
+    "company": {
+      "name": "CloudPeak Systems",
+      "logo": "https://example.com/logos/company-9.png",
+      "website": "https://cloudpeaksystems.example.com",
+      "industry": "Cloud & IT Services",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 25000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CloudPeak Systems is looking for a Graphic Designer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Graphic Designer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Photoshop, Illustrator, Figma.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Typography.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "Typography"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-21"
+    },
+    "posted_date": "2026-07-30",
+    "status": "Open"
+  },
+  {
+    "id": 22,
+    "category_id": 4,
+    "title": "Data Analyst",
+    "company": {
+      "name": "NextGen Innovations",
+      "logo": "https://example.com/logos/company-10.png",
+      "website": "https://nextgeninnovations.example.com",
+      "industry": "Technology",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "NextGen Innovations is looking for a Data Analyst to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Data Analyst role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Excel, SQL, Python.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Power BI.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Excel",
+      "SQL",
+      "Python",
+      "Power BI",
+      "Data Visualization"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-22"
+    },
+    "posted_date": "2026-07-29",
+    "status": "Open"
+  },
+  {
+    "id": 23,
+    "category_id": 4,
+    "title": "Junior Data Analyst",
+    "company": {
+      "name": "ByteBridge Ltd.",
+      "logo": "https://example.com/logos/company-11.png",
+      "website": "https://bytebridgeltd.example.com",
+      "industry": "Software & IT",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ByteBridge Ltd. is looking for a Junior Data Analyst to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Junior Data Analyst role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of Excel, SQL, Statistics.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Power BI.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Excel",
+      "SQL",
+      "Statistics",
+      "Power BI"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-23"
+    },
+    "posted_date": "2026-07-28",
+    "status": "Open"
+  },
+  {
+    "id": 24,
+    "category_id": 4,
+    "title": "Data Scientist",
+    "company": {
+      "name": "DigitalEdge Solutions",
+      "logo": "https://example.com/logos/company-12.png",
+      "website": "https://digitaledgesolutions.example.com",
+      "industry": "IT Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 60000,
+      "maximum": 100000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DigitalEdge Solutions is looking for a Data Scientist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Data Scientist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Python, Pandas, NumPy.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Machine Learning.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Machine Learning",
+      "SQL"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-24",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-24"
+    },
+    "posted_date": "2026-07-27",
+    "status": "Open"
+  },
+  {
+    "id": 25,
+    "category_id": 4,
+    "title": "Machine Learning Engineer",
+    "company": {
+      "name": "TechNova Solutions Ltd.",
+      "logo": "https://example.com/logos/company-1.png",
+      "website": "https://technovasolutionsltd.example.com",
+      "industry": "Software & Technology",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 65000,
+      "maximum": 110000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "TechNova Solutions Ltd. is looking for a Machine Learning Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Machine Learning Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Python, Machine Learning, TensorFlow.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with PyTorch.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "TensorFlow",
+      "PyTorch",
+      "SQL"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-09-05",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-25"
+    },
+    "posted_date": "2026-08-07",
+    "status": "Open"
+  },
+  {
+    "id": 26,
+    "category_id": 4,
+    "title": "BI Analyst",
+    "company": {
+      "name": "CodeCraft Technologies",
+      "logo": "https://example.com/logos/company-2.png",
+      "website": "https://codecrafttechnologies.example.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 75000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CodeCraft Technologies is looking for a BI Analyst to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the BI Analyst role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Power BI, SQL, Excel.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Data Modeling.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Power BI",
+      "SQL",
+      "Excel",
+      "Data Modeling"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-09-05",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-26"
+    },
+    "posted_date": "2026-08-06",
+    "status": "Open"
+  },
+  {
+    "id": 27,
+    "category_id": 4,
+    "title": "Database Analyst",
+    "company": {
+      "name": "Creative Pixel Studio",
+      "logo": "https://example.com/logos/company-3.png",
+      "website": "https://creativepixelstudio.example.com",
+      "industry": "Design & Digital Agency",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Creative Pixel Studio is looking for a Database Analyst to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Database Analyst role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of SQL, MySQL, PostgreSQL.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Excel.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "SQL",
+      "MySQL",
+      "PostgreSQL",
+      "Excel"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-09-05",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-27"
+    },
+    "posted_date": "2026-08-05",
+    "status": "Open"
+  },
+  {
+    "id": 28,
+    "category_id": 5,
+    "title": "Digital Marketing Executive",
+    "company": {
+      "name": "DataVision Analytics",
+      "logo": "https://example.com/logos/company-4.png",
+      "website": "https://datavisionanalytics.example.com",
+      "industry": "Data & Analytics",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 28000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DataVision Analytics is looking for a Digital Marketing Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Digital Marketing Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of SEO, Google Ads, Facebook Ads.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Content Marketing.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "SEO",
+      "Google Ads",
+      "Facebook Ads",
+      "Content Marketing"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-28"
+    },
+    "posted_date": "2026-08-04",
+    "status": "Open"
+  },
+  {
+    "id": 29,
+    "category_id": 5,
+    "title": "SEO Specialist",
+    "company": {
+      "name": "GrowthHub Digital",
+      "logo": "https://example.com/logos/company-5.png",
+      "website": "https://growthhubdigital.example.com",
+      "industry": "Digital Marketing",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "GrowthHub Digital is looking for a SEO Specialist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the SEO Specialist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of SEO, Google Analytics, Keyword Research.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Content Strategy.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "SEO",
+      "Google Analytics",
+      "Keyword Research",
+      "Content Strategy"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-29"
+    },
+    "posted_date": "2026-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 30,
+    "category_id": 5,
+    "title": "Social Media Executive",
+    "company": {
+      "name": "Global Finance Ltd.",
+      "logo": "https://example.com/logos/company-6.png",
+      "website": "https://globalfinanceltd.example.com",
+      "industry": "Financial Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 25000,
+      "maximum": 40000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Global Finance Ltd. is looking for a Social Media Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Social Media Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of Social Media, Content Creation, Canva.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Facebook Ads.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Social Media",
+      "Content Creation",
+      "Canva",
+      "Facebook Ads"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-30"
+    },
+    "posted_date": "2026-08-02",
+    "status": "Open"
+  },
+  {
+    "id": 31,
+    "category_id": 5,
+    "title": "Content Marketing Specialist",
+    "company": {
+      "name": "PeopleFirst Ltd.",
+      "logo": "https://example.com/logos/company-7.png",
+      "website": "https://peoplefirstltd.example.com",
+      "industry": "Human Resources",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 60000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "PeopleFirst Ltd. is looking for a Content Marketing Specialist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Content Marketing Specialist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Content Writing, SEO, Copywriting.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Analytics.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Content Writing",
+      "SEO",
+      "Copywriting",
+      "Analytics"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-31"
+    },
+    "posted_date": "2026-08-01",
+    "status": "Open"
+  },
+  {
+    "id": 32,
+    "category_id": 5,
+    "title": "Performance Marketing Executive",
+    "company": {
+      "name": "ServicePro Bangladesh",
+      "logo": "https://example.com/logos/company-8.png",
+      "website": "https://serviceprobangladesh.example.com",
+      "industry": "Customer Service",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 70000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ServicePro Bangladesh is looking for a Performance Marketing Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Performance Marketing Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Google Ads, Meta Ads, Analytics.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Conversion Optimization.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Google Ads",
+      "Meta Ads",
+      "Analytics",
+      "Conversion Optimization"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-32"
+    },
+    "posted_date": "2026-07-31",
+    "status": "Open"
+  },
+  {
+    "id": 33,
+    "category_id": 5,
+    "title": "Marketing Coordinator",
+    "company": {
+      "name": "CloudPeak Systems",
+      "logo": "https://example.com/logos/company-9.png",
+      "website": "https://cloudpeaksystems.example.com",
+      "industry": "Cloud & IT Services",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 28000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CloudPeak Systems is looking for a Marketing Coordinator to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Marketing Coordinator role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Marketing, Communication, Excel.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Reporting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Marketing",
+      "Communication",
+      "Excel",
+      "Reporting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-33"
+    },
+    "posted_date": "2026-07-30",
+    "status": "Open"
+  },
+  {
+    "id": 34,
+    "category_id": 6,
+    "title": "Junior Accountant",
+    "company": {
+      "name": "NextGen Innovations",
+      "logo": "https://example.com/logos/company-10.png",
+      "website": "https://nextgeninnovations.example.com",
+      "industry": "Technology",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 28000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "NextGen Innovations is looking for a Junior Accountant to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Junior Accountant role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Accounting, Excel, Bookkeeping.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Financial Reporting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Accounting",
+      "Excel",
+      "Bookkeeping",
+      "Financial Reporting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-34"
+    },
+    "posted_date": "2026-07-29",
+    "status": "Open"
+  },
+  {
+    "id": 35,
+    "category_id": 6,
+    "title": "Financial Analyst",
+    "company": {
+      "name": "ByteBridge Ltd.",
+      "logo": "https://example.com/logos/company-11.png",
+      "website": "https://bytebridgeltd.example.com",
+      "industry": "Software & IT",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 75000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ByteBridge Ltd. is looking for a Financial Analyst to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Financial Analyst role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Financial Analysis, Excel, Forecasting.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Reporting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Financial Analysis",
+      "Excel",
+      "Forecasting",
+      "Reporting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-35"
+    },
+    "posted_date": "2026-07-28",
+    "status": "Open"
+  },
+  {
+    "id": 36,
+    "category_id": 6,
+    "title": "Accounts Executive",
+    "company": {
+      "name": "DigitalEdge Solutions",
+      "logo": "https://example.com/logos/company-12.png",
+      "website": "https://digitaledgesolutions.example.com",
+      "industry": "IT Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DigitalEdge Solutions is looking for a Accounts Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Accounts Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Accounting, Tally, Excel.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with VAT.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Accounting",
+      "Tally",
+      "Excel",
+      "VAT"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-22",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-36"
+    },
+    "posted_date": "2026-07-27",
+    "status": "Open"
+  },
+  {
+    "id": 37,
+    "category_id": 6,
+    "title": "Senior Accountant",
+    "company": {
+      "name": "TechNova Solutions Ltd.",
+      "logo": "https://example.com/logos/company-1.png",
+      "website": "https://technovasolutionsltd.example.com",
+      "industry": "Software & Technology",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 4,
+      "maximum": 7,
+      "level": "Senior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 55000,
+      "maximum": 90000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "TechNova Solutions Ltd. is looking for a Senior Accountant to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Senior Accountant role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "4+ years of relevant experience.",
+      "Strong knowledge of Accounting, Financial Reporting, Tax.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Audit.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Accounting",
+      "Financial Reporting",
+      "Tax",
+      "Audit"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-09-03",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-37"
+    },
+    "posted_date": "2026-08-07",
+    "status": "Open"
+  },
+  {
+    "id": 38,
+    "category_id": 6,
+    "title": "Finance Officer",
+    "company": {
+      "name": "CodeCraft Technologies",
+      "logo": "https://example.com/logos/company-2.png",
+      "website": "https://codecrafttechnologies.example.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 32000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CodeCraft Technologies is looking for a Finance Officer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Finance Officer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Finance, Excel, Reporting.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Budgeting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Finance",
+      "Excel",
+      "Reporting",
+      "Budgeting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-09-03",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-38"
+    },
+    "posted_date": "2026-08-06",
+    "status": "Open"
+  },
+  {
+    "id": 39,
+    "category_id": 7,
+    "title": "HR Executive",
+    "company": {
+      "name": "Creative Pixel Studio",
+      "logo": "https://example.com/logos/company-3.png",
+      "website": "https://creativepixelstudio.example.com",
+      "industry": "Design & Digital Agency",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 48000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Creative Pixel Studio is looking for a HR Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the HR Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Recruitment, HR Management, Communication.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Excel.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Recruitment",
+      "HR Management",
+      "Communication",
+      "Excel"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-09-03",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-39"
+    },
+    "posted_date": "2026-08-05",
+    "status": "Open"
+  },
+  {
+    "id": 40,
+    "category_id": 7,
+    "title": "Talent Acquisition Specialist",
+    "company": {
+      "name": "DataVision Analytics",
+      "logo": "https://example.com/logos/company-4.png",
+      "website": "https://datavisionanalytics.example.com",
+      "industry": "Data & Analytics",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DataVision Analytics is looking for a Talent Acquisition Specialist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Talent Acquisition Specialist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Recruitment, Interviewing, LinkedIn.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with HRIS.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Recruitment",
+      "Interviewing",
+      "LinkedIn",
+      "HRIS"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-09-03",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-40"
+    },
+    "posted_date": "2026-08-04",
+    "status": "Open"
+  },
+  {
+    "id": 41,
+    "category_id": 7,
+    "title": "HR Intern",
+    "company": {
+      "name": "GrowthHub Digital",
+      "logo": "https://example.com/logos/company-5.png",
+      "website": "https://growthhubdigital.example.com",
+      "industry": "Digital Marketing",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 0,
+      "maximum": 1,
+      "level": "Internship"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 10000,
+      "maximum": 18000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "GrowthHub Digital is looking for a HR Intern to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the HR Intern role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of Communication, MS Office, Recruitment.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Relevant industry experience.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Communication",
+      "MS Office",
+      "Recruitment"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-09-03",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-41"
+    },
+    "posted_date": "2026-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 42,
+    "category_id": 7,
+    "title": "Senior HR Officer",
+    "company": {
+      "name": "Global Finance Ltd.",
+      "logo": "https://example.com/logos/company-6.png",
+      "website": "https://globalfinanceltd.example.com",
+      "industry": "Financial Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 4,
+      "maximum": 7,
+      "level": "Senior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 80000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Global Finance Ltd. is looking for a Senior HR Officer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Senior HR Officer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "4+ years of relevant experience.",
+      "Strong knowledge of HR Management, Employee Relations, Payroll.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Recruitment.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HR Management",
+      "Employee Relations",
+      "Payroll",
+      "Recruitment"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-42"
+    },
+    "posted_date": "2026-08-02",
+    "status": "Open"
+  },
+  {
+    "id": 43,
+    "category_id": 7,
+    "title": "Learning & Development Executive",
+    "company": {
+      "name": "PeopleFirst Ltd.",
+      "logo": "https://example.com/logos/company-7.png",
+      "website": "https://peoplefirstltd.example.com",
+      "industry": "Human Resources",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "PeopleFirst Ltd. is looking for a Learning & Development Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Learning & Development Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Training, HR, Communication.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Presentation.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Training",
+      "HR",
+      "Communication",
+      "Presentation"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-43"
+    },
+    "posted_date": "2026-08-01",
+    "status": "Open"
+  },
+  {
+    "id": 44,
+    "category_id": 8,
+    "title": "Customer Support Executive",
+    "company": {
+      "name": "ServicePro Bangladesh",
+      "logo": "https://example.com/logos/company-8.png",
+      "website": "https://serviceprobangladesh.example.com",
+      "industry": "Customer Service",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 22000,
+      "maximum": 35000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ServicePro Bangladesh is looking for a Customer Support Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Customer Support Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of Customer Service, Communication, Email Support.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Problem Solving.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Customer Service",
+      "Communication",
+      "Email Support",
+      "Problem Solving"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-44"
+    },
+    "posted_date": "2026-07-31",
+    "status": "Open"
+  },
+  {
+    "id": 45,
+    "category_id": 8,
+    "title": "Customer Success Executive",
+    "company": {
+      "name": "CloudPeak Systems",
+      "logo": "https://example.com/logos/company-9.png",
+      "website": "https://cloudpeaksystems.example.com",
+      "industry": "Cloud & IT Services",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CloudPeak Systems is looking for a Customer Success Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Customer Success Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Customer Success, Communication, CRM.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Problem Solving.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Customer Success",
+      "Communication",
+      "CRM",
+      "Problem Solving"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-45"
+    },
+    "posted_date": "2026-07-30",
+    "status": "Open"
+  },
+  {
+    "id": 46,
+    "category_id": 8,
+    "title": "Call Center Executive",
+    "company": {
+      "name": "NextGen Innovations",
+      "logo": "https://example.com/logos/company-10.png",
+      "website": "https://nextgeninnovations.example.com",
+      "industry": "Technology",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 20000,
+      "maximum": 32000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "NextGen Innovations is looking for a Call Center Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Call Center Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of Communication, Customer Service, English.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Relevant industry experience.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Communication",
+      "Customer Service",
+      "English"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-46"
+    },
+    "posted_date": "2026-07-29",
+    "status": "Open"
+  },
+  {
+    "id": 47,
+    "category_id": 8,
+    "title": "Technical Support Engineer",
+    "company": {
+      "name": "ByteBridge Ltd.",
+      "logo": "https://example.com/logos/company-11.png",
+      "website": "https://bytebridgeltd.example.com",
+      "industry": "Software & IT",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ByteBridge Ltd. is looking for a Technical Support Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Technical Support Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Technical Support, Networking, Windows.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Troubleshooting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Technical Support",
+      "Networking",
+      "Windows",
+      "Troubleshooting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-47"
+    },
+    "posted_date": "2026-07-28",
+    "status": "Open"
+  },
+  {
+    "id": 48,
+    "category_id": 8,
+    "title": "Support Team Lead",
+    "company": {
+      "name": "DigitalEdge Solutions",
+      "logo": "https://example.com/logos/company-12.png",
+      "website": "https://digitaledgesolutions.example.com",
+      "industry": "IT Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 3,
+      "maximum": 6,
+      "level": "Senior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 70000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DigitalEdge Solutions is looking for a Support Team Lead to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Support Team Lead role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "3+ years of relevant experience.",
+      "Strong knowledge of Team Management, Customer Support, CRM.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Reporting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Team Management",
+      "Customer Support",
+      "CRM",
+      "Reporting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-20",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-48"
+    },
+    "posted_date": "2026-07-27",
+    "status": "Open"
+  },
+  {
+    "id": 49,
+    "category_id": 1,
+    "title": "Mobile App Developer",
+    "company": {
+      "name": "TechNova Solutions Ltd.",
+      "logo": "https://example.com/logos/company-1.png",
+      "website": "https://technovasolutionsltd.example.com",
+      "industry": "Software & Technology",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 50000,
+      "maximum": 85000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "TechNova Solutions Ltd. is looking for a Mobile App Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Mobile App Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Flutter, Dart, Firebase.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with REST API.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "REST API",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-49"
+    },
+    "posted_date": "2026-08-07",
+    "status": "Open"
+  },
+  {
+    "id": 50,
+    "category_id": 2,
+    "title": "Cloud Engineer",
+    "company": {
+      "name": "CodeCraft Technologies",
+      "logo": "https://example.com/logos/company-2.png",
+      "website": "https://codecrafttechnologies.example.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 60000,
+      "maximum": 100000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CodeCraft Technologies is looking for a Cloud Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Cloud Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of AWS, Azure, Linux.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Docker.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "AWS",
+      "Azure",
+      "Linux",
+      "Docker",
+      "Networking"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-50"
+    },
+    "posted_date": "2026-08-06",
+    "status": "Open"
+  },
+  {
+    "id": 51,
+    "category_id": 4,
+    "title": "Research Data Scientist",
+    "company": {
+      "name": "Creative Pixel Studio",
+      "logo": "https://example.com/logos/company-3.png",
+      "website": "https://creativepixelstudio.example.com",
+      "industry": "Design & Digital Agency",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 4,
+      "maximum": 7,
+      "level": "Senior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 80000,
+      "maximum": 130000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Creative Pixel Studio is looking for a Research Data Scientist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Research Data Scientist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Statistics / Mathematics.",
+      "4+ years of relevant experience.",
+      "Strong knowledge of Python, Machine Learning, Statistics.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with SQL.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Statistics",
+      "SQL"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Statistics / Mathematics",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-51"
+    },
+    "posted_date": "2026-08-05",
+    "status": "Open"
+  },
+  {
+    "id": 52,
+    "category_id": 5,
+    "title": "Brand Marketing Manager",
+    "company": {
+      "name": "DataVision Analytics",
+      "logo": "https://example.com/logos/company-4.png",
+      "website": "https://datavisionanalytics.example.com",
+      "industry": "Data & Analytics",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 4,
+      "maximum": 7,
+      "level": "Senior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 65000,
+      "maximum": 100000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DataVision Analytics is looking for a Brand Marketing Manager to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Brand Marketing Manager role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Marketing / Business Administration.",
+      "4+ years of relevant experience.",
+      "Strong knowledge of Brand Strategy, Marketing, Analytics.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Leadership.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Brand Strategy",
+      "Marketing",
+      "Analytics",
+      "Leadership"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Marketing / Business Administration",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-52"
+    },
+    "posted_date": "2026-08-04",
+    "status": "Open"
+  },
+  {
+    "id": 53,
+    "category_id": 6,
+    "title": "Internal Audit Officer",
+    "company": {
+      "name": "GrowthHub Digital",
+      "logo": "https://example.com/logos/company-5.png",
+      "website": "https://growthhubdigital.example.com",
+      "industry": "Digital Marketing",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 5,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "GrowthHub Digital is looking for a Internal Audit Officer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Internal Audit Officer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Accounting / Finance / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Audit, Accounting, Excel.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Risk Management.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Audit",
+      "Accounting",
+      "Excel",
+      "Risk Management"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Accounting / Finance / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-53"
+    },
+    "posted_date": "2026-08-03",
+    "status": "Open"
+  },
+  {
+    "id": 54,
+    "category_id": 7,
+    "title": "Payroll Specialist",
+    "company": {
+      "name": "Global Finance Ltd.",
+      "logo": "https://example.com/logos/company-6.png",
+      "website": "https://globalfinanceltd.example.com",
+      "industry": "Financial Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 35000,
+      "maximum": 55000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "Global Finance Ltd. is looking for a Payroll Specialist to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Payroll Specialist role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Human Resources / Business Administration.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Payroll, Excel, HRIS.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Compliance.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Payroll",
+      "Excel",
+      "HRIS",
+      "Compliance"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Human Resources / Business Administration",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-54"
+    },
+    "posted_date": "2026-08-02",
+    "status": "Open"
+  },
+  {
+    "id": 55,
+    "category_id": 3,
+    "title": "Interaction Designer",
+    "company": {
+      "name": "PeopleFirst Ltd.",
+      "logo": "https://example.com/logos/company-7.png",
+      "website": "https://peoplefirstltd.example.com",
+      "industry": "Human Resources",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Gulshan, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 75000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "PeopleFirst Ltd. is looking for a Interaction Designer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Interaction Designer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Design / Computer Science / Related Field.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of Figma, Interaction Design, Prototyping.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with UX.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Figma",
+      "Interaction Design",
+      "Prototyping",
+      "UX"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Design / Computer Science / Related Field",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-09-01",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-55"
+    },
+    "posted_date": "2026-08-01",
+    "status": "Open"
+  },
+  {
+    "id": 56,
+    "category_id": 8,
+    "title": "Client Service Executive",
+    "company": {
+      "name": "ServicePro Bangladesh",
+      "logo": "https://example.com/logos/company-8.png",
+      "website": "https://serviceprobangladesh.example.com",
+      "industry": "Customer Service",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Banani, Dhaka",
+      "work_mode": "On-site"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 28000,
+      "maximum": 45000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ServicePro Bangladesh is looking for a Client Service Executive to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Client Service Executive role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Bachelor’s or equivalent educational background in Any discipline.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of Client Service, Communication, CRM.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Reporting.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "Client Service",
+      "Communication",
+      "CRM",
+      "Reporting"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Any discipline",
+        "required": false
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 2,
+    "application": {
+      "deadline": "2026-08-18",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-56"
+    },
+    "posted_date": "2026-07-31",
+    "status": "Open"
+  },
+  {
+    "id": 57,
+    "category_id": 1,
+    "title": "Frontend Developer",
+    "company": {
+      "name": "CloudPeak Systems",
+      "logo": "https://example.com/logos/company-9.png",
+      "website": "https://cloudpeaksystems.example.com",
+      "industry": "Cloud & IT Services",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Uttara, Dhaka",
+      "work_mode": "Remote"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 40000,
+      "maximum": 65000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "CloudPeak Systems is looking for a Frontend Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Frontend Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of HTML, CSS, JavaScript.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with React.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment",
+      "Remote work flexibility"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 3,
+    "application": {
+      "deadline": "2026-08-18",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-57"
+    },
+    "posted_date": "2026-07-30",
+    "status": "Open"
+  },
+  {
+    "id": 58,
+    "category_id": 1,
+    "title": "React Developer",
+    "company": {
+      "name": "NextGen Innovations",
+      "logo": "https://example.com/logos/company-10.png",
+      "website": "https://nextgeninnovations.example.com",
+      "industry": "Technology",
+      "company_size": "11-50 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Dhanmondi, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Full Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 1,
+      "maximum": 3,
+      "level": "Junior / Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 45000,
+      "maximum": 70000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "NextGen Innovations is looking for a React Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the React Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "1+ years of relevant experience.",
+      "Strong knowledge of JavaScript, React, React Router.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with REST API.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "React",
+      "React Router",
+      "REST API",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 4,
+    "application": {
+      "deadline": "2026-08-18",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-58"
+    },
+    "posted_date": "2026-07-29",
+    "status": "Open"
+  },
+  {
+    "id": 59,
+    "category_id": 1,
+    "title": "Frontend Engineer",
+    "company": {
+      "name": "ByteBridge Ltd.",
+      "logo": "https://example.com/logos/company-11.png",
+      "website": "https://bytebridgeltd.example.com",
+      "industry": "Software & IT",
+      "company_size": "51-200 employees"
+    },
+    "location": {
+      "city": "Chattogram",
+      "country": "Bangladesh",
+      "address": "Agrabad, Chattogram",
+      "work_mode": "On-site"
+    },
+    "job_type": "Part Time",
+    "employment_type": "Permanent",
+    "experience": {
+      "minimum": 2,
+      "maximum": 4,
+      "level": "Mid Level"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 60000,
+      "maximum": 90000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "ByteBridge Ltd. is looking for a Frontend Engineer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Frontend Engineer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "2+ years of relevant experience.",
+      "Strong knowledge of JavaScript, TypeScript, React.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Next.js.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 5,
+    "application": {
+      "deadline": "2026-08-18",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-59"
+    },
+    "posted_date": "2026-07-28",
+    "status": "Open"
+  },
+  {
+    "id": 60,
+    "category_id": 1,
+    "title": "Junior Web Developer",
+    "company": {
+      "name": "DigitalEdge Solutions",
+      "logo": "https://example.com/logos/company-12.png",
+      "website": "https://digitaledgesolutions.example.com",
+      "industry": "IT Services",
+      "company_size": "201-500 employees"
+    },
+    "location": {
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "address": "Mohakhali, Dhaka",
+      "work_mode": "Hybrid"
+    },
+    "job_type": "Contract",
+    "employment_type": "Contractual",
+    "experience": {
+      "minimum": 0,
+      "maximum": 2,
+      "level": "Junior"
+    },
+    "salary": {
+      "currency": "BDT",
+      "minimum": 30000,
+      "maximum": 50000,
+      "period": "Monthly",
+      "negotiable": true
+    },
+    "description": "DigitalEdge Solutions is looking for a Junior Web Developer to join our team. The successful candidate will work with experienced professionals, contribute to important projects, and help deliver high-quality results.",
+    "responsibilities": [
+      "Perform day-to-day responsibilities related to the Junior Web Developer role.",
+      "Collaborate with team members and cross-functional stakeholders.",
+      "Maintain quality, documentation, and timely delivery of assigned work.",
+      "Identify problems and contribute practical solutions.",
+      "Participate in meetings, reviews, and continuous improvement activities."
+    ],
+    "requirements": [
+      "Relevant educational background in Computer Science / Software Engineering.",
+      "Fresh graduates with relevant skills are encouraged to apply.",
+      "Strong knowledge of HTML, CSS, JavaScript.",
+      "Good communication and teamwork skills.",
+      "Strong analytical and problem-solving ability."
+    ],
+    "preferred_qualifications": [
+      "Experience with Bootstrap.",
+      "Experience working in a professional team environment.",
+      "Ability to learn new tools and technologies quickly."
+    ],
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Git"
+    ],
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "field": "Computer Science / Software Engineering",
+        "required": true
+      }
+    ],
+    "benefits": [
+      "Competitive salary",
+      "Performance bonus",
+      "Paid leave",
+      "Professional development opportunities",
+      "Friendly working environment"
+    ],
+    "working_hours": {
+      "days": "Sunday - Thursday",
+      "start": "09:00 AM",
+      "end": "06:00 PM"
+    },
+    "vacancy": 1,
+    "application": {
+      "deadline": "2026-08-18",
+      "method": "Online",
+      "email": "careers@example.com",
+      "apply_url": "https://example.com/careers/job-60"
+    },
+    "posted_date": "2026-07-27",
+    "status": "Open"
+  }
+]

@@ -1,0 +1,24 @@
+import React from 'react';
+import Navbar from '../Component/Navbar/Navbar';
+import Banner from '../Component/Banner/Banner';
+import Categories from '../Component/Categories/Categories';
+
+const HomeLayout = () => {
+    return (
+        <div>
+            <header>
+                <Navbar></Navbar>
+                <Banner></Banner>
+            </header>
+
+            <main>
+                <section>
+                    <Categories></Categories>
+                </section>
+            </main>
+            
+        </div>
+    );
+};
+
+export default HomeLayout;

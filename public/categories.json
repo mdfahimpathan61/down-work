@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Web Development",
+    "icon": "FaCode",
+    "jobs": [
+      "Frontend Developer",
+      "React Developer",
+      "Frontend Engineer",
+      "Junior Web Developer",
+      "Full Stack Web Developer",
+      "WordPress Developer",
+      "Web Application Developer",
+      "UI Developer",
+      "Mobile App Developer"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Software Engineering",
+    "icon": "FaLaptopCode",
+    "jobs": [
+      "Software Engineer",
+      "Junior Software Engineer",
+      "Backend Developer",
+      "Python Developer",
+      "Node.js Developer",
+      "Java Software Developer",
+      "Software QA Engineer",
+      "DevOps Engineer",
+      "Cloud Engineer"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "UI/UX Design",
+    "icon": "FaPenNib",
+    "jobs": [
+      "UI/UX Designer",
+      "Product Designer",
+      "Visual Designer",
+      "UX Researcher",
+      "Graphic Designer",
+      "Interaction Designer"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Data Science",
+    "icon": "FaChartLine",
+    "jobs": [
+      "Data Analyst",
+      "Junior Data Analyst",
+      "Data Scientist",
+      "Machine Learning Engineer",
+      "BI Analyst",
+      "Database Analyst",
+      "Research Data Scientist"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Marketing",
+    "icon": "FaBullhorn",
+    "jobs": [
+      "Digital Marketing Executive",
+      "SEO Specialist",
+      "Social Media Executive",
+      "Content Marketing Specialist",
+      "Performance Marketing Executive",
+      "Marketing Coordinator",
+      "Brand Marketing Manager"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Finance & Accounting",
+    "icon": "FaCalculator",
+    "jobs": [
+      "Junior Accountant",
+      "Financial Analyst",
+      "Accounts Executive",
+      "Senior Accountant",
+      "Finance Officer",
+      "Internal Audit Officer"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Human Resources",
+    "icon": "FaUsers",
+    "jobs": [
+      "HR Executive",
+      "Talent Acquisition Specialist",
+      "HR Intern",
+      "Senior HR Officer",
+      "Learning & Development Executive",
+      "Payroll Specialist"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Customer Support",
+    "icon": "FaHeadset",
+    "jobs": [
+      "Customer Support Executive",
+      "Customer Success Executive",
+      "Call Center Executive",
+      "Technical Support Engineer",
+      "Support Team Lead",
+      "Client Service Executive"
+    ]
+  }
+]
