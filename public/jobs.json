@@ -5,7 +5,7 @@
     "title": "Frontend Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
-      "logo": "https://example.com/logos/company-1.png",
+      "logo": "https://ui-avatars.com/api/?name=TechNova+Solutions+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://technovasolutionsltd.example.com",
       "industry": "Software & Technology",
       "company_size": "51-200 employees"
@@ -85,7 +85,8 @@
       "apply_url": "https://example.com/careers/job-1"
     },
     "posted_date": "2026-08-07",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 2,
@@ -93,7 +94,7 @@
     "title": "React Developer",
     "company": {
       "name": "CodeCraft Technologies",
-      "logo": "https://example.com/logos/company-2.png",
+      "logo": "https://ui-avatars.com/api/?name=CodeCraft+Technologies&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://codecrafttechnologies.example.com",
       "industry": "Software Development",
       "company_size": "201-500 employees"
@@ -172,7 +173,8 @@
       "apply_url": "https://example.com/careers/job-2"
     },
     "posted_date": "2026-08-06",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 3,
@@ -180,7 +182,7 @@
     "title": "Frontend Engineer",
     "company": {
       "name": "Creative Pixel Studio",
-      "logo": "https://example.com/logos/company-3.png",
+      "logo": "https://ui-avatars.com/api/?name=Creative+Pixel+Studio&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://creativepixelstudio.example.com",
       "industry": "Design & Digital Agency",
       "company_size": "11-50 employees"
@@ -260,7 +262,8 @@
       "apply_url": "https://example.com/careers/job-3"
     },
     "posted_date": "2026-08-05",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 4,
@@ -268,7 +271,7 @@
     "title": "Junior Web Developer",
     "company": {
       "name": "DataVision Analytics",
-      "logo": "https://example.com/logos/company-4.png",
+      "logo": "https://ui-avatars.com/api/?name=DataVision+Analytics&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://datavisionanalytics.example.com",
       "industry": "Data & Analytics",
       "company_size": "51-200 employees"
@@ -347,7 +350,8 @@
       "apply_url": "https://example.com/careers/job-4"
     },
     "posted_date": "2026-08-04",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 5,
@@ -355,7 +359,7 @@
     "title": "Full Stack Web Developer",
     "company": {
       "name": "GrowthHub Digital",
-      "logo": "https://example.com/logos/company-5.png",
+      "logo": "https://ui-avatars.com/api/?name=GrowthHub+Digital&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://growthhubdigital.example.com",
       "industry": "Digital Marketing",
       "company_size": "51-200 employees"
@@ -435,7 +439,8 @@
       "apply_url": "https://example.com/careers/job-5"
     },
     "posted_date": "2026-08-03",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 6,
@@ -443,7 +448,7 @@
     "title": "WordPress Developer",
     "company": {
       "name": "Global Finance Ltd.",
-      "logo": "https://example.com/logos/company-6.png",
+      "logo": "https://ui-avatars.com/api/?name=Global+Finance+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://globalfinanceltd.example.com",
       "industry": "Financial Services",
       "company_size": "201-500 employees"
@@ -522,7 +527,8 @@
       "apply_url": "https://example.com/careers/job-6"
     },
     "posted_date": "2026-08-02",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 7,
@@ -530,7 +536,7 @@
     "title": "Web Application Developer",
     "company": {
       "name": "PeopleFirst Ltd.",
-      "logo": "https://example.com/logos/company-7.png",
+      "logo": "https://ui-avatars.com/api/?name=PeopleFirst+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://peoplefirstltd.example.com",
       "industry": "Human Resources",
       "company_size": "51-200 employees"
@@ -609,7 +615,8 @@
       "apply_url": "https://example.com/careers/job-7"
     },
     "posted_date": "2026-08-01",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 8,
@@ -617,7 +624,7 @@
     "title": "UI Developer",
     "company": {
       "name": "ServicePro Bangladesh",
-      "logo": "https://example.com/logos/company-8.png",
+      "logo": "https://ui-avatars.com/api/?name=ServicePro+Bangladesh&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://serviceprobangladesh.example.com",
       "industry": "Customer Service",
       "company_size": "201-500 employees"
@@ -696,7 +703,8 @@
       "apply_url": "https://example.com/careers/job-8"
     },
     "posted_date": "2026-07-31",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 9,
@@ -704,7 +712,7 @@
     "title": "Software Engineer",
     "company": {
       "name": "CloudPeak Systems",
-      "logo": "https://example.com/logos/company-9.png",
+      "logo": "https://ui-avatars.com/api/?name=CloudPeak+Systems&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://cloudpeaksystems.example.com",
       "industry": "Cloud & IT Services",
       "company_size": "51-200 employees"
@@ -784,7 +792,8 @@
       "apply_url": "https://example.com/careers/job-9"
     },
     "posted_date": "2026-07-30",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 10,
@@ -792,7 +801,7 @@
     "title": "Junior Software Engineer",
     "company": {
       "name": "NextGen Innovations",
-      "logo": "https://example.com/logos/company-10.png",
+      "logo": "https://ui-avatars.com/api/?name=NextGen+Innovations&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://nextgeninnovations.example.com",
       "industry": "Technology",
       "company_size": "11-50 employees"
@@ -870,7 +879,8 @@
       "apply_url": "https://example.com/careers/job-10"
     },
     "posted_date": "2026-07-29",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 11,
@@ -878,7 +888,7 @@
     "title": "Backend Developer",
     "company": {
       "name": "ByteBridge Ltd.",
-      "logo": "https://example.com/logos/company-11.png",
+      "logo": "https://ui-avatars.com/api/?name=ByteBridge+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://bytebridgeltd.example.com",
       "industry": "Software & IT",
       "company_size": "51-200 employees"
@@ -957,7 +967,8 @@
       "apply_url": "https://example.com/careers/job-11"
     },
     "posted_date": "2026-07-28",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 12,
@@ -965,7 +976,7 @@
     "title": "Python Developer",
     "company": {
       "name": "DigitalEdge Solutions",
-      "logo": "https://example.com/logos/company-12.png",
+      "logo": "https://ui-avatars.com/api/?name=DigitalEdge+Solutions&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://digitaledgesolutions.example.com",
       "industry": "IT Services",
       "company_size": "201-500 employees"
@@ -1044,7 +1055,8 @@
       "apply_url": "https://example.com/careers/job-12"
     },
     "posted_date": "2026-07-27",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 13,
@@ -1052,7 +1064,7 @@
     "title": "Node.js Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
-      "logo": "https://example.com/logos/company-1.png",
+      "logo": "https://ui-avatars.com/api/?name=TechNova+Solutions+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://technovasolutionsltd.example.com",
       "industry": "Software & Technology",
       "company_size": "51-200 employees"
@@ -1131,7 +1143,8 @@
       "apply_url": "https://example.com/careers/job-13"
     },
     "posted_date": "2026-08-07",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 14,
@@ -1139,7 +1152,7 @@
     "title": "Java Software Developer",
     "company": {
       "name": "CodeCraft Technologies",
-      "logo": "https://example.com/logos/company-2.png",
+      "logo": "https://ui-avatars.com/api/?name=CodeCraft+Technologies&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://codecrafttechnologies.example.com",
       "industry": "Software Development",
       "company_size": "201-500 employees"
@@ -1218,7 +1231,8 @@
       "apply_url": "https://example.com/careers/job-14"
     },
     "posted_date": "2026-08-06",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 15,
@@ -1226,7 +1240,7 @@
     "title": "Software QA Engineer",
     "company": {
       "name": "Creative Pixel Studio",
-      "logo": "https://example.com/logos/company-3.png",
+      "logo": "https://ui-avatars.com/api/?name=Creative+Pixel+Studio&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://creativepixelstudio.example.com",
       "industry": "Design & Digital Agency",
       "company_size": "11-50 employees"
@@ -1306,7 +1320,8 @@
       "apply_url": "https://example.com/careers/job-15"
     },
     "posted_date": "2026-08-05",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 16,
@@ -1314,7 +1329,7 @@
     "title": "DevOps Engineer",
     "company": {
       "name": "DataVision Analytics",
-      "logo": "https://example.com/logos/company-4.png",
+      "logo": "https://ui-avatars.com/api/?name=DataVision+Analytics&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://datavisionanalytics.example.com",
       "industry": "Data & Analytics",
       "company_size": "51-200 employees"
@@ -1393,7 +1408,8 @@
       "apply_url": "https://example.com/careers/job-16"
     },
     "posted_date": "2026-08-04",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 17,
@@ -1401,7 +1417,7 @@
     "title": "UI/UX Designer",
     "company": {
       "name": "GrowthHub Digital",
-      "logo": "https://example.com/logos/company-5.png",
+      "logo": "https://ui-avatars.com/api/?name=GrowthHub+Digital&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://growthhubdigital.example.com",
       "industry": "Digital Marketing",
       "company_size": "51-200 employees"
@@ -1480,7 +1496,8 @@
       "apply_url": "https://example.com/careers/job-17"
     },
     "posted_date": "2026-08-03",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 18,
@@ -1488,7 +1505,7 @@
     "title": "Product Designer",
     "company": {
       "name": "Global Finance Ltd.",
-      "logo": "https://example.com/logos/company-6.png",
+      "logo": "https://ui-avatars.com/api/?name=Global+Finance+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://globalfinanceltd.example.com",
       "industry": "Financial Services",
       "company_size": "201-500 employees"
@@ -1566,7 +1583,8 @@
       "apply_url": "https://example.com/careers/job-18"
     },
     "posted_date": "2026-08-02",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 19,
@@ -1574,7 +1592,7 @@
     "title": "Visual Designer",
     "company": {
       "name": "PeopleFirst Ltd.",
-      "logo": "https://example.com/logos/company-7.png",
+      "logo": "https://ui-avatars.com/api/?name=PeopleFirst+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://peoplefirstltd.example.com",
       "industry": "Human Resources",
       "company_size": "51-200 employees"
@@ -1652,7 +1670,8 @@
       "apply_url": "https://example.com/careers/job-19"
     },
     "posted_date": "2026-08-01",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 20,
@@ -1660,7 +1679,7 @@
     "title": "UX Researcher",
     "company": {
       "name": "ServicePro Bangladesh",
-      "logo": "https://example.com/logos/company-8.png",
+      "logo": "https://ui-avatars.com/api/?name=ServicePro+Bangladesh&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://serviceprobangladesh.example.com",
       "industry": "Customer Service",
       "company_size": "201-500 employees"
@@ -1738,7 +1757,8 @@
       "apply_url": "https://example.com/careers/job-20"
     },
     "posted_date": "2026-07-31",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 21,
@@ -1746,7 +1766,7 @@
     "title": "Graphic Designer",
     "company": {
       "name": "CloudPeak Systems",
-      "logo": "https://example.com/logos/company-9.png",
+      "logo": "https://ui-avatars.com/api/?name=CloudPeak+Systems&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://cloudpeaksystems.example.com",
       "industry": "Cloud & IT Services",
       "company_size": "51-200 employees"
@@ -1825,7 +1845,8 @@
       "apply_url": "https://example.com/careers/job-21"
     },
     "posted_date": "2026-07-30",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 22,
@@ -1833,7 +1854,7 @@
     "title": "Data Analyst",
     "company": {
       "name": "NextGen Innovations",
-      "logo": "https://example.com/logos/company-10.png",
+      "logo": "https://ui-avatars.com/api/?name=NextGen+Innovations&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://nextgeninnovations.example.com",
       "industry": "Technology",
       "company_size": "11-50 employees"
@@ -1912,7 +1933,8 @@
       "apply_url": "https://example.com/careers/job-22"
     },
     "posted_date": "2026-07-29",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 23,
@@ -1920,7 +1942,7 @@
     "title": "Junior Data Analyst",
     "company": {
       "name": "ByteBridge Ltd.",
-      "logo": "https://example.com/logos/company-11.png",
+      "logo": "https://ui-avatars.com/api/?name=ByteBridge+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://bytebridgeltd.example.com",
       "industry": "Software & IT",
       "company_size": "51-200 employees"
@@ -1998,7 +2020,8 @@
       "apply_url": "https://example.com/careers/job-23"
     },
     "posted_date": "2026-07-28",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 24,
@@ -2006,7 +2029,7 @@
     "title": "Data Scientist",
     "company": {
       "name": "DigitalEdge Solutions",
-      "logo": "https://example.com/logos/company-12.png",
+      "logo": "https://ui-avatars.com/api/?name=DigitalEdge+Solutions&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://digitaledgesolutions.example.com",
       "industry": "IT Services",
       "company_size": "201-500 employees"
@@ -2085,7 +2108,8 @@
       "apply_url": "https://example.com/careers/job-24"
     },
     "posted_date": "2026-07-27",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 25,
@@ -2093,7 +2117,7 @@
     "title": "Machine Learning Engineer",
     "company": {
       "name": "TechNova Solutions Ltd.",
-      "logo": "https://example.com/logos/company-1.png",
+      "logo": "https://ui-avatars.com/api/?name=TechNova+Solutions+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://technovasolutionsltd.example.com",
       "industry": "Software & Technology",
       "company_size": "51-200 employees"
@@ -2172,7 +2196,8 @@
       "apply_url": "https://example.com/careers/job-25"
     },
     "posted_date": "2026-08-07",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 26,
@@ -2180,7 +2205,7 @@
     "title": "BI Analyst",
     "company": {
       "name": "CodeCraft Technologies",
-      "logo": "https://example.com/logos/company-2.png",
+      "logo": "https://ui-avatars.com/api/?name=CodeCraft+Technologies&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://codecrafttechnologies.example.com",
       "industry": "Software Development",
       "company_size": "201-500 employees"
@@ -2258,7 +2283,8 @@
       "apply_url": "https://example.com/careers/job-26"
     },
     "posted_date": "2026-08-06",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 27,
@@ -2266,7 +2292,7 @@
     "title": "Database Analyst",
     "company": {
       "name": "Creative Pixel Studio",
-      "logo": "https://example.com/logos/company-3.png",
+      "logo": "https://ui-avatars.com/api/?name=Creative+Pixel+Studio&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://creativepixelstudio.example.com",
       "industry": "Design & Digital Agency",
       "company_size": "11-50 employees"
@@ -2345,7 +2371,8 @@
       "apply_url": "https://example.com/careers/job-27"
     },
     "posted_date": "2026-08-05",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 28,
@@ -2353,7 +2380,7 @@
     "title": "Digital Marketing Executive",
     "company": {
       "name": "DataVision Analytics",
-      "logo": "https://example.com/logos/company-4.png",
+      "logo": "https://ui-avatars.com/api/?name=DataVision+Analytics&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://datavisionanalytics.example.com",
       "industry": "Data & Analytics",
       "company_size": "51-200 employees"
@@ -2431,7 +2458,8 @@
       "apply_url": "https://example.com/careers/job-28"
     },
     "posted_date": "2026-08-04",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 29,
@@ -2439,7 +2467,7 @@
     "title": "SEO Specialist",
     "company": {
       "name": "GrowthHub Digital",
-      "logo": "https://example.com/logos/company-5.png",
+      "logo": "https://ui-avatars.com/api/?name=GrowthHub+Digital&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://growthhubdigital.example.com",
       "industry": "Digital Marketing",
       "company_size": "51-200 employees"
@@ -2517,7 +2545,8 @@
       "apply_url": "https://example.com/careers/job-29"
     },
     "posted_date": "2026-08-03",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 30,
@@ -2525,7 +2554,7 @@
     "title": "Social Media Executive",
     "company": {
       "name": "Global Finance Ltd.",
-      "logo": "https://example.com/logos/company-6.png",
+      "logo": "https://ui-avatars.com/api/?name=Global+Finance+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://globalfinanceltd.example.com",
       "industry": "Financial Services",
       "company_size": "201-500 employees"
@@ -2603,7 +2632,8 @@
       "apply_url": "https://example.com/careers/job-30"
     },
     "posted_date": "2026-08-02",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 31,
@@ -2611,7 +2641,7 @@
     "title": "Content Marketing Specialist",
     "company": {
       "name": "PeopleFirst Ltd.",
-      "logo": "https://example.com/logos/company-7.png",
+      "logo": "https://ui-avatars.com/api/?name=PeopleFirst+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://peoplefirstltd.example.com",
       "industry": "Human Resources",
       "company_size": "51-200 employees"
@@ -2689,7 +2719,8 @@
       "apply_url": "https://example.com/careers/job-31"
     },
     "posted_date": "2026-08-01",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 32,
@@ -2697,7 +2728,7 @@
     "title": "Performance Marketing Executive",
     "company": {
       "name": "ServicePro Bangladesh",
-      "logo": "https://example.com/logos/company-8.png",
+      "logo": "https://ui-avatars.com/api/?name=ServicePro+Bangladesh&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://serviceprobangladesh.example.com",
       "industry": "Customer Service",
       "company_size": "201-500 employees"
@@ -2775,7 +2806,8 @@
       "apply_url": "https://example.com/careers/job-32"
     },
     "posted_date": "2026-07-31",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 33,
@@ -2783,7 +2815,7 @@
     "title": "Marketing Coordinator",
     "company": {
       "name": "CloudPeak Systems",
-      "logo": "https://example.com/logos/company-9.png",
+      "logo": "https://ui-avatars.com/api/?name=CloudPeak+Systems&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://cloudpeaksystems.example.com",
       "industry": "Cloud & IT Services",
       "company_size": "51-200 employees"
@@ -2862,7 +2894,8 @@
       "apply_url": "https://example.com/careers/job-33"
     },
     "posted_date": "2026-07-30",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 34,
@@ -2870,7 +2903,7 @@
     "title": "Junior Accountant",
     "company": {
       "name": "NextGen Innovations",
-      "logo": "https://example.com/logos/company-10.png",
+      "logo": "https://ui-avatars.com/api/?name=NextGen+Innovations&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://nextgeninnovations.example.com",
       "industry": "Technology",
       "company_size": "11-50 employees"
@@ -2948,7 +2981,8 @@
       "apply_url": "https://example.com/careers/job-34"
     },
     "posted_date": "2026-07-29",
-    "status": "Open"
+    "status": "Open",
+    "featured": true
   },
   {
     "id": 35,
@@ -2956,7 +2990,7 @@
     "title": "Financial Analyst",
     "company": {
       "name": "ByteBridge Ltd.",
-      "logo": "https://example.com/logos/company-11.png",
+      "logo": "https://ui-avatars.com/api/?name=ByteBridge+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://bytebridgeltd.example.com",
       "industry": "Software & IT",
       "company_size": "51-200 employees"
@@ -3034,7 +3068,8 @@
       "apply_url": "https://example.com/careers/job-35"
     },
     "posted_date": "2026-07-28",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 36,
@@ -3042,7 +3077,7 @@
     "title": "Accounts Executive",
     "company": {
       "name": "DigitalEdge Solutions",
-      "logo": "https://example.com/logos/company-12.png",
+      "logo": "https://ui-avatars.com/api/?name=DigitalEdge+Solutions&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://digitaledgesolutions.example.com",
       "industry": "IT Services",
       "company_size": "201-500 employees"
@@ -3120,7 +3155,8 @@
       "apply_url": "https://example.com/careers/job-36"
     },
     "posted_date": "2026-07-27",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 37,
@@ -3128,7 +3164,7 @@
     "title": "Senior Accountant",
     "company": {
       "name": "TechNova Solutions Ltd.",
-      "logo": "https://example.com/logos/company-1.png",
+      "logo": "https://ui-avatars.com/api/?name=TechNova+Solutions+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://technovasolutionsltd.example.com",
       "industry": "Software & Technology",
       "company_size": "51-200 employees"
@@ -3206,7 +3242,8 @@
       "apply_url": "https://example.com/careers/job-37"
     },
     "posted_date": "2026-08-07",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 38,
@@ -3214,7 +3251,7 @@
     "title": "Finance Officer",
     "company": {
       "name": "CodeCraft Technologies",
-      "logo": "https://example.com/logos/company-2.png",
+      "logo": "https://ui-avatars.com/api/?name=CodeCraft+Technologies&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://codecrafttechnologies.example.com",
       "industry": "Software Development",
       "company_size": "201-500 employees"
@@ -3292,7 +3329,8 @@
       "apply_url": "https://example.com/careers/job-38"
     },
     "posted_date": "2026-08-06",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 39,
@@ -3300,7 +3338,7 @@
     "title": "HR Executive",
     "company": {
       "name": "Creative Pixel Studio",
-      "logo": "https://example.com/logos/company-3.png",
+      "logo": "https://ui-avatars.com/api/?name=Creative+Pixel+Studio&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://creativepixelstudio.example.com",
       "industry": "Design & Digital Agency",
       "company_size": "11-50 employees"
@@ -3379,7 +3417,8 @@
       "apply_url": "https://example.com/careers/job-39"
     },
     "posted_date": "2026-08-05",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 40,
@@ -3387,7 +3426,7 @@
     "title": "Talent Acquisition Specialist",
     "company": {
       "name": "DataVision Analytics",
-      "logo": "https://example.com/logos/company-4.png",
+      "logo": "https://ui-avatars.com/api/?name=DataVision+Analytics&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://datavisionanalytics.example.com",
       "industry": "Data & Analytics",
       "company_size": "51-200 employees"
@@ -3465,7 +3504,8 @@
       "apply_url": "https://example.com/careers/job-40"
     },
     "posted_date": "2026-08-04",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 41,
@@ -3473,7 +3513,7 @@
     "title": "HR Intern",
     "company": {
       "name": "GrowthHub Digital",
-      "logo": "https://example.com/logos/company-5.png",
+      "logo": "https://ui-avatars.com/api/?name=GrowthHub+Digital&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://growthhubdigital.example.com",
       "industry": "Digital Marketing",
       "company_size": "51-200 employees"
@@ -3550,7 +3590,8 @@
       "apply_url": "https://example.com/careers/job-41"
     },
     "posted_date": "2026-08-03",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 42,
@@ -3558,7 +3599,7 @@
     "title": "Senior HR Officer",
     "company": {
       "name": "Global Finance Ltd.",
-      "logo": "https://example.com/logos/company-6.png",
+      "logo": "https://ui-avatars.com/api/?name=Global+Finance+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://globalfinanceltd.example.com",
       "industry": "Financial Services",
       "company_size": "201-500 employees"
@@ -3636,7 +3677,8 @@
       "apply_url": "https://example.com/careers/job-42"
     },
     "posted_date": "2026-08-02",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 43,
@@ -3644,7 +3686,7 @@
     "title": "Learning & Development Executive",
     "company": {
       "name": "PeopleFirst Ltd.",
-      "logo": "https://example.com/logos/company-7.png",
+      "logo": "https://ui-avatars.com/api/?name=PeopleFirst+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://peoplefirstltd.example.com",
       "industry": "Human Resources",
       "company_size": "51-200 employees"
@@ -3722,7 +3764,8 @@
       "apply_url": "https://example.com/careers/job-43"
     },
     "posted_date": "2026-08-01",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 44,
@@ -3730,7 +3773,7 @@
     "title": "Customer Support Executive",
     "company": {
       "name": "ServicePro Bangladesh",
-      "logo": "https://example.com/logos/company-8.png",
+      "logo": "https://ui-avatars.com/api/?name=ServicePro+Bangladesh&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://serviceprobangladesh.example.com",
       "industry": "Customer Service",
       "company_size": "201-500 employees"
@@ -3808,7 +3851,8 @@
       "apply_url": "https://example.com/careers/job-44"
     },
     "posted_date": "2026-07-31",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 45,
@@ -3816,7 +3860,7 @@
     "title": "Customer Success Executive",
     "company": {
       "name": "CloudPeak Systems",
-      "logo": "https://example.com/logos/company-9.png",
+      "logo": "https://ui-avatars.com/api/?name=CloudPeak+Systems&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://cloudpeaksystems.example.com",
       "industry": "Cloud & IT Services",
       "company_size": "51-200 employees"
@@ -3895,7 +3939,8 @@
       "apply_url": "https://example.com/careers/job-45"
     },
     "posted_date": "2026-07-30",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 46,
@@ -3903,7 +3948,7 @@
     "title": "Call Center Executive",
     "company": {
       "name": "NextGen Innovations",
-      "logo": "https://example.com/logos/company-10.png",
+      "logo": "https://ui-avatars.com/api/?name=NextGen+Innovations&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://nextgeninnovations.example.com",
       "industry": "Technology",
       "company_size": "11-50 employees"
@@ -3980,7 +4025,8 @@
       "apply_url": "https://example.com/careers/job-46"
     },
     "posted_date": "2026-07-29",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 47,
@@ -3988,7 +4034,7 @@
     "title": "Technical Support Engineer",
     "company": {
       "name": "ByteBridge Ltd.",
-      "logo": "https://example.com/logos/company-11.png",
+      "logo": "https://ui-avatars.com/api/?name=ByteBridge+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://bytebridgeltd.example.com",
       "industry": "Software & IT",
       "company_size": "51-200 employees"
@@ -4066,7 +4112,8 @@
       "apply_url": "https://example.com/careers/job-47"
     },
     "posted_date": "2026-07-28",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 48,
@@ -4074,7 +4121,7 @@
     "title": "Support Team Lead",
     "company": {
       "name": "DigitalEdge Solutions",
-      "logo": "https://example.com/logos/company-12.png",
+      "logo": "https://ui-avatars.com/api/?name=DigitalEdge+Solutions&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://digitaledgesolutions.example.com",
       "industry": "IT Services",
       "company_size": "201-500 employees"
@@ -4152,7 +4199,8 @@
       "apply_url": "https://example.com/careers/job-48"
     },
     "posted_date": "2026-07-27",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 49,
@@ -4160,7 +4208,7 @@
     "title": "Mobile App Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
-      "logo": "https://example.com/logos/company-1.png",
+      "logo": "https://ui-avatars.com/api/?name=TechNova+Solutions+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://technovasolutionsltd.example.com",
       "industry": "Software & Technology",
       "company_size": "51-200 employees"
@@ -4239,7 +4287,8 @@
       "apply_url": "https://example.com/careers/job-49"
     },
     "posted_date": "2026-08-07",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 50,
@@ -4247,7 +4296,7 @@
     "title": "Cloud Engineer",
     "company": {
       "name": "CodeCraft Technologies",
-      "logo": "https://example.com/logos/company-2.png",
+      "logo": "https://ui-avatars.com/api/?name=CodeCraft+Technologies&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://codecrafttechnologies.example.com",
       "industry": "Software Development",
       "company_size": "201-500 employees"
@@ -4326,7 +4375,8 @@
       "apply_url": "https://example.com/careers/job-50"
     },
     "posted_date": "2026-08-06",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 51,
@@ -4334,7 +4384,7 @@
     "title": "Research Data Scientist",
     "company": {
       "name": "Creative Pixel Studio",
-      "logo": "https://example.com/logos/company-3.png",
+      "logo": "https://ui-avatars.com/api/?name=Creative+Pixel+Studio&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://creativepixelstudio.example.com",
       "industry": "Design & Digital Agency",
       "company_size": "11-50 employees"
@@ -4413,7 +4463,8 @@
       "apply_url": "https://example.com/careers/job-51"
     },
     "posted_date": "2026-08-05",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 52,
@@ -4421,7 +4472,7 @@
     "title": "Brand Marketing Manager",
     "company": {
       "name": "DataVision Analytics",
-      "logo": "https://example.com/logos/company-4.png",
+      "logo": "https://ui-avatars.com/api/?name=DataVision+Analytics&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://datavisionanalytics.example.com",
       "industry": "Data & Analytics",
       "company_size": "51-200 employees"
@@ -4499,7 +4550,8 @@
       "apply_url": "https://example.com/careers/job-52"
     },
     "posted_date": "2026-08-04",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 53,
@@ -4507,7 +4559,7 @@
     "title": "Internal Audit Officer",
     "company": {
       "name": "GrowthHub Digital",
-      "logo": "https://example.com/logos/company-5.png",
+      "logo": "https://ui-avatars.com/api/?name=GrowthHub+Digital&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://growthhubdigital.example.com",
       "industry": "Digital Marketing",
       "company_size": "51-200 employees"
@@ -4585,7 +4637,8 @@
       "apply_url": "https://example.com/careers/job-53"
     },
     "posted_date": "2026-08-03",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 54,
@@ -4593,7 +4646,7 @@
     "title": "Payroll Specialist",
     "company": {
       "name": "Global Finance Ltd.",
-      "logo": "https://example.com/logos/company-6.png",
+      "logo": "https://ui-avatars.com/api/?name=Global+Finance+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://globalfinanceltd.example.com",
       "industry": "Financial Services",
       "company_size": "201-500 employees"
@@ -4671,7 +4724,8 @@
       "apply_url": "https://example.com/careers/job-54"
     },
     "posted_date": "2026-08-02",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 55,
@@ -4679,7 +4733,7 @@
     "title": "Interaction Designer",
     "company": {
       "name": "PeopleFirst Ltd.",
-      "logo": "https://example.com/logos/company-7.png",
+      "logo": "https://ui-avatars.com/api/?name=PeopleFirst+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://peoplefirstltd.example.com",
       "industry": "Human Resources",
       "company_size": "51-200 employees"
@@ -4757,7 +4811,8 @@
       "apply_url": "https://example.com/careers/job-55"
     },
     "posted_date": "2026-08-01",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 56,
@@ -4765,7 +4820,7 @@
     "title": "Client Service Executive",
     "company": {
       "name": "ServicePro Bangladesh",
-      "logo": "https://example.com/logos/company-8.png",
+      "logo": "https://ui-avatars.com/api/?name=ServicePro+Bangladesh&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://serviceprobangladesh.example.com",
       "industry": "Customer Service",
       "company_size": "201-500 employees"
@@ -4843,7 +4898,8 @@
       "apply_url": "https://example.com/careers/job-56"
     },
     "posted_date": "2026-07-31",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 57,
@@ -4851,7 +4907,7 @@
     "title": "Frontend Developer",
     "company": {
       "name": "CloudPeak Systems",
-      "logo": "https://example.com/logos/company-9.png",
+      "logo": "https://ui-avatars.com/api/?name=CloudPeak+Systems&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://cloudpeaksystems.example.com",
       "industry": "Cloud & IT Services",
       "company_size": "51-200 employees"
@@ -4932,7 +4988,8 @@
       "apply_url": "https://example.com/careers/job-57"
     },
     "posted_date": "2026-07-30",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 58,
@@ -4940,7 +4997,7 @@
     "title": "React Developer",
     "company": {
       "name": "NextGen Innovations",
-      "logo": "https://example.com/logos/company-10.png",
+      "logo": "https://ui-avatars.com/api/?name=NextGen+Innovations&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://nextgeninnovations.example.com",
       "industry": "Technology",
       "company_size": "11-50 employees"
@@ -5019,7 +5076,8 @@
       "apply_url": "https://example.com/careers/job-58"
     },
     "posted_date": "2026-07-29",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 59,
@@ -5027,7 +5085,7 @@
     "title": "Frontend Engineer",
     "company": {
       "name": "ByteBridge Ltd.",
-      "logo": "https://example.com/logos/company-11.png",
+      "logo": "https://ui-avatars.com/api/?name=ByteBridge+Ltd.&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://bytebridgeltd.example.com",
       "industry": "Software & IT",
       "company_size": "51-200 employees"
@@ -5106,7 +5164,8 @@
       "apply_url": "https://example.com/careers/job-59"
     },
     "posted_date": "2026-07-28",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   },
   {
     "id": 60,
@@ -5114,7 +5173,7 @@
     "title": "Junior Web Developer",
     "company": {
       "name": "DigitalEdge Solutions",
-      "logo": "https://example.com/logos/company-12.png",
+      "logo": "https://ui-avatars.com/api/?name=DigitalEdge+Solutions&background=0D8ABC&color=fff&size=128&bold=true&format=svg",
       "website": "https://digitaledgesolutions.example.com",
       "industry": "IT Services",
       "company_size": "201-500 employees"
@@ -5193,6 +5252,7 @@
       "apply_url": "https://example.com/careers/job-60"
     },
     "posted_date": "2026-07-27",
-    "status": "Open"
+    "status": "Open",
+    "featured": false
   }
 ]

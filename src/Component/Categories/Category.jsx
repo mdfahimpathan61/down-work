@@ -23,7 +23,7 @@ const icons = {
 
 const Category = ({category}) => {
     const jobs = category.jobs
-    console.log(jobs[0])
+    //console.log(jobs[0])
          const Icon = icons[category.icon];
         return (
           <div key={category.id} className="p-5 w-70 h-70 hover:bg-primary hover:text-white hover:shadow-blue-400 hover:shadow-lg shadow-md mx-auto">

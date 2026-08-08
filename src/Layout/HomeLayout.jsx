@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Component/Navbar/Navbar';
 import Banner from '../Component/Banner/Banner';
 import Categories from '../Component/Categories/Categories';
+import Featuredjob from '../Component/Featuredjobs/Featuredjobs';
 
 const HomeLayout = () => {
     return (
@@ -14,6 +15,9 @@ const HomeLayout = () => {
             <main>
                 <section>
                     <Categories></Categories>
+                </section>
+                <section>
+                    <Featuredjob></Featuredjob>
                 </section>
             </main>
             
