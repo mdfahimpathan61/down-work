@@ -13,7 +13,7 @@ const HomeLayout = () => {
             </header>
 
             <main>
-                <section>
+                <section id='categories'>
                     <Categories></Categories>
                 </section>
                 <section>

@@ -14,9 +14,9 @@ const Navbar = () => {
         <li className="text-accent hover:text-primary">Browse Services</li>
       </NavLink>
 
-      <NavLink to={"/categories"}>
+      <a href="/#categories">
         <li className="text-accent hover:text-primary">Categories</li>
-      </NavLink>
+      </a>
     </>
   );
 

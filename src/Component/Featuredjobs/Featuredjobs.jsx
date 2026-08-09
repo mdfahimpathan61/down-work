@@ -10,8 +10,9 @@ const Featuredjobs = () => {
     console.log(featuredJob)
     return (
         <div className='bg-gray-100 py-20'>
-            <div className='flex justify-between max-w-360 mx-auto items-center px-8'>
-                <h3 className='text-xl sm:text-2xl font-bold'>Featured Jobs</h3>
+             <h3 className='text-xl sm:text-3xl my-4  font-bold text-center'>Featured Jobs</h3>
+            <div className='flex justify-end max-w-360 mx-auto items-center px-8'>
+               
                 <button className='flex items-center gap-1.5 p-2 border-0 text-secondary hover:text-primary'>Show all Jobs <RiArrowRightWideFill /></button>
             </div>
             {
