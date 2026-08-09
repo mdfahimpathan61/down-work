@@ -1,10 +1,24 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { useContext } from "react";
+import { NavLink, useNavigate } from "react-router";
 import logo from "/logo (1).png";
 import "./navbar.css";
 import { CiMenuFries } from "react-icons/ci";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {activeUser, signout} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+
+  const handleSignOut =() =>{
+    if(activeUser){
+      signout()
+    }
+    else{
+      navigate("/auth/login")
+    }
+  } 
+  
   const list = (
     <>
       <NavLink to={"/"}>
@@ -32,6 +46,13 @@ const Navbar = () => {
         </div>
         
           <div className="navbar-end">
+            <div>
+              {
+                activeUser?
+                <div><img src={activeUser?.imageUrl} alt="" /> </div>:""
+              }
+              <button className="btn" onClick={handleSignOut}>{activeUser ?"Sign out":"Log in"}</button>
+            </div>
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}

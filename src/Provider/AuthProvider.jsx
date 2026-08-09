@@ -1,10 +1,13 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
+ const [activeUser, setActiveuser] = useState(null)
+
+
   const signUpWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -27,10 +30,27 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const signinWithEmail = (email, password) =>{
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+  const signout = () =>{
+    return signOut(auth)
+  }
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth,(user) => {
+        setActiveuser(user)
+    })
+    return () => unsubscribe()
+  },[])
+
   const value = {
     signUpWithEmail,
     updateUser,
-    toastSuccess
+    toastSuccess,
+    signinWithEmail,
+    signout,
+    activeUser
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;

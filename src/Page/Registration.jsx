@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TbPhotoUp } from "react-icons/tb";
 import {  ToastContainer } from "react-toastify";
+import { Link, useNavigate } from "react-router";
 
 const Registration = () => {
   const { signUpWithEmail, updateUser,toastSuccess } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [successReg, setSuccessReg] = useState(false);
+  const navigate = useNavigate()
 
 
 
@@ -33,6 +35,7 @@ const Registration = () => {
         setSuccessReg(true);
         event.target.reset();
         toastSuccess("Registration successful")
+        navigate("/auth/login")
       })
       
       .catch((error) => {
@@ -76,7 +79,9 @@ const Registration = () => {
                   placeholder="Password"
                   name="password"
                 />
-
+                <div>
+                    <Link className="text-sm text-accent" to={"/auth/login"}>Already have an account? <span className="text-primary hover:underline">Log in</span></Link>
+                </div>
                 {error && <p className="text-red-500">{error}</p>}
 
                 <button className="btn text-white mt-4 bg-secondary hover:bg-primary">
