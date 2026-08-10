@@ -9,6 +9,7 @@ import {
   FaUsers,
   FaHeadset
 } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const icons = {
   FaCode: FaCode,
@@ -26,13 +27,15 @@ const Category = ({category}) => {
     //console.log(jobs[0])
          const Icon = icons[category.icon];
         return (
-          <div key={category.id} className="px-4 py-6 max-w-70 max-h-70 hover:bg-primary hover:text-white hover:shadow-blue-400 hover:shadow-lg shadow-md mx-auto">
+          <Link to={`/jobs/${category.id}`}>
+            <div key={category.id} className="px-4 py-6 max-w-70 max-h-70 hover:bg-primary hover:text-white hover:shadow-blue-400 hover:shadow-lg shadow-md mx-auto">
             <Icon className="mx-auto text-3xl" />
             <p className='text-lg mt-4 font-semibold'>{category.name}</p>
             <p className='text-gray-400 hover:text-gray-100 p-3'>
                 {jobs[0]}, {jobs[1]}, {jobs[2]} and more jobs
             </p>
           </div>
+          </Link>
         );
 
 };

@@ -3,6 +3,9 @@ import HomeLayout from "../Layout/HomeLayout";
 import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Page/Login";
 import Registration from "../Page/Registration";
+import JobsLayout from "../Layout/JobsLayout";
+
+import CategoriesJobs from "../Page/CategoriesJobs";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +26,18 @@ const router = createBrowserRouter([
             }
         ]
 
+    },
+    {
+        path:"/jobs",
+        Component:JobsLayout,
+        children :[
+            {
+                path:"/jobs/:id",
+                Component:CategoriesJobs,
+                loader: () => fetch("/jobs.json")
+            }
+        ],
     }
+
 ])
 export default router
