@@ -16,35 +16,38 @@ const Job = ({ job }) => {
     experience,
   } = job;
   return (
-    <div className="shadow-sm hover:shadow-md hover:pt-11 bg-white w-9/10 mx-auto pt-10   mt-7">
-      <div className="sm:flex justify-between items-center px-5">
-        <div className="gap-5 flex items-start   ">
+    <div className="border border-gray-100 shadow-sm hover:shadow-md hover:pt-11 bg-white w-9/10 mx-auto pt-10 mt-7 rounded-b-xl">
+      <div className="sm:flex justify-between items-center px-2 sm:px-5">
+        <div>
+          <div className="gap-5 flex items-start   ">
           <img
-            className="sm:mx-0 w-13 rounded-full"
+            className="sm:mx-0 w-10 sm:w-13 rounded-full"
             src={company.logo}
             alt=""
           />
           <div className=" ">
-            <h4 className="text-xl md:text-2xl  font-bold">{title}</h4>
+            <h4 className="text-lg md:text-2xl  font-bold">{title}</h4>
             <p className="text-accent font-bold flex gap-1 items-center text-md ml-1">
               <LiaIndustrySolid /> {company.name}
             </p>
+          </div>  
+          </div>
 
-            <div>
-              <p className="text-accent font-extralight my-3">{description}</p>
-              <div className="flex gap-5 font-bold">
-                <p>Experience : {experience.minimum} years</p>
+           <div className="mb-5">
+              <p className="text-accent font-extralight my-3 sm:w-8/10">{description}</p>
+              <div className="flex gap-3 md:gap-5 text-accent font-bold">
+                <p>Experience : {experience.minimum} ysr</p>
                 <p>Level : {experience.level}</p>
               </div>
-            </div>
-          </div>
+            </div>  
         </div>
+        
 
         <button className="btn text-accent py-6 bg-gray-100 text-lg hover:bg-white hover:text-black px-5 w-full sm:w-30 hover:shadow-md">
           Apply
         </button>
       </div>
-      <div className="mx-auto grid grid-cols-1 bg-gray-100 py-5 px-2 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 sm:gap-5 text-gray-500 my-4  ">
+      <div className=" grid grid-cols-1 bg-gray-100 py-5 px-3 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 sm:gap-5 text-gray-500 mt-5  ">
         <div className="flex items-center gap-2">
           <SlLocationPin />
           <span>{location.city}</span>

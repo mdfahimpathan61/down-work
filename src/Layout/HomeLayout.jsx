@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Navbar from '../Component/Navbar/Navbar';
 import Banner from '../Component/Banner/Banner';
 import Categories from '../Component/Categories/Categories';
 import Featuredjob from '../Component/Featuredjobs/Featuredjobs';
+import Loading from '../Component/Loading';
 
 const HomeLayout = () => {
     return (
@@ -14,7 +15,9 @@ const HomeLayout = () => {
 
             <main>
                 <section id='categories'>
-                    <Categories></Categories>
+                    <Suspense fallback={<Loading></Loading>}>
+                        <Categories></Categories>
+                    </Suspense>
                 </section>
                 <section>
                     <Featuredjob></Featuredjob>
