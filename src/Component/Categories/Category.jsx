@@ -28,10 +28,10 @@ const Category = ({category}) => {
          const Icon = icons[category.icon];
         return (
           <Link to={`/jobs/${category.id}`}>
-            <div key={category.id} className="px-4 py-6 max-w-70  h-full hover:bg-primary hover:text-white hover:shadow-blue-400 hover:shadow-lg shadow-md mx-auto">
-            <Icon className="mx-auto text-3xl" />
-            <p className='text-lg mt-4 font-semibold'>{category.name}</p>
-            <p className='text-gray-400 hover:text-gray-100 p-3'>
+            <div key={category.id} className="group px-4 py-6 max-w-70  h-full hover:bg-primary hover:text-white hover:shadow-blue-300 hover:shadow-lg shadow-md mx-auto">
+            <Icon className="mx-auto text-3xl text-primary group-hover:text-white" />
+            <p className='text-md sm:text-lg mt-4 font-semibold'>{category.name}</p>
+            <p className='text-sm sm:text-md text-gray-400 group-hover:text-gray-100 p-3'>
                 {jobs[0]}, {jobs[1]}, {jobs[2]} and more jobs
             </p>
           </div>
