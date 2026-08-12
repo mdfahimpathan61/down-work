@@ -36,7 +36,7 @@ const Job = ({ job }) => {
            <div className="mb-5">
               <p className="text-accent font-extralight my-3 sm:w-8/10">{description}</p>
               <div className="flex gap-3 md:gap-5 text-accent font-bold">
-                <p>Experience : {experience.minimum} ysr</p>
+                <p>Experience : {experience.minimum} yrs</p>
                 <p>Level : {experience.level}</p>
               </div>
             </div>  
