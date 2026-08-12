@@ -88,11 +88,11 @@ const CategoriesJobs = () => {
 
   const filterResult = catigoriesAllJobs.filter(job => {
     return(
-      job.salary.minimum <= Number(salary) && job.salary.maximum >= Number(salary) &&
-      job.job_type.toLowerCase().includes(jobType) &&
-      job.work_mode?.toLowerCase().includes(workMode)&&
-      job.industry.toLowerCase().includes(industry)&&
-      job.location.city.toLowerCase().includes(location)
+      (!salary || (job.salary.minimum <= Number(salary) && job.salary.maximum >= Number(salary))) &&
+      (!jobType || (job.job_type.toLowerCase().includes(jobType))) &&
+      (!workMode || (job.work_mode?.toLowerCase().includes(workMode)))&&
+      (!industry || (job.industry.toLowerCase().includes(industry)))&&
+      (!location || (job.location.city.toLowerCase().includes(location)))
     )
   })
   console.log(filterResult)
