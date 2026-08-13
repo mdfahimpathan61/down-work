@@ -2,13 +2,14 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TbPhotoUp } from "react-icons/tb";
 import {  ToastContainer } from "react-toastify";
-import { Link, useNavigate } from "react-router";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router";
 
 const Login = () => {
   const { signinWithEmail,toastSuccess } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [successLogin, setSuccessLogin] = useState(false);
   const navigate = useNavigate()
+  const location = useLocation()
 
 
 
@@ -32,7 +33,7 @@ const Login = () => {
         setSuccessLogin(true);
         event.target.reset();
         toastSuccess("Log in successful")
-        navigate("/")
+        location?.state?navigate(location.state) : navigate("/")
 
       })
       

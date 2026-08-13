@@ -9,11 +9,14 @@ import CategoriesJobs from "../Page/CategoriesJobs";
 import JobDetails from "../Page/JobDetails";
 import Loading from "../Component/Loading";
 import JobDetailsLayout from "../Layout/JobDetailsLayout";
+import PrivateRoute from "./PrivateRoute";
+import Error from "../Page/Error";
 
 const router = createBrowserRouter([
     {
         path:"/",
-        Component:HomeLayout
+        Component:HomeLayout,
+        errorElement:<Error></Error>
     },
     {
         path:"/auth",
@@ -44,10 +47,11 @@ const router = createBrowserRouter([
     },
     {
         path:"/details/:id",
-        Component:JobDetailsLayout,
+        element:<PrivateRoute><JobDetailsLayout></JobDetailsLayout></PrivateRoute>,
         loader:() => fetch("/jobs.json"),
         hydrateFallbackElement:Loading
-    }
+    },
+    
 
 
 ])
