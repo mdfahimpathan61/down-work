@@ -6,6 +6,9 @@ import Registration from "../Page/Registration";
 import JobsLayout from "../Layout/JobsLayout";
 
 import CategoriesJobs from "../Page/CategoriesJobs";
+import JobDetails from "../Page/JobDetails";
+import Loading from "../Component/Loading";
+import JobDetailsLayout from "../Layout/JobDetailsLayout";
 
 const router = createBrowserRouter([
     {
@@ -28,16 +31,24 @@ const router = createBrowserRouter([
 
     },
     {
-        path:"/jobs",
+        path:"/category",
         Component:JobsLayout,
         children :[
             {
-                path:"/jobs/:id",
+                path:"/category/:id",
                 Component:CategoriesJobs,
-                loader: () => fetch("/jobs.json")
+                loader: () => fetch("/jobs.json"),
+                hydrateFallbackElement:Loading
             }
         ],
+    },
+    {
+        path:"/details/:id",
+        Component:JobDetailsLayout,
+        loader:() => fetch("/jobs.json"),
+        hydrateFallbackElement:Loading
     }
+
 
 ])
 export default router
