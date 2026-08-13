@@ -28,7 +28,7 @@ const JobDetails = () => {
     vacancy,
   } = job;
   return (
-    <div className="max-w-360 p-3 sm:p-7 mx-auto">
+    <div className="max-w-360 p-3 sm:p-5 mx-auto">
       <header>
         <div className="flex items-center gap-5 mt-5">
           <div>
@@ -54,7 +54,7 @@ const JobDetails = () => {
           <h3 className="text-lg sm:text-xl font-extralight">
             Job Description
           </h3>
-          <p className="text-accent ml-2 text-sm sm:text-md font-extralight lg:max-w-7/10">
+          <p className="text-accent text-sm sm:text-md font-extralight lg:max-w-7/10">
             {description}
           </p>
         </section>
@@ -88,7 +88,7 @@ const JobDetails = () => {
           ))}
         </section>
         <section className="my-5">
-          <h3 className="text-lg sm:text-xl font-extralight mb-1">Skill - </h3>
+          <h3 className="text-lg sm:text-xl font-extralight">Skill - </h3>
           {skills.map((skill) => (
             <span className="badge badge-sm sm:badge-md text-accent bg-gray-200 mx-1">
               {skill}

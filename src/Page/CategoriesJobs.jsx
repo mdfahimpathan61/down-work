@@ -1,15 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink, useLoaderData, useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import NojobFound from "./NojobFound";
+import { AuthContext } from "../Provider/AuthProvider";
+import Loading from "../Component/Loading";
 
 const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
+  const {loading} = useContext(AuthContext)
 
   const { id } = useParams();
   const allJobsData = useLoaderData();
@@ -110,7 +113,11 @@ const CategoriesJobs = () => {
   };
 
   return (
-    <div className="max-w-360 mx-auto">
+    <>
+    {
+      loading ? <Loading></Loading> :
+
+      <div className="max-w-360 mx-auto">
       <div className="flex sm:justify-end  items-center mt-5">
         
         <div className="w-full md:w-auto my-3 mx-3 flex shadow-sm shadow-base-300  ">
@@ -249,6 +256,8 @@ const CategoriesJobs = () => {
 
       {noJob && <NojobFound></NojobFound>}
     </div>
+    }
+    </>
   );
 };
 

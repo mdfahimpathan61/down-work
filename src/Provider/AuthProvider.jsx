@@ -6,6 +6,7 @@ import { Bounce, toast } from "react-toastify";
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
+ const [loading,isLoading] = useState(true)
 
 
   const signUpWithEmail = (email, password) => {
@@ -40,6 +41,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth,(user) => {
         setActiveuser(user)
+        isLoading(false)
     })
     return () => unsubscribe()
   },[])
@@ -50,7 +52,8 @@ const AuthProvider = ({ children }) => {
     toastSuccess,
     signinWithEmail,
     signout,
-    activeUser
+    activeUser,
+    loading
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;
