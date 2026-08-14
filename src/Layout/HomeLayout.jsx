@@ -12,7 +12,8 @@ const HomeLayout = () => {
     const location = useLocation()
     useEffect(() => {
         if(location.hash == "#categories"){
-            
+            document.getElementById("categories")?.scrollIntoView({
+                behavior:'smooth'
             }
                 
             )

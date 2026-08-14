@@ -12,7 +12,7 @@ const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
-  const {loading,searchTextContext} = useContext(AuthContext)
+  const {loading,searchTextContext, setSearchTextContext} = useContext(AuthContext)
   //console.log(searchTextContext)
  
 
@@ -23,11 +23,15 @@ const CategoriesJobs = () => {
   const searchRef = useRef();
 
   
-  const handleSearch = () => {
+  const handleSearch = (event) => {
     console.log(searchTextContext)
-     
-    if(searchTextContext){
+    if(event){
+      setSearchTextContext("")
+    }
+    else if(searchTextContext){
        searchRef.current.value = searchTextContext
+       //console.log(catigoriesAllJobs)
+      
     }
     
       const searchText = searchRef.current.value.toLowerCase();
@@ -50,6 +54,7 @@ const CategoriesJobs = () => {
     setNoJob(false);
 
     setFilteredJobs(searchResult);
+     //setSearchTextContext("")
 
     if (searchResult.length == 0) {
       setNoJob(true);
@@ -62,13 +67,14 @@ const CategoriesJobs = () => {
       setFilteredJobs(allJobsData);
       setCatigoriesAllJobs(allJobsData);
       searchTextContext && handleSearch()
+      
     } else {
       const categoryJobs = allJobsData.filter((job) => job.category_id == id);
       setFilteredJobs(categoryJobs);
       setCatigoriesAllJobs(categoryJobs);
       
     }
-  }, [id]);
+  }, [id,catigoriesAllJobs]);
 
 
 
