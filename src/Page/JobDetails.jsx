@@ -60,8 +60,8 @@ const JobDetails = () => {
         </section>
         <section className="my-5">
           <h3 className="text-lg sm:text-xl font-extralight">Resposibilits</h3>
-          {responsibilities.map((resposibility) => (
-            <p className="text-accent text-sm sm:text-md font-extralight  ml-1 mt-1">
+          {responsibilities.map((resposibility,index) => (
+            <p key={index} className="text-accent text-sm sm:text-md font-extralight  ml-1 mt-1">
               {" "}
               <span className="font-bold"> - </span> {resposibility}
             </p>

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import { MdOutlineSearch } from "react-icons/md";
 import Typewriter from "typewriter-effect";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useNavigate } from "react-router";
 
 const Banner = () => {
+  const {setSearchTextContext} = useContext(AuthContext)
+  const searchRef = useRef()
+  const navigate = useNavigate()
+  const handleSearch = () => {
+    const searchText = searchRef.current.value 
+    //console.log(searchText)
+    if(searchText){
+      setSearchTextContext(searchText)
+      navigate("/category/all")
+    }
+  }
+
   return (
     <div className="max-w-360 mx-auto relative">
       <div className="">
@@ -33,12 +47,12 @@ const Banner = () => {
             </p>
           </div>
           <div className="md:relative w-6/10 flex">
-            <input
+            <input ref={searchRef}
               className=" bg-white shadow-md shadow-base-500 md:rounded rounded-r-none w-full md:p-5 py-1 px-3 "
               type="text"
               placeholder="Search here"
             />
-            <button className="md:btn-md btn btn-sm max-w-3/10 rounded-none min-w-1/10 bg-primary text-white hover:bg-secondary md:absolute top-3.5 right-10 shadow-sm">
+            <button onClick={handleSearch} className="md:btn-md btn btn-sm max-w-3/10 rounded-none min-w-1/10 bg-primary text-white hover:bg-secondary md:absolute top-3.5 right-10 shadow-sm">
               {" "}
               <span className="hidden md:block">Search</span>{" "}
               <MdOutlineSearch />

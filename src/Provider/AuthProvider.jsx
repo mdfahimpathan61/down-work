@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
  const [loading,setLoading] = useState(true)
+ const [searchTextContext, setSearchTextContext] = useState()
 
 
   const signUpWithEmail = (email, password) => {
@@ -62,7 +63,9 @@ const AuthProvider = ({ children }) => {
     signout,
     activeUser,
     loading,
-    signInWitGoogle
+    signInWitGoogle,
+    searchTextContext,
+    setSearchTextContext
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;

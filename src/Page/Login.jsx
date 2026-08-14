@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { TbPhotoUp } from "react-icons/tb";
-import { ToastContainer } from "react-toastify";
+
 import {
   Link,
   Navigate,
-  useLoaderData,
+  
   useLocation,
   useNavigate,
 } from "react-router";

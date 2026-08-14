@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { NavLink, useLoaderData, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
@@ -12,7 +12,9 @@ const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
-  const {loading} = useContext(AuthContext)
+  const {loading,searchTextContext} = useContext(AuthContext)
+  //console.log(searchTextContext)
+ 
 
   const { id } = useParams();
   const allJobsData = useLoaderData();
@@ -20,21 +22,18 @@ const CategoriesJobs = () => {
 
   const searchRef = useRef();
 
-  useEffect(() => {
-    if (id == "all") {
-      setFilteredJobs(allJobsData);
-      setCatigoriesAllJobs(allJobsData);
-    } else {
-      const categoryJobs = allJobsData.filter((job) => job.category_id == id);
-      setCatigoriesAllJobs(categoryJobs);
-      setFilteredJobs(categoryJobs);
-    }
-  }, [id]);
-
+  
   const handleSearch = () => {
-    const searchText = searchRef.current.value.toLowerCase();
+    console.log(searchTextContext)
+     
+    if(searchTextContext){
+       searchRef.current.value = searchTextContext
+    }
+    
+      const searchText = searchRef.current.value.toLowerCase();
     //searchRef.current.value = ""
     console.log(searchText);
+    
 
     // const searchCategory = (id == "all")? allJobsData: catigoriesAllJobs
 
@@ -56,6 +55,24 @@ const CategoriesJobs = () => {
       setNoJob(true);
     }
   };
+
+
+  useEffect(() => {
+    if (id == "all") {
+      setFilteredJobs(allJobsData);
+      setCatigoriesAllJobs(allJobsData);
+      searchTextContext && handleSearch()
+    } else {
+      const categoryJobs = allJobsData.filter((job) => job.category_id == id);
+      setFilteredJobs(categoryJobs);
+      setCatigoriesAllJobs(categoryJobs);
+      
+    }
+  }, [id]);
+
+
+
+
 
   const sortBy = (sortName) => {
     //reset status

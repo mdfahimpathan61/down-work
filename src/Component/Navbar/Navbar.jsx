@@ -28,7 +28,9 @@ const Navbar = () => {
       </NavLink>
 
       <a href="/#categories">
-        <li className="text-accent hover:text-primary">Categories</li>
+        
+          <li className="text-accent hover:text-primary">Categories</li>
+        
       </a>
     </>
   );
