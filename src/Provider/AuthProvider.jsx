@@ -1,17 +1,23 @@
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
- const [loading,isLoading] = useState(true)
+ const [loading,setLoading] = useState(true)
 
 
   const signUpWithEmail = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  const signInWitGoogle = () =>{
+    const googleProvider = new GoogleAuthProvider()
+    return signInWithPopup(auth, googleProvider)
+  }
 
   const updateUser = (updateInfo) => {
     return updateProfile(auth.currentUser, updateInfo);
@@ -32,16 +38,18 @@ const AuthProvider = ({ children }) => {
   };
 
   const signinWithEmail = (email, password) =>{
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
   const signout = () =>{
+    setLoading(true)
     return signOut(auth)
   }
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth,(user) => {
         setActiveuser(user)
-        isLoading(false)
+        setLoading(false)
     })
     return () => unsubscribe()
   },[])
@@ -53,7 +61,8 @@ const AuthProvider = ({ children }) => {
     signinWithEmail,
     signout,
     activeUser,
-    loading
+    loading,
+    signInWitGoogle
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;

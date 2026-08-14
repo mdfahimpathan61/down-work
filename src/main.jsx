@@ -5,9 +5,11 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import router from './route/router.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider> <RouterProvider router={router}></RouterProvider> </AuthProvider>
+    <ToastContainer toastClassName="!w-[70vw] md:!w-[35vw]"></ToastContainer>
   </StrictMode>,
 )
