@@ -12,6 +12,7 @@ const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
+  const [sortActive, setSortActive] = useState("Sort By")
   const {loading,searchTextContext, setSearchTextContext} = useContext(AuthContext)
   //console.log(searchTextContext)
  
@@ -42,6 +43,7 @@ const CategoriesJobs = () => {
     // const searchCategory = (id == "all")? allJobsData: catigoriesAllJobs
 
     const searchResult = catigoriesAllJobs.filter((job) => {
+      
       return (
         job.title.toLowerCase().includes(searchText) ||
         job.company.name.toLowerCase().includes(searchText) ||
@@ -50,7 +52,7 @@ const CategoriesJobs = () => {
         job.job_type.toLowerCase().includes(searchText)
       );
     });
-
+    console.log(searchResult)
     setNoJob(false);
 
     setFilteredJobs(searchResult);
@@ -65,8 +67,8 @@ const CategoriesJobs = () => {
   useEffect(() => {
     if (id == "all") {
       setFilteredJobs(allJobsData);
-      setCatigoriesAllJobs(allJobsData);
-      searchTextContext && handleSearch()
+      setCatigoriesAllJobs(allJobsData);  
+      
       
     } else {
       const categoryJobs = allJobsData.filter((job) => job.category_id == id);
@@ -74,8 +76,13 @@ const CategoriesJobs = () => {
       setCatigoriesAllJobs(categoryJobs);
       
     }
-  }, [id,catigoriesAllJobs]);
+  }, [id]);
 
+  useEffect(() => {
+    if(searchTextContext && catigoriesAllJobs){
+       handleSearch()
+    }
+  },[catigoriesAllJobs])
 
 
 
@@ -89,11 +96,14 @@ const CategoriesJobs = () => {
         (a, b) => b.salary.minimum - a.salary.minimum,
       );
       setFilteredJobs(sortedJobs);
-    } else {
+    } else if(sortName == "experience") {
       const sortedJobs = [...filteredJobs].sort(
         (a, b) => a.experience.minimum - b.experience.minimum,
       );
       setFilteredJobs(sortedJobs);
+    }
+    else{
+      handleSearch()
     }
     // console.log(sortedJobs)
     //console.log(filteredJobs)
@@ -254,17 +264,20 @@ const CategoriesJobs = () => {
               role="button"
               className="btn btn-sm sm:btn-md m-1 text-sm sm:text-md text-accent"
             >
-              Sort By <FaAngleDown />
+              <span>{sortActive}</span> <FaAngleDown />
             </div>
             <ul
               tabIndex="-1"
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-1 shadow-sm mr-2"
             >
-              <li onClick={() => sortBy("salary")}>
+              <li onClick={() => {sortBy("salary"); setSortActive("Salary")}}>
                 <a>Salary</a>
               </li>
-              <li onClick={() => sortBy("experience")}>
+              <li onClick={() => {sortBy("experience"), setSortActive("Experience")}}>
                 <a>Experience</a>
+              </li>
+              <li onClick={() => {sortBy("default"), setSortActive("Default")}}>
+                <a>Default</a>
               </li>
             </ul>
           </div>

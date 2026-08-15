@@ -33,8 +33,10 @@ const Login = () => {
         console.log(result);
         setSuccessLogin(true);
         event.target.reset();
-        toastSuccess("Log in successful");
+        
+        console.log(location.state)
         location?.state ? navigate(location.state) : navigate("/");
+        toastSuccess("Log in successful");
       })
 
       .catch((error) => {
@@ -56,7 +58,7 @@ const Login = () => {
 
   return (
     <div>
-      {activeUser && <Navigate to={"/"}></Navigate>}
+      {/* {activeUser && <Navigate to={"/"}></Navigate>} */}
       <div className="hero bg-base-200 min-h-screen">
         <div className="card bg-base-100  md:w-full max-w-sm  shadow-2xl">
           <div className="card-body max-w-10/10 p-5">
