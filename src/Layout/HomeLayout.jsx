@@ -6,6 +6,7 @@ import Featuredjob from '../Component/Featuredjobs/Featuredjobs';
 import Loading from '../Component/Loading';
 import { useLocation } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import Footer from '../Component/Footer';
 
 const HomeLayout = () => {
     const {loading} = useContext(AuthContext)
@@ -21,14 +22,15 @@ const HomeLayout = () => {
     },[location])
 
     return (
-        <div>
+        <>
+         
+         <div>
             <header>
                 <Navbar></Navbar>
                 <Banner></Banner>
             </header>
 
-            {
-                loading ? <Loading></Loading>:
+           
                 <main>
                 <section id='categories'>
                     <Suspense fallback={<Loading></Loading>}>
@@ -40,9 +42,14 @@ const HomeLayout = () => {
                 </section>
             </main>
 
-            }
+            
+            <footer>
+                <Footer></Footer>
+            </footer>
             
         </div>
+
+        </>
     );
 };
 

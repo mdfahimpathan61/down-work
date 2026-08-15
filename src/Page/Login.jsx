@@ -71,6 +71,7 @@ const Login = () => {
                   name="email"
                   className="input"
                   placeholder="Email"
+                  required
                 />
                 <label className="label">Password</label>
                 <input
@@ -78,6 +79,7 @@ const Login = () => {
                   className="input"
                   placeholder="Password"
                   name="password"
+                  required
                 />
                 <div>
                   <Link className="text-[12px] text-accent hover:text-black hover:underline">

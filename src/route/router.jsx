@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Error from "../Page/Error";
 import DetailsLayout from "../Layout/DetailsLayout";
 import CompanyDetails from "../Page/CompanyDetails";
+import BrowseService from "../Page/BrowseService";
 
 const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
            }
         ]
     },
+    {
+        path:"/browseservice",
+        element:<BrowseService></BrowseService>
+    }
     
 
 

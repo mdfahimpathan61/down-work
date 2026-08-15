@@ -37,7 +37,7 @@ const JobDetails = () => {
           <div>
             <h4 className=" text-lg sm:text-2xl font-bold mb-2">{title}</h4>
             <Link to={`/details/company/${id}`}>
-                <p className="text-accent text-sm sm:text-md  font-bold flex gap-1 items-center text-md ml-1 hover:text-secondary">
+                <p className="text-secondary text-sm sm:text-md  font-bold flex gap-1 items-center text-md ml-1 hover:text-primary">
                <LiaIndustrySolid /> {company.name}
             </p>
             </Link>

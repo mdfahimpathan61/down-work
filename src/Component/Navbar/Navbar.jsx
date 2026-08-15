@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import logo from "/logo (1).png";
 import "./navbar.css";
@@ -21,9 +21,9 @@ const Navbar = () => {
   const list = (
     <>
       <NavLink to={"/"}>
-        <li className=" hover:text-primary">Home</li>
+        <li className="text-accent hover:text-primary">Home</li>
       </NavLink>
-      <NavLink to={"/bs"}>
+      <NavLink to={"/browseservice"}>
         <li className="text-accent hover:text-primary">Browse Services</li>
       </NavLink>
 
