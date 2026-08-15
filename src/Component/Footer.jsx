@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 max-w-360 mx-auto">
   <aside>
-    <img className='w-20  rounded-full' src={logo} alt="" />
+    <img className='w-14 sm:w-20  rounded-full' src={logo} alt="" />
     <p className='text-lg font-bold'>
       Down Work
       

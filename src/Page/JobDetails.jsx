@@ -160,8 +160,12 @@ const JobDetails = () => {
             
             
           </div>
+          
         </section>
+
+        
       </main>
+      <div className="flex justify-center my-5"><button  className="btn btn-primary text-white mx-auto w-full md:w-2/7">Apply</button></div>
     </div>
   );
 };

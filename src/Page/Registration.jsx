@@ -24,6 +24,10 @@ const Registration = () => {
       photoURL: url,
     };
 
+    if(error){
+      return
+    }
+
     //reset state
     setError("");
     setSuccessReg(false);
@@ -43,6 +47,24 @@ const Registration = () => {
       });
   };
 
+  const handlePassword = (event) =>{
+    const password = event.target.value 
+    
+    console.log(password)
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/;
+    if(!passwordRegex.test(password)){
+      setError("Password must be contain uppcase, lowercase, number and Special character eg. w, W, 1, @")
+      
+    }
+    else if(password.length < 6){
+      setError("Password must be 6 or more character")
+    }
+    else{
+      setError("")
+    }
+    
+  }
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -57,6 +79,7 @@ const Registration = () => {
                   name="name"
                   className="input"
                   placeholder="Name"
+                  required
                 />
                 <label className="label">Photo URL</label>
                 <input
@@ -78,6 +101,8 @@ const Registration = () => {
                   className="input"
                   placeholder="Password"
                   name="password"
+                  required
+                  onChange={handlePassword}
                 />
                 <div>
                     <Link className="text-sm text-accent" to={"/auth/login"}>Already have an account? <span className="text-primary hover:underline">Log in</span></Link>
@@ -92,7 +117,7 @@ const Registration = () => {
           </div>
         </div>
       </div>
-      <ToastContainer/>
+      
     </div>
   );
 };
