@@ -8,9 +8,11 @@ import JobsLayout from "../Layout/JobsLayout";
 import CategoriesJobs from "../Page/CategoriesJobs";
 import JobDetails from "../Page/JobDetails";
 import Loading from "../Component/Loading";
-import JobDetailsLayout from "../Layout/JobDetailsLayout";
+
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Page/Error";
+import DetailsLayout from "../Layout/DetailsLayout";
+import CompanyDetails from "../Page/CompanyDetails";
 
 const router = createBrowserRouter([
     {
@@ -46,10 +48,23 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path:"/details/:id",
-        element:<PrivateRoute><JobDetailsLayout></JobDetailsLayout></PrivateRoute>,
-        loader:() => fetch("/jobs.json"),
-        hydrateFallbackElement:Loading
+        path:"/details",
+        element:<PrivateRoute><DetailsLayout></DetailsLayout></PrivateRoute>,
+       
+        children:[
+           {
+             path:"/details/job/:id",
+             element:<JobDetails></JobDetails>,
+              loader:() => fetch("/jobs.json"),
+              hydrateFallbackElement:Loading,
+           },
+           {
+             path:"/details/company/:id",
+             element:<CompanyDetails></CompanyDetails>,
+              loader:() => fetch("/jobs.json"),
+              hydrateFallbackElement:Loading,
+           }
+        ]
     },
     
 

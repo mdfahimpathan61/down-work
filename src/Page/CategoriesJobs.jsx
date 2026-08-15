@@ -242,7 +242,7 @@ const CategoriesJobs = () => {
                   />
                 </fieldset>
                 <div className="mt-8 flex justify-between gap-1 mr-1">
-                  <button className="btn btn-sm md:btn-md btn-success text-white">
+                  <button className="btn btn-sm md:btn-md btn-primary text-white">
                     Set Filter <HiOutlineAdjustmentsHorizontal />{" "}
                   </button>
 

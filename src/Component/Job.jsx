@@ -28,9 +28,9 @@ const Job = ({ job }) => {
             src={company.logo}
             alt=""
           />
-          <div className=" ">
+          <div className=" "> 
             <h4 className="text-lg md:text-2xl  font-bold">{title}</h4>
-            <Link to={job.company.website} target="_blank">
+            <Link to={`/details/company/${id}`} target="_blank">
               <p className="text-accent font-bold flex gap-1 items-center text-md ml-1 hover:text-secondary">
               <LiaIndustrySolid /> {company.name}
             </p>
@@ -47,7 +47,7 @@ const Job = ({ job }) => {
             </div>  
         </div>
         
-         <Link to={`/details/${id}`}>
+         <Link to={`/details/job/${id}`}>
               <button className="btn  py-6 bg-secondary hover:bg-primary sm:text-lg  text-white px-5 w-full sm:w-35 text-sm hover:shadow-md">
                  See Details
             </button>

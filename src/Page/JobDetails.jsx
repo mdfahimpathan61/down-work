@@ -4,7 +4,7 @@ import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { LiaIndustrySolid } from "react-icons/lia";
 import { MdOutlineAccessTime, MdWorkOutline } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
-import { useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -32,13 +32,16 @@ const JobDetails = () => {
       <header>
         <div className="flex items-center gap-5 mt-5">
           <div>
-            <img className="w-15 sm:w-20 shadow-md" src={company.logo} alt="" />
+            <img className="w-15 rounded-lg sm:w-20 shadow-md" src={company.logo} alt="" />
           </div>
           <div>
             <h4 className=" text-lg sm:text-2xl font-bold mb-2">{title}</h4>
-            <p className="text-accent text-sm sm:text-md  font-bold flex gap-1 items-center text-md ml-1 hover:text-secondary">
-              <LiaIndustrySolid /> {company.name}
+            <Link to={`/details/company/${id}`}>
+                <p className="text-accent text-sm sm:text-md  font-bold flex gap-1 items-center text-md ml-1 hover:text-secondary">
+               <LiaIndustrySolid /> {company.name}
             </p>
+            </Link>
+            
             <p className="text-accent text-sm sm:text-md  font-bold flex gap-1 items-center text-md ml-1 ">
               <FaHouseFlag />
               {location.country}
@@ -80,8 +83,8 @@ const JobDetails = () => {
           <h3 className="text-lg sm:text-xl font-extralight">
             Preferred Qualifications :
           </h3>
-          {preferred_qualifications.map((q) => (
-            <p className="text-accent text-sm sm:text-md font-extralight  ml-1 mt-1">
+          {preferred_qualifications.map((q,index) => (
+            <p key={index} className="text-accent text-sm sm:text-md font-extralight  ml-1 mt-1">
               {" "}
               <span className="font-bold"> - </span> {q}
             </p>

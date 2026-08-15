@@ -9,7 +9,7 @@ const Featuredjob = ({job}) => {
     const {id,title, company, location, job_type, posted_date,salary}  = job
  //console.log(company.logo)
     return (
-        <Link  to={`/details/${id}`}>
+        <Link  to={`/details/job/${id}`}>
             <div className=' shadow-blue-100 shadow-sm hover:shadow-md hover:pt-11 bg-white w-9/10 mx-auto py-10 px-5 sm:flex justify-between items-center mt-7'>
              <div className='gap-5 flex items-start   '>
                 <img className='sm:mx-0 w-13 rounded-full' src={company.logo} alt="" />
