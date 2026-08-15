@@ -14,6 +14,7 @@ import Error from "../Page/Error";
 import DetailsLayout from "../Layout/DetailsLayout";
 import CompanyDetails from "../Page/CompanyDetails";
 import BrowseService from "../Page/BrowseService";
+import ForgotPassword from "../Page/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:"/auth/registration",
                 Component:Registration
+            },
+            {
+                path:"/auth/forgotpassword",
+                element:<ForgotPassword></ForgotPassword>
             }
         ]
 
@@ -70,7 +75,8 @@ const router = createBrowserRouter([
     {
         path:"/browseservice",
         element:<BrowseService></BrowseService>
-    }
+    },
+    
     
 
 

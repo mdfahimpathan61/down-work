@@ -25,7 +25,7 @@ const CategoriesJobs = () => {
 
   
   const handleSearch = (event) => {
-    console.log(searchTextContext)
+    //console.log(searchTextContext)
     if(event){
       setSearchTextContext("")
     }
@@ -37,7 +37,7 @@ const CategoriesJobs = () => {
     
       const searchText = searchRef.current.value.toLowerCase();
     //searchRef.current.value = ""
-    console.log(searchText);
+    //console.log(searchText);
     
 
     // const searchCategory = (id == "all")? allJobsData: catigoriesAllJobs
@@ -52,7 +52,7 @@ const CategoriesJobs = () => {
         job.job_type.toLowerCase().includes(searchText)
       );
     });
-    console.log(searchResult)
+    //console.log(searchResult)
     setNoJob(false);
 
     setFilteredJobs(searchResult);
@@ -117,7 +117,7 @@ const CategoriesJobs = () => {
     const workMode = event.target.workMode.value.toLowerCase();
     const industry = event.target.industry.value.toLowerCase();
     const location = event.target.location.value.toLowerCase();
-    console.log(salary, jobType, workMode, industry, location);
+    //console.log(salary, jobType, workMode, industry, location);
 
     const filterResult = catigoriesAllJobs.filter((job) => {
       return (
@@ -130,7 +130,7 @@ const CategoriesJobs = () => {
         (!location || job.location.city.toLowerCase().includes(location))
       );
     });
-    console.log(filterResult);
+    //console.log(filterResult);
 
     //reset status
     setNoJob(false);

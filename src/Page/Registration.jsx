@@ -35,7 +35,7 @@ const Registration = () => {
     signUpWithEmail(email, password)
     .then(() => updateUser(updateinfo))
       .then((result) => {
-        console.log(result);
+       // console.log(result);
         setSuccessReg(true);
         event.target.reset();
         toastSuccess("Registration successful")
@@ -50,7 +50,7 @@ const Registration = () => {
   const handlePassword = (event) =>{
     const password = event.target.value 
     
-    console.log(password)
+    //console.log(password)
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/;
     if(!passwordRegex.test(password)){
       setError("Password must be contain uppcase, lowercase, number and Special character eg. w, W, 1, @")

@@ -30,11 +30,11 @@ const Login = () => {
 
     signinWithEmail(email, password)
       .then((result) => {
-        console.log(result);
+        //console.log(result);
         setSuccessLogin(true);
         event.target.reset();
         
-        console.log(location.state)
+        //console.log(location.state)
         location?.state ? navigate(location.state) : navigate("/");
         toastSuccess("Log in successful");
       })
@@ -82,7 +82,7 @@ const Login = () => {
                   required
                 />
                 <div>
-                  <Link className="text-[12px] text-accent hover:text-black hover:underline">
+                  <Link to={"/auth/forgotpassword"} className="text-[12px] text-accent hover:text-black hover:underline">
                     Forgot password
                   </Link>
                 </div>

@@ -10,7 +10,7 @@ const JobDetails = () => {
   const { id } = useParams();
   const allJobsData = useLoaderData();
   const job = allJobsData.find((job) => job.id == id);
-  console.log(job);
+  //console.log(job);
   const {
     title,
     company,
