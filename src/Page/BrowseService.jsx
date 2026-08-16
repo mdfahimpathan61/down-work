@@ -8,13 +8,19 @@ const BrowseService = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='h-screen mx-auto flex flex-col items-center'>
-                    <h3 className='text-xl md:text-2xl'>Soon This Page will Build <SiRobotframework /></h3>
+            <div className='min-h-screen  flex  items-center justify-center '>
+                
+                    <div className=' '>
+                        <SiRobotframework className='text-5xl text-center my-3' />
+                    <h3 className='text-xl md:text-2xl '>Soon This Page will Build </h3>
+                    
                     <Link to={"/"}>
                         <button className='btn btn-warning text-white mt-4'><RiArrowLeftWideLine /> Go to Home</button>
                     </Link>
                     
-       </div>
+             </div>
+            </div>
+            
         </div>
     );
 };

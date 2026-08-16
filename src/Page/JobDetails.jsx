@@ -132,11 +132,11 @@ const JobDetails = () => {
         </section>
 
         <section>
-          <div className=" grid grid-cols-1    sm:grid-cols-2  md:grid-cols-3 sm:gap-5  ">
+          <div className=" grid grid-cols-1   font-extralight  sm:grid-cols-2  md:grid-cols-3 sm:gap-5  ">
             
-              <p className="text-md sm:text-lg">
+              <p className="text-md sm:text-lg ">
                 Location :{" "}
-                <span className="text-accent font-light text-md">
+                <span className="text-accent font-light text-sm">
                   {location.address}, 
                   {location.country}
                 </span>
@@ -145,7 +145,7 @@ const JobDetails = () => {
             
               <p className="text-md sm:text-lg">
                 Job Type :{" "}
-                <span className="text-accent font-light text-md">
+                <span className="text-accent font-light text-sm">
                   {job_type}
                 </span>
               </p>
@@ -153,7 +153,7 @@ const JobDetails = () => {
             
               <p className=" text-md sm:text-lg">
                 Post Date :{" "}
-                <span className="text-accent font-light text-md">
+                <span className="text-accent font-light text-sm">
                   {posted_date}
                 </span>
               </p>
