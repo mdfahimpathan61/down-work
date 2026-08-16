@@ -9,11 +9,11 @@ category-based browsing, search, filtering, sorting, and detailed job informatio
 
 ## 🌐 Live Website
 
-[Live Demo](https://down-work-9.web.app)
+ [https://down-work-9.web.app]
 
 ## 📂 GitHub Repository
 
-[GitHub Repository](https://github.com/mdfahimpathan61/down-work)
+[https://github.com/mdfahimpathan61/down-work]
 
 ---
 
