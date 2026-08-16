@@ -3,12 +3,17 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { useNavigate } from 'react-router';
 
 const ForgotPassword = () => {
-    const {toastSuccess} = useContext(AuthContext)
+    const {toastSuccess, forgotPassword} = useContext(AuthContext)
     const navigate = useNavigate()
     const handleOnSubmit = (event) =>{
         event.preventDefault()
-        toastSuccess("Link is sent in your Email account. Check at spam!")
+        const email = event.target.email.value
+        forgotPassword(email)
+        .then(() => {
+            toastSuccess("Link is sent in your Email account. Check at spam!")
         navigate("/auth/login")
+        })
+        
     }
     return (
         <div className="hero bg-base-200 min-h-screen">

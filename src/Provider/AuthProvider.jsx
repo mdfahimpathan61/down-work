@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
@@ -47,6 +47,10 @@ const AuthProvider = ({ children }) => {
     return signOut(auth)
   }
 
+  const forgotPassword = (email) =>{
+      return sendPasswordResetEmail(auth, email)
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth,(user) => {
         setActiveuser(user)
@@ -65,7 +69,8 @@ const AuthProvider = ({ children }) => {
     loading,
     signInWitGoogle,
     searchTextContext,
-    setSearchTextContext
+    setSearchTextContext,
+    forgotPassword
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;
