@@ -119,18 +119,17 @@ const CategoriesJobs = () => {
     const location = event.target.location.value.toLowerCase();
     //console.log(salary, jobType, workMode, industry, location);
 
-    const filterResult = catigoriesAllJobs.filter((job) => {
+    const filterResult = filteredJobs.filter((job) => {
       return (
         (!salary ||
-          (job.salary.minimum <= Number(salary) &&
-            job.salary.maximum >= Number(salary))) &&
+          (job.salary.maximum <= Number(salary))) &&
         (!jobType || job.job_type.toLowerCase().includes(jobType)) &&
         (!workMode || job.work_mode?.toLowerCase().includes(workMode)) &&
         (!industry || job.industry.toLowerCase().includes(industry)) &&
         (!location || job.location.city.toLowerCase().includes(location))
       );
     });
-    //console.log(filterResult);
+    console.log(filterResult);
 
     //reset status
     setNoJob(false);
