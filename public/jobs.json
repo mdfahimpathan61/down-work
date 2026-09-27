@@ -1,7 +1,7 @@
 [
   {
-    "id": 1,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Frontend Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
@@ -89,8 +89,8 @@
     "featured": true
   },
   {
-    "id": 2,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "React Developer",
     "company": {
       "name": "CodeCraft Technologies",
@@ -177,8 +177,8 @@
     "featured": true
   },
   {
-    "id": 3,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Frontend Engineer",
     "company": {
       "name": "Creative Pixel Studio",
@@ -266,8 +266,8 @@
     "featured": true
   },
   {
-    "id": 4,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Junior Web Developer",
     "company": {
       "name": "DataVision Analytics",
@@ -354,8 +354,8 @@
     "featured": false
   },
   {
-    "id": 5,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Full Stack Web Developer",
     "company": {
       "name": "GrowthHub Digital",
@@ -443,8 +443,8 @@
     "featured": true
   },
   {
-    "id": 6,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "WordPress Developer",
     "company": {
       "name": "Global Finance Ltd.",
@@ -531,8 +531,8 @@
     "featured": false
   },
   {
-    "id": 7,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Web Application Developer",
     "company": {
       "name": "PeopleFirst Ltd.",
@@ -619,8 +619,8 @@
     "featured": false
   },
   {
-    "id": 8,
-    "category_id": 1,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "UI Developer",
     "company": {
       "name": "ServicePro Bangladesh",
@@ -707,8 +707,8 @@
     "featured": false
   },
   {
-    "id": 9,
-    "category_id": 2,
+  
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Software Engineer",
     "company": {
       "name": "CloudPeak Systems",
@@ -796,8 +796,8 @@
     "featured": true
   },
   {
-    "id": 10,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Junior Software Engineer",
     "company": {
       "name": "NextGen Innovations",
@@ -883,8 +883,8 @@
     "featured": true
   },
   {
-    "id": 11,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Backend Developer",
     "company": {
       "name": "ByteBridge Ltd.",
@@ -971,8 +971,8 @@
     "featured": false
   },
   {
-    "id": 12,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Python Developer",
     "company": {
       "name": "DigitalEdge Solutions",
@@ -1059,8 +1059,8 @@
     "featured": false
   },
   {
-    "id": 13,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Node.js Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
@@ -1147,8 +1147,8 @@
     "featured": true
   },
   {
-    "id": 14,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Java Software Developer",
     "company": {
       "name": "CodeCraft Technologies",
@@ -1235,8 +1235,8 @@
     "featured": false
   },
   {
-    "id": 15,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Software QA Engineer",
     "company": {
       "name": "Creative Pixel Studio",
@@ -1324,8 +1324,8 @@
     "featured": false
   },
   {
-    "id": 16,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "DevOps Engineer",
     "company": {
       "name": "DataVision Analytics",
@@ -1412,8 +1412,8 @@
     "featured": false
   },
   {
-    "id": 17,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "UI/UX Designer",
     "company": {
       "name": "GrowthHub Digital",
@@ -1500,8 +1500,8 @@
     "featured": true
   },
   {
-    "id": 18,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "Product Designer",
     "company": {
       "name": "Global Finance Ltd.",
@@ -1587,8 +1587,8 @@
     "featured": false
   },
   {
-    "id": 19,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "Visual Designer",
     "company": {
       "name": "PeopleFirst Ltd.",
@@ -1674,8 +1674,8 @@
     "featured": false
   },
   {
-    "id": 20,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "UX Researcher",
     "company": {
       "name": "ServicePro Bangladesh",
@@ -1761,8 +1761,8 @@
     "featured": false
   },
   {
-    "id": 21,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "Graphic Designer",
     "company": {
       "name": "CloudPeak Systems",
@@ -1849,8 +1849,8 @@
     "featured": true
   },
   {
-    "id": 22,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Data Analyst",
     "company": {
       "name": "NextGen Innovations",
@@ -1937,8 +1937,8 @@
     "featured": false
   },
   {
-    "id": 23,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Junior Data Analyst",
     "company": {
       "name": "ByteBridge Ltd.",
@@ -2024,8 +2024,8 @@
     "featured": false
   },
   {
-    "id": 24,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Data Scientist",
     "company": {
       "name": "DigitalEdge Solutions",
@@ -2112,8 +2112,8 @@
     "featured": true
   },
   {
-    "id": 25,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Machine Learning Engineer",
     "company": {
       "name": "TechNova Solutions Ltd.",
@@ -2200,8 +2200,8 @@
     "featured": false
   },
   {
-    "id": 26,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "BI Analyst",
     "company": {
       "name": "CodeCraft Technologies",
@@ -2287,8 +2287,8 @@
     "featured": false
   },
   {
-    "id": 27,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Database Analyst",
     "company": {
       "name": "Creative Pixel Studio",
@@ -2375,8 +2375,8 @@
     "featured": false
   },
   {
-    "id": 28,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Digital Marketing Executive",
     "company": {
       "name": "DataVision Analytics",
@@ -2462,8 +2462,8 @@
     "featured": false
   },
   {
-    "id": 29,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "SEO Specialist",
     "company": {
       "name": "GrowthHub Digital",
@@ -2549,8 +2549,8 @@
     "featured": true
   },
   {
-    "id": 30,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Social Media Executive",
     "company": {
       "name": "Global Finance Ltd.",
@@ -2636,8 +2636,8 @@
     "featured": false
   },
   {
-    "id": 31,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Content Marketing Specialist",
     "company": {
       "name": "PeopleFirst Ltd.",
@@ -2723,8 +2723,8 @@
     "featured": false
   },
   {
-    "id": 32,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Performance Marketing Executive",
     "company": {
       "name": "ServicePro Bangladesh",
@@ -2810,8 +2810,8 @@
     "featured": false
   },
   {
-    "id": 33,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Marketing Coordinator",
     "company": {
       "name": "CloudPeak Systems",
@@ -2898,8 +2898,8 @@
     "featured": false
   },
   {
-    "id": 34,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Junior Accountant",
     "company": {
       "name": "NextGen Innovations",
@@ -2985,8 +2985,8 @@
     "featured": true
   },
   {
-    "id": 35,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Financial Analyst",
     "company": {
       "name": "ByteBridge Ltd.",
@@ -3072,8 +3072,8 @@
     "featured": false
   },
   {
-    "id": 36,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Accounts Executive",
     "company": {
       "name": "DigitalEdge Solutions",
@@ -3159,8 +3159,8 @@
     "featured": false
   },
   {
-    "id": 37,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Senior Accountant",
     "company": {
       "name": "TechNova Solutions Ltd.",
@@ -3246,8 +3246,8 @@
     "featured": false
   },
   {
-    "id": 38,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Finance Officer",
     "company": {
       "name": "CodeCraft Technologies",
@@ -3333,8 +3333,8 @@
     "featured": false
   },
   {
-    "id": 39,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "HR Executive",
     "company": {
       "name": "Creative Pixel Studio",
@@ -3421,8 +3421,8 @@
     "featured": false
   },
   {
-    "id": 40,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "Talent Acquisition Specialist",
     "company": {
       "name": "DataVision Analytics",
@@ -3508,8 +3508,8 @@
     "featured": false
   },
   {
-    "id": 41,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "HR Intern",
     "company": {
       "name": "GrowthHub Digital",
@@ -3594,8 +3594,8 @@
     "featured": false
   },
   {
-    "id": 42,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "Senior HR Officer",
     "company": {
       "name": "Global Finance Ltd.",
@@ -3681,8 +3681,8 @@
     "featured": false
   },
   {
-    "id": 43,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "Learning & Development Executive",
     "company": {
       "name": "PeopleFirst Ltd.",
@@ -3768,8 +3768,8 @@
     "featured": false
   },
   {
-    "id": 44,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Customer Support Executive",
     "company": {
       "name": "ServicePro Bangladesh",
@@ -3855,8 +3855,8 @@
     "featured": false
   },
   {
-    "id": 45,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Customer Success Executive",
     "company": {
       "name": "CloudPeak Systems",
@@ -3943,8 +3943,8 @@
     "featured": false
   },
   {
-    "id": 46,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Call Center Executive",
     "company": {
       "name": "NextGen Innovations",
@@ -4029,8 +4029,8 @@
     "featured": false
   },
   {
-    "id": 47,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Technical Support Engineer",
     "company": {
       "name": "ByteBridge Ltd.",
@@ -4116,8 +4116,8 @@
     "featured": false
   },
   {
-    "id": 48,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Support Team Lead",
     "company": {
       "name": "DigitalEdge Solutions",
@@ -4203,8 +4203,8 @@
     "featured": false
   },
   {
-    "id": 49,
-    "category_id": 1,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Mobile App Developer",
     "company": {
       "name": "TechNova Solutions Ltd.",
@@ -4291,8 +4291,8 @@
     "featured": false
   },
   {
-    "id": 50,
-    "category_id": 2,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c9",
     "title": "Cloud Engineer",
     "company": {
       "name": "CodeCraft Technologies",
@@ -4379,8 +4379,8 @@
     "featured": false
   },
   {
-    "id": 51,
-    "category_id": 4,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cb",
     "title": "Research Data Scientist",
     "company": {
       "name": "Creative Pixel Studio",
@@ -4467,8 +4467,8 @@
     "featured": false
   },
   {
-    "id": 52,
-    "category_id": 5,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cc",
     "title": "Brand Marketing Manager",
     "company": {
       "name": "DataVision Analytics",
@@ -4554,8 +4554,8 @@
     "featured": false
   },
   {
-    "id": 53,
-    "category_id": 6,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cd",
     "title": "Internal Audit Officer",
     "company": {
       "name": "GrowthHub Digital",
@@ -4641,8 +4641,8 @@
     "featured": false
   },
   {
-    "id": 54,
-    "category_id": 7,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ce",
     "title": "Payroll Specialist",
     "company": {
       "name": "Global Finance Ltd.",
@@ -4728,8 +4728,8 @@
     "featured": false
   },
   {
-    "id": 55,
-    "category_id": 3,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212ca",
     "title": "Interaction Designer",
     "company": {
       "name": "PeopleFirst Ltd.",
@@ -4815,8 +4815,8 @@
     "featured": false
   },
   {
-    "id": 56,
-    "category_id": 8,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212cf",
     "title": "Client Service Executive",
     "company": {
       "name": "ServicePro Bangladesh",
@@ -4902,8 +4902,8 @@
     "featured": false
   },
   {
-    "id": 57,
-    "category_id": 1,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Frontend Developer",
     "company": {
       "name": "CloudPeak Systems",
@@ -4992,8 +4992,8 @@
     "featured": false
   },
   {
-    "id": 58,
-    "category_id": 1,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "React Developer",
     "company": {
       "name": "NextGen Innovations",
@@ -5080,8 +5080,8 @@
     "featured": false
   },
   {
-    "id": 59,
-    "category_id": 1,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Frontend Engineer",
     "company": {
       "name": "ByteBridge Ltd.",
@@ -5168,8 +5168,8 @@
     "featured": false
   },
   {
-    "id": 60,
-    "category_id": 1,
+    
+    "category_id" :  "6ab798cea38c5e2d0e9212c8",
     "title": "Junior Web Developer",
     "company": {
       "name": "DigitalEdge Solutions",

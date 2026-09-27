@@ -15,11 +15,13 @@ import DetailsLayout from "../Layout/DetailsLayout";
 import CompanyDetails from "../Page/CompanyDetails";
 import BrowseService from "../Page/BrowseService";
 import ForgotPassword from "../Page/ForgotPassword";
+import Role from "../Page/Role";
+import RoleGuard from "./RoleGuard";
 
 const router = createBrowserRouter([
     {
         path:"/",
-        Component:HomeLayout,
+        element:<RoleGuard><HomeLayout></HomeLayout></RoleGuard>,
         errorElement:<Error></Error>
     },
     {
@@ -31,43 +33,48 @@ const router = createBrowserRouter([
                 Component:Login
             },
             {
-                path:"/auth/registration",
-                Component:Registration
+                path:"/auth/role",
+                Component:Role
             },
             {
                 path:"/auth/forgotpassword",
                 element:<ForgotPassword></ForgotPassword>
+            },
+            {
+                 path:"/auth/registration/:role",
+                 Component:Registration,
+                 
             }
         ]
 
     },
     {
         path:"/category",
-        Component:JobsLayout,
+        element:<RoleGuard><JobsLayout></JobsLayout></RoleGuard>,
         children :[
             {
                 path:"/category/:id",
                 Component:CategoriesJobs,
-                loader: () => fetch("/jobs.json"),
+                loader: () => fetch("http://localhost:3000/jobs"),
                 hydrateFallbackElement:Loading
             }
         ],
     },
     {
         path:"/details",
-        element:<PrivateRoute><DetailsLayout></DetailsLayout></PrivateRoute>,
+        element:<RoleGuard><PrivateRoute><DetailsLayout></DetailsLayout></PrivateRoute></RoleGuard>,
        
         children:[
            {
              path:"/details/job/:id",
              element:<JobDetails></JobDetails>,
-              loader:() => fetch("/jobs.json"),
+              loader:() => fetch("http://localhost:3000/jobs"),
               hydrateFallbackElement:Loading,
            },
            {
              path:"/details/company/:id",
              element:<CompanyDetails></CompanyDetails>,
-              loader:() => fetch("/jobs.json"),
+              loader:() => fetch("http://localhost:3000/jobs"),
               hydrateFallbackElement:Loading,
            }
         ]

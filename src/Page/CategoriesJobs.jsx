@@ -285,7 +285,7 @@ const CategoriesJobs = () => {
 
       <div className="max-w-360 mx-auto">
         {filteredJobs.map((job) => (
-          <Job key={job.id} job={job}></Job>
+          <Job key={job._id} job={job}></Job>
         ))}
       </div>
 

@@ -1,15 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TbPhotoUp } from "react-icons/tb";
 import {  ToastContainer } from "react-toastify";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 
 const Registration = () => {
   const { signUpWithEmail, updateUser,toastSuccess } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [successReg, setSuccessReg] = useState(false);
   const navigate = useNavigate()
-
+const {role} = useParams()
+console.log(role)
 
 
   const handleOnSubmit = (event) => {
@@ -24,6 +25,13 @@ const Registration = () => {
       photoURL: url,
     };
 
+    const newUser = {
+      name,
+      email,
+      url,
+      role 
+    }
+
     if(error){
       return
     }
@@ -32,19 +40,45 @@ const Registration = () => {
     setError("");
     setSuccessReg(false);
 
-    signUpWithEmail(email, password)
+    fetch(`http://localhost:3000/user?email=${email}&role=${role}`)
+    .then(res => res.json())
+    .then(data => {
+     // console.log(data)
+      if(data?._id){
+        setError("This Email is Already Registared!")
+        return;
+      }
+      else{
+        signUpWithEmail(email, password)
     .then(() => updateUser(updateinfo))
       .then((result) => {
        // console.log(result);
+
+       fetch('http://localhost:3000/user',{
+        method:"POST",
+        headers:{
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(newUser)
+       })
+       .then(res => res.json())
+       .then( data => console.log(data))
+
+
+
         setSuccessReg(true);
         event.target.reset();
-        toastSuccess("Registration successful")
+        toastSuccess(`Registration successful as a ${role}`)
         navigate("/auth/login")
       })
       
       .catch((error) => {
         setError(error.message);
       });
+      }
+    })
+
+    
   };
 
   const handlePassword = (event) =>{
@@ -70,7 +104,7 @@ const Registration = () => {
       <div className="hero bg-base-200 min-h-screen">
         <div className="card bg-base-100  md:w-full max-w-sm  shadow-2xl">
           <div className="card-body max-w-9/10 p-10">
-            <h1 className="text-2xl font-bold">Registar Now!</h1>
+            <h1 className="text-2xl font-bold">Registar as a <span className="text-secondary">{role[0].toUpperCase() + role.slice(1).toLowerCase()}</span>!</h1>
             <form onSubmit={handleOnSubmit}>
               <fieldset className="fieldset">
                 <label className="label">Your Name</label>

@@ -10,7 +10,7 @@ import {
 } from "react-router";
 
 const Login = () => {
-  const { signinWithEmail, toastSuccess, activeUser,signInWitGoogle } = useContext(AuthContext);
+  const {setActiveuser, signinWithEmail, toastSuccess, activeUser,signInWitGoogle } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [successLogin, setSuccessLogin] = useState(false);
   const navigate = useNavigate();
@@ -35,8 +35,9 @@ const Login = () => {
         event.target.reset();
         
         //console.log(location.state)
-        location?.state ? navigate(location.state) : navigate("/");
         toastSuccess("Log in successful");
+        location?.state ? navigate(location.state) : navigate("/");
+        
       })
 
       .catch((error) => {
@@ -45,11 +46,30 @@ const Login = () => {
   };
 
 
-  const handleSignInWithGoogle = () =>{
+  const handleSignInWithGoogle = async() =>{
     signInWitGoogle()
-    .then(result => {
-      toastSuccess("Log in successful");
-      location?.state ? navigate(location.state) : navigate("/");
+    
+    .then(async data => {
+      const firebaseUser = data.user
+      //console.log(firebaseUser)
+      setActiveuser({...firebaseUser,role:""})
+      
+      await fetch(`http://localhost:3000/user?email=${firebaseUser.email}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if(data?.role){
+          toastSuccess("Log in successful");
+          location?.state ? navigate(location.state) : navigate('/')
+          
+        }
+        else{
+          navigate('/auth/role')
+        }
+      })
+
+      
+      
     })
     .catch(error =>{
       setError(error.message)

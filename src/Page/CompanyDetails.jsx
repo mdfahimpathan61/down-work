@@ -5,7 +5,7 @@ import { useLoaderData, useParams } from "react-router";
 const CompanyDetails = () => {
     const { id } = useParams();
   const allJobsData = useLoaderData();
-  const { company, location } = allJobsData.find((job) => job.id == id);
+  const { company, location } = allJobsData.find((job) => job._id == id);
   return (
     <div className="min-h-screen bg-base-200 py-10 px-4">
       <div className="max-w-5xl mx-auto">

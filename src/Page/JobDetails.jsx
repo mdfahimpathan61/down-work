@@ -9,7 +9,7 @@ import { Link, useLoaderData, useParams } from "react-router";
 const JobDetails = () => {
   const { id } = useParams();
   const allJobsData = useLoaderData();
-  const job = allJobsData.find((job) => job.id == id);
+  const job = allJobsData.find((job) => job._id == id);
   //console.log(job);
   const {
     title,

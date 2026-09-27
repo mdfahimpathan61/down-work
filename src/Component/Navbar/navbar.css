@@ -1,4 +1,4 @@
- .active{
+.navbar a.active li{
     color: #0182ff;
     
 }

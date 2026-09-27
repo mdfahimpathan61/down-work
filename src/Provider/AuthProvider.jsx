@@ -3,11 +3,14 @@ import { auth } from "../firebase.config";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 
+
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
  const [loading,setLoading] = useState(true)
  const [searchTextContext, setSearchTextContext] = useState()
+ const [role, setRole] = useState("")
+
 
 
   const signUpWithEmail = (email, password) => {
@@ -59,6 +62,18 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe()
   },[])
 
+  useEffect(() => {
+    if(activeUser){
+      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
+      .then(res => res.json())
+      .then(data => {
+        if(data?.role){
+         // navigate('/auth/role')
+         setRole(data.role)
+        }
+      })
+    }
+  },[activeUser])
   const value = {
     signUpWithEmail,
     updateUser,
@@ -66,11 +81,14 @@ const AuthProvider = ({ children }) => {
     signinWithEmail,
     signout,
     activeUser,
+    setActiveuser,
     loading,
     signInWitGoogle,
     searchTextContext,
     setSearchTextContext,
-    forgotPassword
+    forgotPassword,
+    role, 
+    setRole
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;
