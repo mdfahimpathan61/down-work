@@ -4,10 +4,12 @@ import logo from "/logo (1).png";
 import "./navbar.css";
 import { CiLogin, CiLogout, CiMenuFries } from "react-icons/ci";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { MdWork } from "react-icons/md";
 
 const Navbar = () => {
-  const { activeUser, signout } = useContext(AuthContext);
+  const { activeUser, signout ,role} = useContext(AuthContext);
  // console.log(activeUser);
+ console.log(role)
   const navigate = useNavigate();
 
   const handleSignOut = () => {
@@ -36,7 +38,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="max-w-360 mx-auto shadow-lg shadow-blue-50 relative z-50">
+    <div className="max-w-360 mx-auto shadow-lg shadow-blue-50  z-50 sticky top-0">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <img className="md:w-30 w-20" src={logo} alt="" />
@@ -77,10 +79,14 @@ const Navbar = () => {
                 src={activeUser?.photoURL}
                 alt=""
               />
-              <h4 className="font-bold text-center mb-2">
+              <h4 className="font-bold text-center mb-1">
                 {activeUser?.displayName}
               </h4>
               <hr className=" border-gray-200 my-2" />
+              
+              <Link to={"/client/postjob"} className="text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
+
+             <hr className=" border-gray-200 my-2" />
               <button
                 className="mx-auto  mt-2 gap-1 text-secondary hover:text-primary flex items-center"
                 onClick={handleSignOut}

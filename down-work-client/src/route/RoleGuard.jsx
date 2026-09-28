@@ -4,9 +4,9 @@ import Loading from '../Component/Loading';
 import { Navigate, Outlet } from 'react-router';
 
 const RoleGuard = ({children}) => {
-    const { activeUser, loading } = useAuth();
+    const { activeUser, loading,setRole } = useAuth();
 
-    const [role, setRole] = useState(null);
+    const [role, setRolee] = useState(null);
     const [roleLoading, setRoleLoading] = useState(true);
 
     useEffect(() => {
@@ -20,7 +20,9 @@ const RoleGuard = ({children}) => {
         fetch(`http://localhost:3000/user?email=${activeUser.email}`)
             .then(res => res.json())
             .then(data => {
-                setRole(data?.role || null);
+                setRolee(data?.role || null);
+                setRole(data?.role)
+
                 setRoleLoading(false);
             });
     }, [activeUser]);

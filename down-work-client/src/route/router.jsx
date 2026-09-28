@@ -17,6 +17,8 @@ import BrowseService from "../Page/BrowseService";
 import ForgotPassword from "../Page/ForgotPassword";
 import Role from "../Page/Role";
 import RoleGuard from "./RoleGuard";
+import ClientLayout from "../Layout/ClientLayout";
+import Postjob from "../Page/Postjob"
 
 const router = createBrowserRouter([
     {
@@ -77,6 +79,16 @@ const router = createBrowserRouter([
               loader:() => fetch("http://localhost:3000/jobs"),
               hydrateFallbackElement:Loading,
            }
+        ]
+    },
+    {
+        path:"/client",
+        element:<RoleGuard><ClientLayout></ClientLayout></RoleGuard>,
+        children:[
+            {
+                path:'/client/postjob',
+                element:<Postjob></Postjob>
+            },
         ]
     },
     {

@@ -5,8 +5,10 @@ import { LiaIndustrySolid } from "react-icons/lia";
 import { MdOutlineAccessTime, MdWorkOutline } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
 import { Link, useLoaderData, useParams } from "react-router";
+import useAuth from "../hooks/useAuth";
 
 const JobDetails = () => {
+  const {role} = useAuth()
   const { id } = useParams();
   const allJobsData = useLoaderData();
   const job = allJobsData.find((job) => job._id == id);
@@ -165,7 +167,9 @@ const JobDetails = () => {
 
         
       </main>
-      <div className="flex justify-center my-5"><button  className="btn btn-primary text-white mx-auto w-full md:w-2/7">Apply</button></div>
+      {
+        role != "client" && <div className="flex justify-center my-5"><button  className="btn btn-primary text-white mx-auto w-full md:w-2/7">Apply</button></div>
+      }
     </div>
   );
 };
