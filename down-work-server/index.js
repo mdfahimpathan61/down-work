@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 
 const app = express()
 const cors = require('cors')
@@ -10,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 
-const client = new MongoClient("mongodb+srv://downWork:bfBvTplnzXySnGRS@cluster0.5xpfw1y.mongodb.net/?appName=Cluster0")
+const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.5xpfw1y.mongodb.net/?appName=Cluster0`)
 
  async function connectToMongoDB() {
     try{
@@ -24,7 +25,7 @@ const client = new MongoClient("mongodb+srv://downWork:bfBvTplnzXySnGRS@cluster0
 
         app.post("/jobpost",async (req,res)=>{
             const newJob = req.body
-            const inserAJob = await postedJobs.insertMany(newJob)
+            const inserAJob = await postedJobs.insertOne(newJob)
             res.send(inserAJob)
         })
         app.post("/categorypost", async(req,res) =>{
@@ -41,6 +42,8 @@ const client = new MongoClient("mongodb+srv://downWork:bfBvTplnzXySnGRS@cluster0
             const insertAUser = await users.updateOne(query, update, option)
             res.send(insertAUser)
         })
+
+        
 
 
         app.get('/jobs', async(req,res) => {
