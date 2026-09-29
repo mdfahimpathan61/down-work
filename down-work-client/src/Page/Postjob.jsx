@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BriefcaseBusiness,
   Building2,
@@ -16,6 +16,8 @@ import {
   Check,
   Sparkles,
 } from "lucide-react";
+import useAuth from "../hooks/useAuth";
+import { data } from "react-router";
 
 const initialForm = {
   title: "",
@@ -27,7 +29,7 @@ const initialForm = {
   companyWebsite: "",
   industry: "",
   companySize: "",
-  companyLogo: null,
+  companyLogo: "",
 
   country: "Bangladesh",
   city: "",
@@ -74,14 +76,15 @@ const initialForm = {
 };
 
 const categories = [
-  "Technology",
+  "Customer Support",
   "Software & IT",
-  "Data & Analytics",
-  "Digital Marketing",
-  "Design",
-  "Finance",
+  "UI/UX Design",
+
+  "Web Development",
+  "Data Science",
   "Human Resources",
   "Sales & Marketing",
+  "Finance & Accounting"
 ];
 
 const skillsList = [
@@ -289,12 +292,36 @@ function Repeater({
   );
 }
 
-export default function CreateJob() {
+export default function Postjob() {
   const [form, setForm] = useState(initialForm);
   const [activeSection, setActiveSection] = useState("basic");
   const [skillInput, setSkillInput] = useState("");
+  const [allCategories, setAllCategories] = useState([])
+  const {activeUser} = useAuth()
 
+
+  useEffect(() => {
+    fetch('http://localhost:3000/category')
+      .then(res => res.json())
+      .then(data => {
+        setAllCategories(data)
+      })
+  },[])
+// console.log(allCategories)
   const update = (field, value) => {
+    if(field == "category"){
+      //console.log(allCategories)
+      const category = allCategories.find(category => category.name == value)
+      if(category){
+        //console.log(category._id)
+        setForm((prev) => ({
+      ...prev,
+      category_id: category._id,
+    }));
+      }
+      
+      
+    }
     setForm((prev) => ({
       ...prev,
       [field]: value,
@@ -376,9 +403,19 @@ export default function CreateJob() {
         email: form.applicationEmail,
         apply_url: form.applyUrl,
       },
+      client:activeUser.email,
+      posted_date: new Date()
     };
 
-    console.log("CREATE JOB PAYLOAD:", payload);
+    fetch('http://localhost:3000/jobpost',{
+      method:"POST",
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
   };
 
   return (
@@ -407,8 +444,8 @@ export default function CreateJob() {
                       onClick={() => scrollToSection(section.id)}
                       className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition ${
                         active
-                          ? "bg-indigo-50 text-primary"
-                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                          ? "bg-primary/10 text-primary"
+                          : "text-slate-600 hover:bg-primary/10 hover:text-primary"
                       }`}
                     >
                       <Icon size={17} />
@@ -569,35 +606,35 @@ export default function CreateJob() {
 
                 <div className="md:col-span-2">
                   <label className="mb-2 block text-sm font-medium text-slate-700">
-                    Company Logo
+                    Company Logo URL
                   </label>
 
-                  <label className="flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 transition hover:border-primary/60 hover:bg-primary/30">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-400 shadow-sm">
+                  {/* <label className="flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 transition hover:border-primary/60 hover:bg-primary/30"> */}
+                    {/* <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-400 shadow-sm">
                       <Upload size={20} />
-                    </div>
+                    </div> */}
 
-                    <div>
+                    {/* <div>
                       <p className="text-sm font-medium text-slate-700">
                         Upload company logo
                       </p>
                       <p className="mt-1 text-xs text-slate-500">
                         PNG, JPG or SVG · Recommended 256×256px
                       </p>
-                    </div>
+                    </div> */}
 
-                    <input
-                      type="file"
-                      accept="image/*"
-                      className="hidden"
+                    <Input
+                      required
+                      placeholder="Upload company logo URL"
+                      className=""
                       onChange={(e) =>
                         update(
                           "companyLogo",
-                          e.target.files?.[0] || null
+                          e.target.value || null
                         )
                       }
                     />
-                  </label>
+                  
                 </div>
               </div>
             </Section>
@@ -1033,6 +1070,18 @@ export default function CreateJob() {
                     update("deadline", e.target.value)
                   }
                 />
+
+                <Select
+                  label="Status"
+                  value={form.status}
+                  onChange={(e) =>
+                    update("status", e.target.value)
+                  }
+                >
+                  <option>Open</option>
+                  <option>Hired</option>
+                  
+                </Select>
               </div>
 
               <div className="mt-6 border-t border-slate-100 pt-6">
@@ -1079,16 +1128,7 @@ export default function CreateJob() {
                 Reset Form
               </button>
 
-              <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => update("status", "Draft")}
-                  className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-                >
-                  Save as Draft
-                </button>
-
-                <button
+              <button
                   type="submit"
                   onClick={() => update("status", "Open")}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary"
@@ -1096,7 +1136,6 @@ export default function CreateJob() {
                   Publish Job
                   <Send size={16} />
                 </button>
-              </div>
             </div>
           </form>
         </div>
