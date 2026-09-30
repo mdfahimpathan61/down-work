@@ -19,6 +19,7 @@ import Role from "../Page/Role";
 import RoleGuard from "./RoleGuard";
 import ClientLayout from "../Layout/ClientLayout";
 import Postjob from "../Page/Postjob"
+import MyJobs from "../Page/Myjobs";
 
 const router = createBrowserRouter([
     {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
                 path:'/client/postjob',
                 element:<Postjob></Postjob>
             },
+            {
+                path:'/client/mypostedjobs',
+                element: <MyJobs></MyJobs>
+            }
         ]
     },
     {

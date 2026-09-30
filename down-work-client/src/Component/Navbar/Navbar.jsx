@@ -4,7 +4,7 @@ import logo from "/logo (1).png";
 import "./navbar.css";
 import { CiLogin, CiLogout, CiMenuFries } from "react-icons/ci";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { MdWork } from "react-icons/md";
+import { MdWork, MdWorkHistory } from "react-icons/md";
 
 const Navbar = () => {
   const { activeUser, signout ,role} = useContext(AuthContext);
@@ -84,7 +84,8 @@ const Navbar = () => {
               </h4>
               <hr className=" border-gray-200 my-2" />
               
-              <Link to={"/client/postjob"} className="text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
+              <Link to={"/client/postjob"} className="pl-3 text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
+              <Link to={"/client/mypostedjobs"} className="pl-3 mt-1 text-accent hover:text-primary flex items-center gap-1"><MdWorkHistory /> My posted Jobs</Link>
 
              <hr className=" border-gray-200 my-2" />
               <button
@@ -102,7 +103,7 @@ const Navbar = () => {
             </div>
             <div
               tabIndex="5"
-              className="dropdown-content menu bg-base-100 rounded-box z-1 w-32 p-2 shadow-sm py-4"
+              className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-3 shadow-sm py-4"
             >
               {activeUser && (
                 <div>
@@ -118,6 +119,8 @@ const Navbar = () => {
                 </div>
               )}
               {list}
+              <Link to={"/client/postjob"} className="text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
+              <Link to={"/client/mypostedjobs"} className="text-accent hover:text-primary flex items-center gap-1"><MdWorkHistory /> My posted Jobs</Link>
               <hr className=" border-gray-200 my-2" />
               <button
                 className="   gap-1 text-secondary hover:text-primary flex items-center"

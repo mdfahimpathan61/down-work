@@ -66,6 +66,14 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             }
             res.send(result)
         })
+        app.get('/myjobs', async(req,res) => {
+            const email = req.query.email
+            const query = {client : email}
+            const projectField = {_id:1, location:1, title : 1,jobType:1, posted_date : 1, vacancy : 1, status:1,  }
+            const cursor =  postedJobs.find(query).project(projectField)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
 
 
 

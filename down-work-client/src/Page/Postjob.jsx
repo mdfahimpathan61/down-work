@@ -22,7 +22,7 @@ import { data } from "react-router";
 const initialForm = {
   title: "",
   category: "",
-  jobType: "Full Time",
+  job_type: "Full Time",
   employmentType: "Permanent",
 
   companyName: "",
@@ -50,7 +50,7 @@ const initialForm = {
 
   responsibilities: [""],
   requirements: [""],
-  preferredQualifications: [""],
+  preferred_qualifications: [""],
 
   skills: [],
 
@@ -360,52 +360,83 @@ export default function Postjob() {
     e.preventDefault();
 
     const payload = {
-      ...form,
-      experience: {
-        minimum: Number(form.minExperience) || 0,
-        maximum: Number(form.maxExperience) || 0,
-        level: form.experienceLevel,
-      },
-      salary: {
-        currency: form.currency,
-        minimum: Number(form.minSalary) || 0,
-        maximum: Number(form.maxSalary) || 0,
-        period: form.salaryPeriod,
-        negotiable: form.negotiable,
-      },
-      company: {
-        name: form.companyName,
-        website: form.companyWebsite,
-        industry: form.industry,
-        company_size: form.companySize,
-      },
-      location: {
-        city: form.city,
-        country: form.country,
-        address: form.address,
-        work_mode: form.workMode,
-      },
-      education: [
-        {
-          degree: form.degree,
-          field: form.educationField,
-          required: form.educationRequired,
-        },
-      ],
-      working_hours: {
-        days: form.workingDays,
-        start: form.startTime,
-        end: form.endTime,
-      },
-      application: {
-        deadline: form.deadline,
-        method: form.applicationMethod,
-        email: form.applicationEmail,
-        apply_url: form.applyUrl,
-      },
-      client:activeUser.email,
-      posted_date: new Date()
-    };
+  category_id: form.categoryId,
+
+  title: form.title,
+
+  company: {
+    name: form.companyName,
+    website: form.companyWebsite,
+    industry: form.industry,
+    company_size: form.companySize,
+    logo: form.companyLogo,
+  },
+
+  location: {
+    city: form.city,
+    country: form.country,
+    address: form.address,
+    work_mode: form.workMode,
+  },
+
+  job_type: form.jobType,
+
+  employment_type: form.employmentType,
+
+  experience: {
+    minimum: Number(form.minExperience) || 0,
+    maximum: Number(form.maxExperience) || 0,
+    level: form.experienceLevel,
+  },
+
+  salary: {
+    currency: form.currency,
+    minimum: Number(form.minSalary) || 0,
+    maximum: Number(form.maxSalary) || 0,
+    period: form.salaryPeriod,
+    negotiable: form.negotiable,
+  },
+
+  description: form.description,
+
+  responsibilities: form.responsibilities,
+
+  requirements: form.requirements,
+
+  preferred_qualifications:
+    form.preferredQualifications,
+
+  skills: form.skills,
+
+  education: [
+    {
+      degree: form.degree,
+      field: form.educationField,
+      required: form.educationRequired,
+    },
+  ],
+
+  benefits: form.benefits,
+
+  working_hours: {
+    days: form.workingDays,
+    start: form.startTime,
+    end: form.endTime,
+  },
+
+  vacancy: Number(form.vacancy) || 0,
+
+  application: {
+    deadline: form.deadline,
+    method: form.applicationMethod,
+    email: form.applicationEmail,
+    apply_url: form.applyUrl,
+  },
+
+  client: activeUser.email,
+
+  posted_date: new Date(),
+};
 
     fetch('http://localhost:3000/jobpost',{
       method:"POST",
@@ -604,38 +635,18 @@ export default function Postjob() {
                   <option>500+ employees</option>
                 </Select>
 
-                <div className="md:col-span-2">
-                  <label className="mb-2 block text-sm font-medium text-slate-700">
-                    Company Logo URL
-                  </label>
-
-                  {/* <label className="flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 transition hover:border-primary/60 hover:bg-primary/30"> */}
-                    {/* <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-slate-400 shadow-sm">
-                      <Upload size={20} />
-                    </div> */}
-
-                    {/* <div>
-                      <p className="text-sm font-medium text-slate-700">
-                        Upload company logo
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">
-                        PNG, JPG or SVG · Recommended 256×256px
-                      </p>
-                    </div> */}
-
-                    <Input
+                <Input
+                    label="Company Logo URL"
                       required
                       placeholder="Upload company logo URL"
                       className=""
                       onChange={(e) =>
                         update(
                           "companyLogo",
-                          e.target.value || null
+                          e.target.value 
                         )
                       }
                     />
-                  
-                </div>
               </div>
             </Section>
 
@@ -850,9 +861,9 @@ export default function Postjob() {
 
                 <Repeater
                   label="Preferred Qualifications"
-                  values={form.preferredQualifications}
+                  values={form.preferred_qualifications}
                   setValues={(value) =>
-                    update("preferredQualifications", value)
+                    update("preferred_qualifications", value)
                   }
                   placeholder="e.g. Experience with REST API."
                 />
@@ -1078,8 +1089,8 @@ export default function Postjob() {
                     update("status", e.target.value)
                   }
                 >
-                  <option>Open</option>
-                  <option>Hired</option>
+                  <option value="open">Open</option>
+                  <option value="hired">Hired</option>
                   
                 </Select>
               </div>
