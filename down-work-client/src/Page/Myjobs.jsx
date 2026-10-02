@@ -54,30 +54,41 @@ const demoJobs = [
 
 export default function MyJobs() {
   const navigate = useNavigate();
-  const {activeUser,loading} = useAuth()
+  const {activeUser,loading,setLoading} = useAuth()
 
-  const [jobs, setJobs] = useState(demoJobs);
+  const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("All");
+  const [nojobText, setNoJobText] = useState("You have not create any job yet!")
 
 
   useEffect(() => {
     fetch(`http://localhost:3000/myjobs?email=${activeUser.email}`)
     .then(res => res.json())
-     .then(data => setJobs(data))
+     .then(data => {
+      setJobs(data)
+      
+      console.log(data)
+     })
   }, [activeUser])
 
   const filteredJobs = useMemo(() => {
-    return jobs.filter((job) => {
+    if(jobs){
+      return jobs.filter((job) => {
       const matchesSearch = job.title
         .toLowerCase()
         .includes(search.toLowerCase());
 
       const matchesStatus =
         status === "All" || job.status === status;
-
+        setNoJobText("Try changing your search or filter.")
       return matchesSearch && matchesStatus;
     });
+    }
+    else{
+      
+      return []
+    }
   }, [jobs, search, status]);
 
   const handleView = (jobId) => {
@@ -85,7 +96,7 @@ export default function MyJobs() {
   };
 
   const handleUpdate = (jobId) => {
-    navigate(`/jobs/${jobId}/edit`);
+    navigate(`/client/update/job/${jobId}`);
   };
 
   const handleDelete = (jobId) => {
@@ -118,197 +129,175 @@ export default function MyJobs() {
     <>
       {
         loading ? <Loading></Loading> :
-        <div className="min-h-screen bg-slate-50 px-4 py-8 md:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900">
-              My Job Posts
-            </h1>
+         (<div className="min-h-screen bg-slate-50 px-4 py-8 md:px-8">
+              <div className="mx-auto max-w-7xl">
+                {/* Header */}
+                <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h1 className="text-2xl font-bold text-slate-900">
+                      My Job Posts
+                    </h1>
 
-            <p className="mt-1 text-sm text-slate-500">
-              Manage all jobs you have posted.
-            </p>
-          </div>
+                    <p className="mt-1 text-sm text-slate-500">
+                      Manage all jobs you have posted.
+                    </p>
+                  </div>
 
-          <button
-            onClick={() => navigate("/client/postjob")}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary"
-          >
-            <Plus size={17} />
-            Post New Job
-          </button>
-        </div>
-
-        {/* Summary */}
-        <div className="mb-6 grid gap-4 sm:grid-cols-3">
-          <SummaryCard
-            label="Total Jobs"
-            value={jobs.length}
-          />
-
-          <SummaryCard
-            label="Open Jobs"
-            value={
-              jobs.filter((job) => job.status.toLowerCase() === "open")
-                .length
-            }
-          />
-
-          <SummaryCard
-            label="Draft Jobs"
-            value={
-              jobs.filter((job) => job.status === "draft")
-                .length
-            }
-          />
-        </div>
-
-        {/* Table Card */}
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          {/* Filters */}
-          <div className="flex flex-col gap-4 border-b border-slate-200 p-5 md:flex-row md:items-center md:justify-between">
-            <div className="relative w-full md:max-w-sm">
-              <Search
-                size={17}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-              />
-
-              <input
-                type="text"
-                placeholder="Search jobs..."
-                value={search}
-                onChange={(e) =>
-                  setSearch(e.target.value)
-                }
-                className="h-11 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10"
-              />
-            </div>
-
-            <select
-              value={status}
-              onChange={(e) =>
-                setStatus(e.target.value)
-              }
-              className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"
-            >
-              <option value="All">All Status</option>
-              <option value="open">Open</option>
-              <option value="hired">Hired</option>
-            </select>
-          </div>
-
-          {/* Table */}
-          <div className="overflow-x-auto">
-            <table className="min-w-full">
-              <thead className="bg-slate-50">
-                <tr>
-                  <Th>Job</Th>
-                  <Th>Type</Th>
-                  <Th>Vacancy</Th>
-                  <Th>Posted Date</Th>
-                  <Th>Status</Th>
-                  <Th className="text-right">
-                    Actions
-                  </Th>
-                </tr>
-              </thead>
-
-              <tbody className="divide-y divide-slate-100">
-                {filteredJobs.map((job) => (
-                  <tr
-                    key={job._id}
-                    className="transition hover:bg-slate-50/70"
+                  <button
+                    onClick={() => navigate("/client/postjob")}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary"
                   >
-                    {/* Job */}
-                    <td className="px-5 py-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                          <BriefcaseBusiness
-                            size={18}
-                          />
-                        </div>
+                    <Plus size={17} />
+                    Post New Job
+                  </button>
+                </div>
 
-                        <div>
-                          <button
-                            onClick={() =>
-                              handleView(job._id)
-                            }
-                            className="text-left text-sm font-semibold text-slate-900 transition hover:text-primary"
+                {/* Summary */}
+                <div className="mb-6 grid gap-4 sm:grid-cols-3">
+                  <SummaryCard label="Total Jobs" value={jobs.length} />
+
+                  <SummaryCard
+                    label="Open Jobs"
+                    value={
+                      jobs.filter((job) => job?.status.toLowerCase() === "open")
+                        .length
+                    }
+                  />
+
+                  <SummaryCard
+                    label="Draft Jobs"
+                    value={jobs.filter((job) => job.status === "draft").length}
+                  />
+                </div>
+
+                {/* Table Card */}
+                <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                  {/* Filters */}
+                  <div className="flex flex-col gap-4 border-b border-slate-200 p-5 md:flex-row md:items-center md:justify-between">
+                    <div className="relative w-full md:max-w-sm">
+                      <Search
+                        size={17}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                      />
+
+                      <input
+                        type="text"
+                        placeholder="Search jobs..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="h-11 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/10"
+                      />
+                    </div>
+
+                    <select
+                      value={status}
+                      onChange={(e) => setStatus(e.target.value)}
+                      className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"
+                    >
+                      <option value="All">All Status</option>
+                      <option value="open">Open</option>
+                      <option value="hired">Hired</option>
+                    </select>
+                  </div>
+
+                  {/* Table */}
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full">
+                      <thead className="bg-slate-50">
+                        <tr>
+                          <Th>Job</Th>
+                          <Th>Type</Th>
+                          <Th>Vacancy</Th>
+                          <Th>Posted Date</Th>
+                          <Th>Status</Th>
+                          <Th className="text-right">Actions</Th>
+                        </tr>
+                      </thead>
+
+                      <tbody className="divide-y divide-slate-100">
+                        {filteredJobs.map((job) => (
+                          <tr
+                            key={job._id}
+                            className="transition hover:bg-slate-50/70"
                           >
-                            {job.title}
-                          </button>
+                            {/* Job */}
+                            <td className="px-5 py-4">
+                              <div className="flex items-start gap-3">
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                  <BriefcaseBusiness size={18} />
+                                </div>
 
-                          <p className="mt-1 text-xs text-slate-500">
-                            {job.location.address}
-                          </p>
-                        </div>
-                      </div>
-                    </td>
+                                <div>
+                                  <button
+                                    onClick={() => handleView(job._id)}
+                                    className="text-left text-sm font-semibold text-slate-900 transition hover:text-primary"
+                                  >
+                                    {job.title}
+                                  </button>
 
-                    {/* Type */}
-                    <td className="px-5 py-4 text-sm text-slate-600">
-                      {job.job_type}
-                    </td>
+                                  <p className="mt-1 text-xs text-slate-500">
+                                    {job.location.address}
+                                  </p>
+                                </div>
+                              </div>
+                            </td>
 
-                    {/* Vacancy */}
-                    <td className="px-5 py-4 text-sm text-slate-600">
-                      {job.vacancy}
-                    </td>
+                            {/* Type */}
+                            <td className="px-5 py-4 text-sm text-slate-600">
+                              {job.job_type}
+                            </td>
 
-                    {/* Posted */}
-                    <td className="px-5 py-4 text-sm text-slate-600">
-                      {formatDate(job.posted_date)}
-                    </td>
+                            {/* Vacancy */}
+                            <td className="px-5 py-4 text-sm text-slate-600">
+                              {job.vacancy}
+                            </td>
 
-                    {/* Status */}
-                    <td className="px-5 py-4">
-                      <span
-                        className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${getStatusStyle(
-                          job.status.toLocaleLowerCase()
-                        )}`}
-                      >
-                        {job.status}
-                      </span>
-                    </td>
+                            {/* Posted */}
+                            <td className="px-5 py-4 text-sm text-slate-600">
+                              {formatDate(job.posted_date)}
+                            </td>
 
-                    {/* Actions */}
-                    <td className="px-5 py-4">
-                      <div className="flex justify-end gap-2">
-                        <button
-                          onClick={() =>
-                            handleView(job._id)
-                          }
-                          title="View job"
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
-                        >
-                          <Eye size={16} />
-                        </button>
+                            {/* Status */}
+                            <td className="px-5 py-4">
+                              <span
+                                className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${getStatusStyle(
+                                  job.status.toLocaleLowerCase()
+                                )}`}
+                              >
+                                {job.status}
+                              </span>
+                            </td>
 
-                        <button
-                          onClick={() =>
-                            handleUpdate(job._id)
-                          }
-                          title="Edit job"
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-amber-200 hover:bg-amber-50 hover:text-amber-600"
-                        >
-                          <Pencil size={16} />
-                        </button>
+                            {/* Actions */}
+                            <td className="px-5 py-4">
+                              <div className="flex justify-end gap-2">
+                                <button
+                                  onClick={() => handleView(job._id)}
+                                  title="View job"
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
+                                >
+                                  <Eye size={16} />
+                                </button>
 
-                        <button
-                          onClick={() =>
-                            handleDelete(job._id)
-                          }
-                          title="Delete job"
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600"
-                        >
-                          <Trash2 size={16} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                                <button
+                                  onClick={() => handleUpdate(job._id)}
+                                  title="Edit job"
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-amber-200 hover:bg-amber-50 hover:text-amber-600"
+                                >
+                                  <Pencil size={16} />
+                                </button>
+
+                                <button
+                                  onClick={() => handleDelete(job._id)}
+                                  title="Delete job"
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+                                >
+                                  <Trash2 size={16} />
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
 
                 {filteredJobs.length === 0 && (
                   <tr>
@@ -320,10 +309,15 @@ export default function MyJobs() {
                         No jobs found
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-400">
-                        Try changing your search or
-                        filter.
-                      </p>
+                       <p className="mt-1 text-sm text-slate-400">
+                        {nojobText}
+                      </p> 
+
+                      
+                      
+                      {
+                        console.log(jobs)
+                      }
                     </td>
                   </tr>
                 )}
@@ -340,7 +334,10 @@ export default function MyJobs() {
           </div>
         </div>
       </div>
-    </div>
+        </div>) 
+        
+
+        
       }
     </>
   );

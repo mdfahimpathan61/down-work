@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase.config";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 
 export const AuthContext = createContext(null);
@@ -62,6 +63,16 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe()
   },[])
 
+  const successAlert = (title) => {
+    Swal.fire({
+  position: "center",
+  icon: "success",
+  title: title,
+  showConfirmButton: false,
+  timer: 2000
+});
+  }
+
   useEffect(() => {
     if(activeUser){
       fetch(`http://localhost:3000/user?email=${activeUser.email}`)
@@ -83,12 +94,14 @@ const AuthProvider = ({ children }) => {
     activeUser,
     setActiveuser,
     loading,
+    setLoading,
     signInWitGoogle,
     searchTextContext,
     setSearchTextContext,
     forgotPassword,
     role, 
-    setRole
+    setRole,
+    successAlert
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;

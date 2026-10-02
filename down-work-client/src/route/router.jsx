@@ -88,11 +88,15 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/client/postjob',
-                element:<Postjob></Postjob>
+                element:<Postjob mode="create"></Postjob>
             },
             {
                 path:'/client/mypostedjobs',
                 element: <MyJobs></MyJobs>
+            },
+            {
+                path:'/client/update/job/:id',
+                element:<Postjob mode="update"></Postjob>
             }
         ]
     },

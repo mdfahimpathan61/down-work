@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const app = express()
 const cors = require('cors')
-const { MongoClient } = require('mongodb')
+const { MongoClient, ObjectId } = require('mongodb')
 const port = process.env.PORT || 3000
 
 
@@ -42,13 +42,36 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             const insertAUser = await users.updateOne(query, update, option)
             res.send(insertAUser)
         })
+        
 
+        app.patch('/updatejob', async(req,res) =>{
+            const id = req.query.id
+            const updatedJob = req.body
+        console.log(id)
+            console.log(updatedJob)
+            const query = {_id : new ObjectId(id)}
+            const update = { $set : updatedJob}
+            const result = await postedJobs.updateOne(query, update)
+            res.send(result)
+        })
         
 
 
         app.get('/jobs', async(req,res) => {
-             const cursor =await postedJobs.find().toArray()
+            
+            if(req.query.id){
+                const id = req.query.id
+                
+                const query = {_id : new ObjectId(id)}
+                const result =await postedJobs.findOne(query)
+                console.log(result)
+                res.send(result)
+                
+            }
+             else{
+                const cursor =await postedJobs.find().toArray()
              res.send(cursor)
+             }
         })
         app.get('/category', async(req,res) => {
             const cursor = await category.find().toArray()

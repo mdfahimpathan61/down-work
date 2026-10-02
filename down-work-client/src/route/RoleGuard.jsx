@@ -10,7 +10,10 @@ const RoleGuard = ({children}) => {
     const [roleLoading, setRoleLoading] = useState(true);
 
     useEffect(() => {
-        if (loading) return;
+        if (loading){
+            
+             return;
+        }
         
         if (!activeUser) {
             setRoleLoading(false);
@@ -27,9 +30,14 @@ const RoleGuard = ({children}) => {
             });
     }, [activeUser]);
 
-    if (loading || roleLoading) {
+    if(loading){
+        return <Loading></Loading>
+    }
+    else if (activeUser && (loading || roleLoading)) {
         return <Loading />;
     }
+
+    
 
     
 
