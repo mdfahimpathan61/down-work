@@ -2,14 +2,15 @@ import React, { use, useEffect } from 'react';
 import { FaUser, FaUserTie } from 'react-icons/fa';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { AuthContext } from '../Provider/AuthProvider';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import Loading from '../Component/Loading';
 
 const Role = () => {
     const {activeUser,loading,toastSuccess} = useAuth()
-    const location = useLocation()
-    console.log(location)
+    //const location = useLocation()
+    //console.log(location)
+    const navigate =  useNavigate()
 
     const handleLoginWithGoogle = (role) =>{
         const newUser = {
@@ -26,8 +27,15 @@ const Role = () => {
             },
             body:JSON.stringify(newUser)
         })
+        .then(res => res.json())
+        .then(data => {
+           if(data.acknowledged){
+             toastSuccess("Registration Complete");
+            navigate('/')
+           }
+        })
 
-        toastSuccess("Registration Complete");
+       
 
     }
 

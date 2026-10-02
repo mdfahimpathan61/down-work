@@ -11,6 +11,14 @@ const Navbar = () => {
  // console.log(activeUser);
  console.log(role)
   const navigate = useNavigate();
+  const clientRole =
+   <>
+    <Link to={"/client/postjob"} className="pl-3 text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
+    <Link to={"/client/mypostedjobs"} className="pl-3 mt-1 text-accent hover:text-primary flex items-center gap-1"><MdWorkHistory /> My posted Jobs</Link>
+
+    <hr className=" border-gray-200 my-2" />
+
+  </>
 
   const handleSignOut = () => {
     if (activeUser) {
@@ -84,10 +92,9 @@ const Navbar = () => {
               </h4>
               <hr className=" border-gray-200 my-2" />
               
-              <Link to={"/client/postjob"} className="pl-3 text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
-              <Link to={"/client/mypostedjobs"} className="pl-3 mt-1 text-accent hover:text-primary flex items-center gap-1"><MdWorkHistory /> My posted Jobs</Link>
-
-             <hr className=" border-gray-200 my-2" />
+              {
+                role == "client"  && clientRole
+              }
               <button
                 className="mx-auto  mt-2 gap-1 text-secondary hover:text-primary flex items-center"
                 onClick={handleSignOut}
@@ -119,9 +126,9 @@ const Navbar = () => {
                 </div>
               )}
               {list}
-              <Link to={"/client/postjob"} className="text-accent hover:text-primary flex items-center gap-1"><MdWork />Post Job</Link>
-              <Link to={"/client/mypostedjobs"} className="text-accent hover:text-primary flex items-center gap-1"><MdWorkHistory /> My posted Jobs</Link>
-              <hr className=" border-gray-200 my-2" />
+              {
+                role == 'client' && clientRole
+              }
               <button
                 className="   gap-1 text-secondary hover:text-primary flex items-center"
                 onClick={handleSignOut}

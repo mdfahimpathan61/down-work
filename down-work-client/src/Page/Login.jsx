@@ -57,9 +57,10 @@ const Login = () => {
       await fetch(`http://localhost:3000/user?email=${firebaseUser.email}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        //console.log(data)
+         toastSuccess("Log in successful");
         if(data?.role){
-          toastSuccess("Log in successful");
+         
           location?.state ? navigate(location.state) : navigate('/')
           
         }
