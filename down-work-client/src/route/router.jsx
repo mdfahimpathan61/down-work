@@ -71,7 +71,7 @@ const router = createBrowserRouter([
            {
              path:"/details/job/:id",
              element:<JobDetails></JobDetails>,
-              loader:() => fetch("http://localhost:3000/jobs"),
+              loader:({params}) => fetch(`http://localhost:3000/jobs?id=${params.id}`),
               hydrateFallbackElement:Loading,
            },
            {

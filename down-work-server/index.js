@@ -22,6 +22,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
         const postedJobs = database.collection("postedJobs")
         const category = database.collection("downWork_category")
         const users = database.collection("downWork_users")
+        const appliedJobs = database.collection("applied_jobs")
 
         app.post("/jobpost",async (req,res)=>{
             const newJob = req.body
@@ -42,12 +43,18 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             const insertAUser = await users.updateOne(query, update, option)
             res.send(insertAUser)
         })
+
+        app.post('/applyjob', async(req,res) =>{
+            const newApplyedJob = req.body
+            const insertApplyJob = await appliedJobs.insertOne(newApplyedJob)
+            res.send(insertApplyJob)
+        })
         
 
         app.patch('/updatejob', async(req,res) =>{
             const id = req.query.id
             const updatedJob = req.body
-        console.log(id)
+            //console.log(id)
             console.log(updatedJob)
             const query = {_id : new ObjectId(id)}
             const update = { $set : updatedJob}
@@ -64,7 +71,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
                 
                 const query = {_id : new ObjectId(id)}
                 const result =await postedJobs.findOne(query)
-                console.log(result)
+                //console.log(result)
                 res.send(result)
                 
             }
@@ -95,6 +102,25 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             const projectField = {_id:1, location:1, title : 1,jobType:1, posted_date : 1, vacancy : 1, status:1,  }
             const cursor =  postedJobs.find(query).project(projectField)
             const result = await cursor.toArray()
+            res.send(result)
+        })
+
+        app.get('/myapplyedjobs', async(req, res) => {
+            const email = req.query.email
+            const query = {email: email}
+            const cursor = appliedJobs.find(query)
+            const result = await cursor.toArray()
+            res.send(result)
+        })
+
+        app.get('/applyed', async(req, res) =>{
+            const email = req.query.email
+            const id = req.query.id
+            const query = {
+                email : email,
+                job_id : id
+            }
+            const result = await appliedJobs.findOne(query)
             res.send(result)
         })
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaHouseFlag } from "react-icons/fa6";
 import {
   HiOutlineCurrencyDollar,
@@ -25,16 +25,65 @@ import { Link, useLoaderData, useParams } from "react-router";
 import useAuth from "../hooks/useAuth";
 
 const JobDetails = () => {
-  const { role } = useAuth();
+  const { role,activeUser,successAlert } = useAuth();
   const { id } = useParams();
-  const allJobsData = useLoaderData();
+  const job = useLoaderData();
+  const [applyed, setApplyed] = useState(false)
+  const [freelancer, setFreelancer] = useState(null)
 
+  //console.log(job)
+
+  useEffect(() => {
+    if(role == 'freelancer'){
+      fetch(`http://localhost:3000/applyed?email=${activeUser.email}&id=${id}`)
+    .then(res => res.json())
+    .then(data => {
+      if(data._id){
+        setApplyed(true)
+      }
+      //console.log(data)
+    })
+
+
+    fetch(`http://localhost:3000/user?email=${activeUser.email}`)
+    .then(res => res.json())
+    .then(data => {
+      if(data._id){
+        setFreelancer(data)
+      }
+    })
+    }
+  },[activeUser,id,role]) 
+
+//console.log(applyed)
+  const handleApplyed = () =>{
+    const payload = {
+      freelancer_id : freelancer._id,
+      job_id : id,
+      email: freelancer.email
+    }
+    fetch(`http://localhost:3000/applyjob`,{
+      method:"POST",
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res=> res.json())
+    .then(data => {
+      console.log(data)
+      if(data.acknowledged){
+        successAlert("You Applied the Job")
+        setApplyed(true)
+      }
+    })
+
+    
+  }
   // -----------------------------------
   // Find current job safely
   // -----------------------------------
-  const job = allJobsData?.find(
-    (job) => job?._id == id
-  );
+ 
 
   // -----------------------------------
   // If job doesn't exist
@@ -111,6 +160,9 @@ const JobDetails = () => {
   const safeEducation = Array.isArray(education)
     ? education
     : [];
+
+
+   
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -504,7 +556,7 @@ const JobDetails = () => {
             APPLY SECTION
         ================================= */}
         {role !== "client" && (
-          <div className="mt-8 rounded-3xl bg-gradient-to-r from-primary to-primary/80 p-5 shadow-lg sm:p-7">
+          <div className={`mt-8 rounded-3xl  p-5 shadow-lg sm:p-7 ${applyed ? "bg-gray-500" : "bg-linear-to-r from-primary to-primary/80"}`}>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div className="text-white">
                 <h3 className="text-xl font-bold sm:text-2xl">
@@ -517,8 +569,8 @@ const JobDetails = () => {
                 </p>
               </div>
 
-              <button className="w-full rounded-xl bg-white px-8 py-3 text-sm font-bold text-primary shadow-sm transition hover:bg-slate-100 sm:w-auto">
-                Apply Now
+              <button disabled={applyed} onClick={() => handleApplyed()} className={`w-full rounded-xl ${applyed ? "bg-gray-400 text-gray-700" :'bg-white text-primary hover:bg-slate-100'} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}>
+                {applyed ? "Applied" : "Apply Now"}
               </button>
             </div>
           </div>
