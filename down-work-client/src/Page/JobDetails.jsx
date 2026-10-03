@@ -27,6 +27,7 @@ import useAuth from "../hooks/useAuth";
 const JobDetails = () => {
   const { role,activeUser,successAlert } = useAuth();
   const { id } = useParams();
+  console.log(id)
   const job = useLoaderData();
   const [applyed, setApplyed] = useState(false)
   const [freelancer, setFreelancer] = useState(null)
@@ -60,7 +61,8 @@ const JobDetails = () => {
     const payload = {
       freelancer_id : freelancer._id,
       job_id : id,
-      email: freelancer.email
+      email: freelancer.email,
+     
     }
     fetch(`http://localhost:3000/applyjob`,{
       method:"POST",
@@ -172,7 +174,7 @@ const JobDetails = () => {
         ================================= */}
         <div className="mb-5">
           <Link
-            to="/jobs"
+            to="/category/all"
             className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-primary"
           >
             <FiArrowLeft />
@@ -558,7 +560,10 @@ const JobDetails = () => {
         {role !== "client" && (
           <div className={`mt-8 rounded-3xl  p-5 shadow-lg sm:p-7 ${applyed ? "bg-gray-500" : "bg-linear-to-r from-primary to-primary/80"}`}>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="text-white">
+              {
+                applyed ? <h3 className="text-gray-50 text-xl font-bold sm:text-2xl">
+                  You applied this job.
+                </h3> :<div className="text-white">
                 <h3 className="text-xl font-bold sm:text-2xl">
                   Interested in this position?
                 </h3>
@@ -568,8 +573,9 @@ const JobDetails = () => {
                   career.
                 </p>
               </div>
+              }
 
-              <button disabled={applyed} onClick={() => handleApplyed()} className={`w-full rounded-xl ${applyed ? "bg-gray-400 text-gray-700" :'bg-white text-primary hover:bg-slate-100'} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}>
+              <button disabled={applyed} onClick={() => handleApplyed()} className={`w-full rounded-xl ${applyed ? "bg-gray-300 text-gray-600" :'bg-white text-primary hover:bg-slate-100'} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}>
                 {applyed ? "Applied" : "Apply Now"}
               </button>
             </div>

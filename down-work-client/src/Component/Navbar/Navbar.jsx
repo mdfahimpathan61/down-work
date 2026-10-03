@@ -20,6 +20,10 @@ const Navbar = () => {
 
   </>
 
+  const freelancerRole = <>
+  <Link to={"/freelancer/appliedjobs"} className="pl-3 text-accent hover:text-primary flex items-center gap-1"><MdWork />Appplied Job</Link>
+  </>
+
   const handleSignOut = () => {
     if (activeUser) {
       signout();
@@ -95,6 +99,9 @@ const Navbar = () => {
               {
                 role == "client"  && clientRole
               }
+              {
+                role == 'freelancer' && freelancerRole
+              }
               <button
                 className="mx-auto  mt-2 gap-1 text-secondary hover:text-primary flex items-center"
                 onClick={handleSignOut}
@@ -128,6 +135,10 @@ const Navbar = () => {
               {list}
               {
                 role == 'client' && clientRole
+                
+              }
+              {
+                role == 'freelancer' && freelancerRole
               }
               <button
                 className="   gap-1 text-secondary hover:text-primary flex items-center"

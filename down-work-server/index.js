@@ -46,7 +46,19 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
         app.post('/applyjob', async(req,res) =>{
             const newApplyedJob = req.body
-            const insertApplyJob = await appliedJobs.insertOne(newApplyedJob)
+            const payload = {
+                freelancer_id : new ObjectId(newApplyedJob.freelancer_id),
+                job_id : new ObjectId(newApplyedJob.job_id),
+                 email: newApplyedJob.email,
+                 status : "pending",
+                 applied_date : new Date()
+            }
+            const query = {freelancer_id : newApplyedJob.freelancer_id, job_id : newApplyedJob.job_id}
+            const existingApplication =  await appliedJobs.findOne(query)
+            if(existingApplication){
+               return res.status(400).send({message : "Already Applyed"})
+            }
+            const insertApplyJob = await appliedJobs.insertOne(payload)
             res.send(insertApplyJob)
         })
         
@@ -105,13 +117,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             res.send(result)
         })
 
-        app.get('/myapplyedjobs', async(req, res) => {
-            const email = req.query.email
-            const query = {email: email}
-            const cursor = appliedJobs.find(query)
-            const result = await cursor.toArray()
-            res.send(result)
-        })
+        
 
         app.get('/applyed', async(req, res) =>{
             const email = req.query.email
@@ -122,6 +128,64 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             }
             const result = await appliedJobs.findOne(query)
             res.send(result)
+        })
+
+        app.get('/myappliedjobs', async(req, res) => {
+            const email = req.query.email
+            const query = {email : email}
+            //console.log(email)
+
+            const freelancer = await users.findOne(query)
+            if(!freelancer){
+                return res.status(404).send({message :"User not found"})
+            }
+            //console.log(freelancer)
+
+            const result = await appliedJobs.find({freelancer_id : freelancer._id}).toArray()
+            console.log(result)
+
+            
+
+            const application = await appliedJobs.aggregate([
+                {
+                    $match:{
+                        freelancer_id: freelancer._id,
+                    }
+                },
+                {
+                    $lookup : {
+                        from : "postedJobs",
+                        localField : "job_id",
+                        foreignField : "_id",
+                        as : "job"
+                    }
+                },
+                {
+                    $unwind : "$job"
+                }
+
+            ]).toArray()
+
+            const result3 = await appliedJobs.aggregate([
+  {
+    $match: {
+      freelancer_id: freelancer._id
+    }
+  },
+  {
+    $lookup: {
+      from: "postedJobs",
+      localField: "job_id",
+      foreignField: "_id",
+      as: "job"
+    }
+  }
+]).toArray();
+
+console.log("STEP 3:", result3);
+
+            //console.log(application[0].jobs)
+            res.send(application)
         })
 
 

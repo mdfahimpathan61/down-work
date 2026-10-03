@@ -20,8 +20,13 @@ import RoleGuard from "./RoleGuard";
 import ClientLayout from "../Layout/ClientLayout";
 import Postjob from "../Page/Postjob"
 import MyJobs from "../Page/Myjobs";
+import FreelancerLayout from "../Layout/FreelancerLayout";
+import Myappliedjobs from "../Page/Freelancer.jsx/Myappliedjobs";
+import useAuth from "../hooks/useAuth";
+
 
 const router = createBrowserRouter([
+    
     {
         path:"/",
         element:<RoleGuard><HomeLayout></HomeLayout></RoleGuard>,
@@ -97,6 +102,17 @@ const router = createBrowserRouter([
             {
                 path:'/client/update/job/:id',
                 element:<Postjob mode="update"></Postjob>
+            }
+        ]
+    },
+    {
+        path:"/freelancer",
+        element:<RoleGuard><FreelancerLayout></FreelancerLayout></RoleGuard>,
+        children:[
+            {
+                path:'/freelancer/appliedjobs',
+                element:<Myappliedjobs></Myappliedjobs>,
+               
             }
         ]
     },
