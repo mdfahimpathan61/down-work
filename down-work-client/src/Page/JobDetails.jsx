@@ -42,7 +42,7 @@ const JobDetails = () => {
       if(data._id){
         setApplyed(true)
       }
-      //console.log(data)
+      console.log(data)
     })
 
 

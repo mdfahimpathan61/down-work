@@ -122,11 +122,13 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
         app.get('/applyed', async(req, res) =>{
             const email = req.query.email
             const id = req.query.id
+            //console.log(email, id)
             const query = {
                 email : email,
-                job_id : id
+                job_id : new ObjectId(id)
             }
             const result = await appliedJobs.findOne(query)
+            console.log(result)
             res.send(result)
         })
 
@@ -165,28 +167,41 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
                 }
 
             ]).toArray()
+            res.send(application)
+             })
+//             const result3 = await appliedJobs.aggregate([
+//   {
+//     $match: {
+//       freelancer_id: freelancer._id
+//     }
+//   },
+//   {
+//     $lookup: {
+//       from: "postedJobs",
+//       localField: "job_id",
+//       foreignField: "_id",
+//       as: "job"
+//     }
+//   }
+// ]).toArray();
 
-            const result3 = await appliedJobs.aggregate([
-  {
-    $match: {
-      freelancer_id: freelancer._id
-    }
-  },
-  {
-    $lookup: {
-      from: "postedJobs",
-      localField: "job_id",
-      foreignField: "_id",
-      as: "job"
-    }
-  }
-]).toArray();
-
-console.log("STEP 3:", result3);
+// console.log("STEP 3:", result3);
 
             //console.log(application[0].jobs)
-            res.send(application)
-        })
+
+            
+
+            
+       
+
+        app.delete('/deletemyjob', async(req,res) =>{
+                const id = req.query.id
+                const email = req.query.email
+                console.log(id, email)
+                const query = {_id : new ObjectId(id), client:email}
+                const result = await postedJobs.deleteOne(query)
+                res.send(result)
+            })
 
 
 

@@ -23,7 +23,7 @@ const Myappliedjobs = () => {
     fetch(`http://localhost:3000/myappliedjobs?email=${activeUser.email}`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        //console.log(data)
         setApplicationsData(data)
     })
   },[activeUser])
