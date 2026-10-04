@@ -37,6 +37,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
         app.post("/user", async(req,res) =>{
             const newUser = req.body
+            
             const query = {email: newUser.email}
             const update = {$set : newUser}
             const option = {upsert : true}
@@ -73,6 +74,15 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             const result = await postedJobs.updateOne(query, update)
             res.send(result)
         })
+
+        app.patch('/updateuser', async(req,res) =>{
+            const updateUser = req.body
+             const id = req.query.id
+             const query = {_id : new ObjectId(id)}
+             const update = {$set : updateUser}
+             const result = await users.updateOne(query, update)
+             res.send(result)
+        })
         
 
 
@@ -84,7 +94,12 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
                 const query = {_id : new ObjectId(id)}
                 const result =await postedJobs.findOne(query)
                 //console.log(result)
-                res.send(result)
+                if(result){
+                    res.send(result)
+                }
+                else{
+                    res.status(404).send({message : "Job not found"})
+                }
                 
             }
              else{

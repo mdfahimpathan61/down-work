@@ -1,10 +1,17 @@
 import React from 'react';
 import Navbar from '../Component/Navbar/Navbar';
-import { Outlet } from 'react-router';
+import { Navigate, Outlet } from 'react-router';
 import Footer from '../Component/Footer';
+import useAuth from '../hooks/useAuth';
 
 const FreelancerLayout = () => {
-    return (
+    const {role} = useAuth()
+    if(role != 'freelancer'){
+        return <Navigate to={'/notfound'}></Navigate>
+    }
+    else{
+        return (
+        
         <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
@@ -12,6 +19,9 @@ const FreelancerLayout = () => {
             
         </div>
     );
+    }
+
+    
 };
 
 export default FreelancerLayout;

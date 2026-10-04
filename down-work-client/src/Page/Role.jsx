@@ -16,7 +16,7 @@ const Role = () => {
         const newUser = {
             name:activeUser.displayName, 
             email: activeUser.email,
-            url:activeUser.photoURL,
+            image:activeUser.photoURL,
             role:role
         }
 

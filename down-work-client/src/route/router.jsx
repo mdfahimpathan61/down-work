@@ -23,6 +23,9 @@ import MyJobs from "../Page/Myjobs";
 import FreelancerLayout from "../Layout/FreelancerLayout";
 import Myappliedjobs from "../Page/Freelancer.jsx/Myappliedjobs";
 import useAuth from "../hooks/useAuth";
+import Updateprofile from "../Page/Freelancer.jsx/Updateprofile";
+import Notfound from "../Page/Notfound";
+import Profile from "../Page/Freelancer.jsx/Profile";
 
 
 const router = createBrowserRouter([
@@ -113,13 +116,26 @@ const router = createBrowserRouter([
                 path:'/freelancer/appliedjobs',
                 element:<Myappliedjobs></Myappliedjobs>,
                
-            }
+            },
+            {
+                path:'/freelancer/profile/update',
+                element: <Updateprofile></Updateprofile>
+            },
+            {
+                path:'/freelancer/profile',
+                element: <Profile></Profile>
+            },
         ]
     },
     {
         path:"/browseservice",
         element:<BrowseService></BrowseService>
     },
+    {
+        path:'/notfound',
+        element:<Notfound></Notfound>
+
+    }
     
     
 
