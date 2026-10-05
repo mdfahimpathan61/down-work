@@ -204,6 +204,41 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
             //console.log(application[0].jobs)
 
+            app.get('/jobapplications',async(req, res)=>{
+                const jobId = req.query.id
+                
+                
+
+                const applications = await appliedJobs.aggregate([
+                    {
+                        $match : {
+                            job_id : new ObjectId(jobId)
+                        }
+                    },
+
+                    {
+                        $lookup : {
+                            from : "downWork_users",
+                            localField : "freelancer_id",
+                            foreignField : "_id",
+                            as : "freelancer"
+                        }
+
+
+                    },
+                    {
+                        $unwind : "$freelancer"
+                    }
+                ]).toArray()
+
+                //console.log(applications)
+                
+
+                const job = await postedJobs.findOne({_id : new ObjectId(jobId)})
+               // console.log(job)
+
+                res.send({applications, job})
+            })
             
 
             

@@ -15,6 +15,7 @@ import useAuth from "../../hooks/useAuth";
 const Profile = () => {
 
     const [user, setUser] = useState({})
+    //console.log(user?.image)
   
   const {activeUser} = useAuth()
 
@@ -22,7 +23,7 @@ const Profile = () => {
     fetch(`http://localhost:3000/user?email=${activeUser.email}`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+        //console.log(data)
         setUser(data)
     })
   },[activeUser])
@@ -54,7 +55,7 @@ const Profile = () => {
 
                 {user?.image ? (
                   <img
-                    src={user.photoURL}
+                    src={user.image}
                     alt={user?.name || "Profile"}
                     className="h-full w-full object-cover"
                   />

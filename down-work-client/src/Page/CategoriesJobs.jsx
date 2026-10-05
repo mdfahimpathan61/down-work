@@ -31,17 +31,19 @@ const CategoriesJobs = () => {
       searchRef.current.value = searchTextContext;
     }
 
-    const searchText = searchRef.current.value.toLowerCase();
+    const searchText = searchRef.current.value?.toLowerCase();
 
-    const searchResult = catigoriesAllJobs.filter((job) => {
+    const searchResult = catigoriesAllJobs &&
+     catigoriesAllJobs.filter((job) => {
       return (
-        job.title.toLowerCase().includes(searchText) ||
-        job.company.name.toLowerCase().includes(searchText) ||
-        job.company.industry.toLowerCase().includes(searchText) ||
-        job.location.city.toLowerCase().includes(searchText) ||
-        job.job_type.toLowerCase().includes(searchText)
+        job.title?.toLowerCase().includes(searchText) ||
+        job.company.name?.toLowerCase().includes(searchText) ||
+        job.company.industry?.toLowerCase().includes(searchText) ||
+        job.location.city?.toLowerCase().includes(searchText) ||
+        job.job_type?.toLowerCase().includes(searchText)
       );
     });
+    
 
     setNoJob(false);
     setFilteredJobs(searchResult);

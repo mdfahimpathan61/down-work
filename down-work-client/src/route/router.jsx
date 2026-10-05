@@ -18,127 +18,145 @@ import ForgotPassword from "../Page/ForgotPassword";
 import Role from "../Page/Role";
 import RoleGuard from "./RoleGuard";
 import ClientLayout from "../Layout/ClientLayout";
-import Postjob from "../Page/Postjob"
-import MyJobs from "../Page/Myjobs";
+import Postjob from "../Page/Client/Postjob";
+import MyJobs from "../Page/Client/Myjobs";
 import FreelancerLayout from "../Layout/FreelancerLayout";
-import Myappliedjobs from "../Page/Freelancer.jsx/Myappliedjobs";
-import useAuth from "../hooks/useAuth";
-import Updateprofile from "../Page/Freelancer.jsx/Updateprofile";
-import Notfound from "../Page/Notfound";
-import Profile from "../Page/Freelancer.jsx/Profile";
+import Myappliedjobs from "../Page/Freelancer/Myappliedjobs";
 
+import Updateprofile from "../Page/Freelancer/Updateprofile";
+import Notfound from "../Page/Notfound";
+import Profile from "../Page/Freelancer/Profile";
+import ViewApplication from "../Page/Client/ViewApplication";
 
 const router = createBrowserRouter([
-    
-    {
-        path:"/",
-        element:<RoleGuard><HomeLayout></HomeLayout></RoleGuard>,
-        errorElement:<Error></Error>
-    },
-    {
-        path:"/auth",
-        Component:AuthLayout,
-        children:[
-            {
-                path:"/auth/login",
-                Component:Login
-            },
-            {
-                path:"/auth/role",
-                Component:Role
-            },
-            {
-                path:"/auth/forgotpassword",
-                element:<ForgotPassword></ForgotPassword>
-            },
-            {
-                 path:"/auth/registration/:role",
-                 Component:Registration,
-                 
-            }
-        ]
+  {
+    path: "/",
+    element: (
+      <RoleGuard>
+        <HomeLayout></HomeLayout>
+      </RoleGuard>
+    ),
+    errorElement: <Error></Error>,
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
+      },
+      {
+        path: "/auth/role",
+        Component: Role,
+      },
+      {
+        path: "/auth/forgotpassword",
+        element: <ForgotPassword></ForgotPassword>,
+      },
+      {
+        path: "/auth/registration/:role",
+        Component: Registration,
+      },
+    ],
+  },
+  {
+    path: "/category",
+    element: (
+      <RoleGuard>
+        <JobsLayout></JobsLayout>
+      </RoleGuard>
+    ),
+    children: [
+      {
+        path: "/category/:id",
+        Component: CategoriesJobs,
+        loader: () => fetch("http://localhost:3000/jobs"),
+        hydrateFallbackElement: Loading,
+      },
+    ],
+  },
+  {
+    path: "/details",
+    element: (
+      <RoleGuard>
+        <PrivateRoute>
+          <DetailsLayout></DetailsLayout>
+        </PrivateRoute>
+      </RoleGuard>
+    ),
 
-    },
-    {
-        path:"/category",
-        element:<RoleGuard><JobsLayout></JobsLayout></RoleGuard>,
-        children :[
-            {
-                path:"/category/:id",
-                Component:CategoriesJobs,
-                loader: () => fetch("http://localhost:3000/jobs"),
-                hydrateFallbackElement:Loading
-            }
-        ],
-    },
-    {
-        path:"/details",
-        element:<RoleGuard><PrivateRoute><DetailsLayout></DetailsLayout></PrivateRoute></RoleGuard>,
-       
-        children:[
-           {
-             path:"/details/job/:id",
-             element:<JobDetails></JobDetails>,
-              loader:({params}) => fetch(`http://localhost:3000/jobs?id=${params.id}`),
-              hydrateFallbackElement:Loading,
-           },
-           {
-             path:"/details/company/:id",
-             element:<CompanyDetails></CompanyDetails>,
-              loader:() => fetch("http://localhost:3000/jobs"),
-              hydrateFallbackElement:Loading,
-           }
-        ]
-    },
-    {
-        path:"/client",
-        element:<RoleGuard><ClientLayout></ClientLayout></RoleGuard>,
-        children:[
-            {
-                path:'/client/postjob',
-                element:<Postjob mode="create"></Postjob>
-            },
-            {
-                path:'/client/mypostedjobs',
-                element: <MyJobs></MyJobs>
-            },
-            {
-                path:'/client/update/job/:id',
-                element:<Postjob mode="update"></Postjob>
-            }
-        ]
-    },
-    {
-        path:"/freelancer",
-        element:<RoleGuard><FreelancerLayout></FreelancerLayout></RoleGuard>,
-        children:[
-            {
-                path:'/freelancer/appliedjobs',
-                element:<Myappliedjobs></Myappliedjobs>,
-               
-            },
-            {
-                path:'/freelancer/profile/update',
-                element: <Updateprofile></Updateprofile>
-            },
-            {
-                path:'/freelancer/profile',
-                element: <Profile></Profile>
-            },
-        ]
-    },
-    {
-        path:"/browseservice",
-        element:<BrowseService></BrowseService>
-    },
-    {
-        path:'/notfound',
-        element:<Notfound></Notfound>
-
-    }
-    
-    
-
-
-])
-export default router
+    children: [
+      {
+        path: "/details/job/:id",
+        element: <JobDetails></JobDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/jobs?id=${params.id}`),
+        hydrateFallbackElement: Loading,
+      },
+      {
+        path: "/details/company/:id",
+        element: <CompanyDetails></CompanyDetails>,
+        loader: () => fetch("http://localhost:3000/jobs"),
+        hydrateFallbackElement: Loading,
+      },
+    ],
+  },
+  {
+    path: "/client",
+    element: (
+      <RoleGuard>
+        <ClientLayout></ClientLayout>
+      </RoleGuard>
+    ),
+    children: [
+      {
+        path: "/client/postjob",
+        element: <Postjob mode="create"></Postjob>,
+      },
+      {
+        path: "/client/mypostedjobs",
+        element: <MyJobs></MyJobs>,
+      },
+      {
+        path: "/client/update/job/:id",
+        element: <Postjob mode="update"></Postjob>,
+      },
+      {
+        path: "/client/mypostedjobs/application/:jobId",
+        element: <ViewApplication></ViewApplication>
+      },
+    ],
+  },
+  {
+    path: "/freelancer",
+    element: (
+      <RoleGuard>
+        <FreelancerLayout></FreelancerLayout>
+      </RoleGuard>
+    ),
+    children: [
+      {
+        path: "/freelancer/appliedjobs",
+        element: <Myappliedjobs></Myappliedjobs>,
+      },
+      {
+        path: "/freelancer/profile/update",
+        element: <Updateprofile></Updateprofile>,
+      },
+      {
+        path: "/freelancer/profile",
+        element: <Profile></Profile>,
+      },
+    ],
+  },
+  {
+    path: "/browseservice",
+    element: <BrowseService></BrowseService>,
+  },
+  {
+    path: "/notfound",
+    element: <Notfound></Notfound>,
+  },
+]);
+export default router;

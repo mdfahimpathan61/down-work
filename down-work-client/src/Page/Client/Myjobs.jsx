@@ -6,54 +6,18 @@ import {
   Search,
   Plus,
   BriefcaseBusiness,
+  Users,
 } from "lucide-react";
 import { useNavigate } from "react-router";
-import useAuth from "../hooks/useAuth";
-import Loading from "../Component/Loading";
+import useAuth from "../../hooks/useAuth";
+import Loading from "../../Component/Loading";
 import Swal from "sweetalert2";
 
-const demoJobs = [
-  {
-    _id: "job-1",
-    title: "Frontend Developer",
-    location: "Dhaka, Bangladesh",
-    job_type: "Full Time",
-    posted_date: "2026-08-07",
-    status: "Open",
-    vacancy: 2,
-  },
-  {
-    _id: "job-2",
-    title: "React Developer",
-    location: "Dhaka, Bangladesh",
-    job_type: "Full Time",
-    posted_date: "2026-08-06",
-    status: "Open",
-    vacancy: 3,
-  },
-  {
-    _id: "job-3",
-    title: "UI/UX Designer",
-    location: "Chattogram, Bangladesh",
-    job_type: "Full Time",
-    posted_date: "2026-08-03",
-    status: "Draft",
-    vacancy: 1,
-  },
-  {
-    _id: "job-4",
-    title: "Backend Developer",
-    location: "Dhaka, Bangladesh",
-    job_type: "Contract",
-    posted_date: "2026-07-28",
-    status: "Closed",
-    vacancy: 2,
-  },
-];
+
 
 export default function MyJobs() {
   const navigate = useNavigate();
-  const { activeUser, loading, setLoading } = useAuth();
+  const { activeUser, loading } = useAuth();
 
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
@@ -95,6 +59,9 @@ export default function MyJobs() {
   const handleUpdate = (jobId) => {
     navigate(`/client/update/job/${jobId}`);
   };
+  const handleApplications = (id) => {
+    navigate(`/client/mypostedjobs/application/${id}`);
+  };
 
   const handleDelete = (jobId) => {
     //console.log(jobId)
@@ -108,31 +75,25 @@ export default function MyJobs() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed)
-        
         fetch(
-      `http://localhost:3000/deletemyjob?email=${activeUser.email}&&id=${jobId}`,
-      {
-        method: "DELETE",
-      },
-    )
-      .then(res => res.json())
-      .then((data) => {
-        
-        console.log(data)
-        if(data.deletedCount){
-          Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
-          setJobs((prev) => prev.filter((job) => job._id !== jobId));
-        }
-      });
-       
-
+          `http://localhost:3000/deletemyjob?email=${activeUser.email}&&id=${jobId}`,
+          {
+            method: "DELETE",
+          },
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              setJobs((prev) => prev.filter((job) => job._id !== jobId));
+            }
+          });
     });
-    
-   
   };
 
   const getStatusStyle = (jobStatus) => {
@@ -294,6 +255,14 @@ export default function MyJobs() {
                         {/* Actions */}
                         <td className="px-5 py-4">
                           <div className="flex justify-end gap-2">
+                            <button
+                              onClick={() => handleApplications(job._id)}
+                              title="View applications"
+                              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-primary/80 hover:bg-primary/10 hover:text-primary"
+                            >
+                              <Users size={16} />
+                            </button>
+
                             <button
                               onClick={() => handleView(job._id)}
                               title="View job"

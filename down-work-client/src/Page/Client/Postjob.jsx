@@ -16,8 +16,8 @@ import {
   Check,
   Sparkles,
 } from "lucide-react";
-import useAuth from "../hooks/useAuth";
-import { data, useLoaderData, useParams } from "react-router";
+import useAuth from "../../hooks/useAuth";
+import { data, useLoaderData, useNavigate, useParams } from "react-router";
 
 const initialForm = {
   title: "",
@@ -137,7 +137,7 @@ function Input({
       </label>
 
       <input
-      required 
+        required
         type={type}
         value={value}
         onChange={onChange}
@@ -164,7 +164,7 @@ function Select({
       </label>
 
       <select
-      required
+        required
         value={value}
         onChange={onChange}
         className="h-11 w-full rounded-xl border border-slate-200 bg-white px-3.5 text-sm text-slate-900 outline-none transition hover:border-slate-300 focus:border-primary focus:ring-4 focus:ring-primary/10"
@@ -184,7 +184,7 @@ function Textarea({ label, required, value, onChange, placeholder, rows = 5 }) {
       </label>
 
       <textarea
-      required
+        required
         rows={rows}
         value={value}
         onChange={onChange}
@@ -290,6 +290,8 @@ export default function Postjob({ mode }) {
   const [date, setDate] = useState("posted_date");
   const { activeUser, successAlert } = useAuth();
   const { id } = useParams();
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:3000/category")
@@ -430,7 +432,7 @@ export default function Postjob({ mode }) {
         email: form.applicationEmail,
         apply_url: form.applyUrl,
       },
-      status:form.status,
+      status: form.status,
 
       client: activeUser.email,
 
@@ -450,25 +452,26 @@ export default function Postjob({ mode }) {
           console.log(data);
           if (data.insertedId) {
             successAlert("You Successfully Create a job");
+            e.target.reset()
+            navigate('/client/mypostedjobs')
           }
         });
-    }
-    else{
-      fetch(`http://localhost:3000/updatejob?id=${id}`,{
-        method:"PATCH",
-        headers : {
-          "Content-Type" : "application/json"
+    } else {
+      fetch(`http://localhost:3000/updatejob?id=${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body : JSON.stringify(payload)
+        body: JSON.stringify(payload),
       })
-      .then(res => res.json())
-      .then(data => {
-        //console.log(data.acknowledged)
-        if(data.acknowledged){
-          successAlert("Your job is updated.")
-        }
-      })
-      console.log(payload)
+        .then((res) => res.json())
+        .then((data) => {
+          //console.log(data.acknowledged)
+          if (data.acknowledged) {
+            successAlert("Your job is updated.");
+          }
+        });
+      //console.log(payload);
     }
   };
 
@@ -546,7 +549,6 @@ export default function Postjob({ mode }) {
                   name="title"
                   required
                   label="Job Title"
-                  
                   value={form.title}
                   onChange={(e) => update("title", e.target.value)}
                   placeholder="e.g. Senior Frontend Developer"
@@ -560,7 +562,9 @@ export default function Postjob({ mode }) {
                     value={form.category}
                     onChange={(e) => update("category", e.target.value)}
                   >
-                    <option value="" disabled>Select category</option>
+                    <option value="" disabled>
+                      Select category
+                    </option>
                     {categories.map((category) => (
                       <option key={category}>{category}</option>
                     ))}
@@ -571,7 +575,10 @@ export default function Postjob({ mode }) {
                     required
                     value={form.job_type}
                     onChange={(e) => update("job_type", e.target.value)}
-                  ><option value="" disabled>Select Job Type</option>
+                  >
+                    <option value="" disabled>
+                      Select Job Type
+                    </option>
                     <option>Full Time</option>
                     <option>Part Time</option>
                     <option>Freelance</option>
@@ -583,7 +590,9 @@ export default function Postjob({ mode }) {
                     value={form.employment_type}
                     onChange={(e) => update("employment_type", e.target.value)}
                   >
-                    <option value="" disabled>Select Type</option>
+                    <option value="" disabled>
+                      Select Type
+                    </option>
                     <option>Permanent</option>
                     <option>Contractual</option>
                     <option>Temporary</option>
@@ -613,7 +622,9 @@ export default function Postjob({ mode }) {
                   label="Company Name"
                   required
                   required
-                  value={mode == 'update' ? form.company?.name : form.companyName }
+                  value={
+                    mode == "update" ? form.company?.name : form.companyName
+                  }
                   onChange={(e) => update("companyName", e.target.value)}
                   placeholder="e.g. DigitalEdge Solutions"
                 />
@@ -621,7 +632,11 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Company Website"
                   required
-                  value={mode == 'update'? form.company?.website : form.companyWebsite}
+                  value={
+                    mode == "update"
+                      ? form.company?.website
+                      : form.companyWebsite
+                  }
                   onChange={(e) => update("companyWebsite", e.target.value)}
                   placeholder="https://company.com"
                 />
@@ -629,14 +644,20 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Industry"
                   required
-                  value={mode == 'update'?form.company?.industry: form.industry}
+                  value={
+                    mode == "update" ? form.company?.industry : form.industry
+                  }
                   onChange={(e) => update("industry", e.target.value)}
                   placeholder="e.g. Software & IT"
                 />
 
                 <Select
                   label="Company Size"
-                  value={mode == 'update'?form.company?.companySize : form.companySize}
+                  value={
+                    mode == "update"
+                      ? form.company?.companySize
+                      : form.companySize
+                  }
                   onChange={(e) => update("companySize", e.target.value)}
                 >
                   <option value="">Select company size</option>
@@ -650,8 +671,9 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Company Logo URL"
                   required
-                  
-                  value={mode == 'update'?form.company?.logo : form.companyLogo}
+                  value={
+                    mode == "update" ? form.company?.logo : form.companyLogo
+                  }
                   placeholder="Upload company logo URL"
                   className=""
                   onChange={(e) => update("companyLogo", e.target.value)}
@@ -670,8 +692,9 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Country"
                   required
-                  
-                  value={mode == 'update'? form.location?.country : form.country}
+                  value={
+                    mode == "update" ? form.location?.country : form.country
+                  }
                   onChange={(e) => update("country", e.target.value)}
                   placeholder="Bangladesh"
                 />
@@ -679,8 +702,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="City"
                   required
-                  
-                  value={mode == 'update'?form.location?.city : form.city}
+                  value={mode == "update" ? form.location?.city : form.city}
                   onChange={(e) => update("city", e.target.value)}
                   placeholder="Dhaka"
                 />
@@ -689,7 +711,9 @@ export default function Postjob({ mode }) {
                   <Input
                     label="Address"
                     required
-                    value={mode == 'update'?form.location?.address:form.address}
+                    value={
+                      mode == "update" ? form.location?.address : form.address
+                    }
                     onChange={(e) => update("address", e.target.value)}
                     placeholder="e.g. Dhanmondi, Dhaka"
                   />
@@ -702,7 +726,10 @@ export default function Postjob({ mode }) {
 
                   <div className="grid grid-cols-3 gap-3">
                     {["On-site", "Hybrid", "Remote"].map((mode) => {
-                      const active =mode == 'update'? form.location?.work_mode :form.work_mode === mode;
+                      const active =
+                        mode == "update"
+                          ? form.location?.work_mode
+                          : form.work_mode === mode;
 
                       return (
                         <button
@@ -738,7 +765,11 @@ export default function Postjob({ mode }) {
                 <Select
                   label="Experience Level"
                   required
-                  value={mode == 'update'?form.experience?.level:form.experienceLevel}
+                  value={
+                    mode == "update"
+                      ? form.experience?.level
+                      : form.experienceLevel
+                  }
                   onChange={(e) => update("experienceLevel", e.target.value)}
                 >
                   <option value="">Select level</option>
@@ -754,7 +785,11 @@ export default function Postjob({ mode }) {
                   label="Minimum Experience"
                   required
                   type="number"
-                  value={mode == 'update'?form.experience?.minimum:form.minExperience}
+                  value={
+                    mode == "update"
+                      ? form.experience?.minimum
+                      : form.minExperience
+                  }
                   onChange={(e) => update("minExperience", e.target.value)}
                   placeholder="0"
                 />
@@ -763,7 +798,11 @@ export default function Postjob({ mode }) {
                   label="Maximum Experience"
                   required
                   type="number"
-                  value={mode == 'update'?form.experience?.maximum:form.maxExperience}
+                  value={
+                    mode == "update"
+                      ? form.experience?.maximum
+                      : form.maxExperience
+                  }
                   onChange={(e) => update("maxExperience", e.target.value)}
                   placeholder="5"
                 />
@@ -774,7 +813,9 @@ export default function Postjob({ mode }) {
               <div className="grid gap-5 md:grid-cols-4">
                 <Select
                   label="Currency"
-                  value={mode == 'update'?form.salary?.currency:form.currency}
+                  value={
+                    mode == "update" ? form.salary?.currency : form.currency
+                  }
                   onChange={(e) => update("currency", e.target.value)}
                 >
                   <option>BDT</option>
@@ -787,7 +828,9 @@ export default function Postjob({ mode }) {
                   label="Minimum Salary"
                   required
                   type="number"
-                  value={mode == 'update'?form.salary?.minimum:form.minSalary}
+                  value={
+                    mode == "update" ? form.salary?.minimum : form.minSalary
+                  }
                   onChange={(e) => update("minSalary", e.target.value)}
                   placeholder="30000"
                 />
@@ -796,14 +839,18 @@ export default function Postjob({ mode }) {
                   label="Maximum Salary"
                   required
                   type="number"
-                  value={mode == 'update'?form.salary?.maximum : form.maxSalary}
+                  value={
+                    mode == "update" ? form.salary?.maximum : form.maxSalary
+                  }
                   onChange={(e) => update("maxSalary", e.target.value)}
                   placeholder="50000"
                 />
 
                 <Select
                   label="Salary Period"
-                  value={mode == 'update'?form.salary?.period: form.salaryPeriod}
+                  value={
+                    mode == "update" ? form.salary?.period : form.salaryPeriod
+                  }
                   onChange={(e) => update("salaryPeriod", e.target.value)}
                 >
                   <option>Monthly</option>
@@ -816,7 +863,9 @@ export default function Postjob({ mode }) {
               <label className="mt-5 flex cursor-pointer items-center gap-3">
                 <input
                   type="checkbox"
-                  checked={mode == 'update'?form.salary?.negotiable:form.negotiable}
+                  checked={
+                    mode == "update" ? form.salary?.negotiable : form.negotiable
+                  }
                   onChange={(e) => update("negotiable", e.target.checked)}
                   className="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary"
                 />
@@ -1046,8 +1095,6 @@ export default function Postjob({ mode }) {
                   onChange={(e) => update("applicationEmail", e.target.value)}
                   placeholder="careers@company.com"
                 />
-
-                
 
                 <Input
                   label="Application Deadline"
