@@ -83,6 +83,16 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
              const result = await users.updateOne(query, update)
              res.send(result)
         })
+
+        app.patch('/application', async(req,res) => {
+            const applicationId = req.query.id
+            console.log(applicationId)
+            const newInfo = req.body
+            const query = {_id : new ObjectId(applicationId)}
+            const update ={$set : newInfo}
+            const result = await appliedJobs.updateOne(query,update)
+            res.send(result)
+        })
         
 
 
@@ -112,6 +122,13 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             res.send(cursor)
         })
         app.get("/user", async(req,res) => {
+            const freelancerId = req.query.id 
+            if(freelancerId){
+                const query = {_id : new ObjectId(freelancerId)}
+                const result = await users.findOne(query)
+                return res.send(result)
+            }
+
             const email = req.query.email
             //const role = req.query.role
             //console.log(email)

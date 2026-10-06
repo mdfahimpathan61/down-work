@@ -126,6 +126,10 @@ const router = createBrowserRouter([
         path: "/client/mypostedjobs/application/:jobId",
         element: <ViewApplication></ViewApplication>
       },
+      {
+        path: "/client/candidate/:freelancerId",
+        element: <Profile></Profile>
+      }
     ],
   },
   {

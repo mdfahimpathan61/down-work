@@ -79,11 +79,11 @@ const Myappliedjobs = () => {
           />
 
           <SummaryCard
-            title="Accepted"
+            title="Hired"
             value={
               applications.filter(
                 (application) =>
-                  application?.status === "accepted"
+                  application?.status === "hired"
               ).length
             }
           />
@@ -417,26 +417,36 @@ const SummaryCard = ({ title, value }) => {
 const StatusBadge = ({ status }) => {
 
   const statusConfig = {
+  pending: {
+    text: "Pending",
+    className: "border-warning/20 bg-warning/10 text-warning",
+  },
 
-    pending: {
-      text: "Pending",
-      className:
-        "border-warning/20 bg-warning/10 text-warning",
-    },
+  shortlisted: {
+    text: "Shortlisted",
+    className: "border-primary/20 bg-primary/10 text-primary",
+  },
 
-    accepted: {
-      text: "Accepted",
-      className:
-        "border-success/20 bg-success/10 text-success",
-    },
+  interview: {
+    text: "Interview",
+    className: "border-info/20 bg-info/10 text-info",
+  },
 
-    rejected: {
-      text: "Rejected",
-      className:
-        "border-error/20 bg-error/10 text-error",
-    },
+  accepted: {
+    text: "Accepted",
+    className: "border-success/20 bg-success/10 text-success",
+  },
 
-  };
+  hired: {
+    text: "Hired",
+    className: "border-success/20 bg-success/10 text-success",
+  },
+
+  rejected: {
+    text: "Rejected",
+    className: "border-error/20 bg-error/10 text-error",
+  },
+};
 
   const config =
     statusConfig[status] || {
