@@ -14,13 +14,19 @@ const Myappliedjobs = () => {
   
 
   const {activeUser} = useAuth()
+  console.log(activeUser)
 
   useEffect(() => {
     if(!activeUser){
         return
     }
 
-    fetch(`http://localhost:3000/myappliedjobs?email=${activeUser.email}`)
+    fetch(`http://localhost:3000/myappliedjobs?email=${activeUser.email}`,{
+      headers : {
+        authorization : `Bearer ${activeUser.accessToken}`
+      
+      }
+    })
     .then(res => res.json())
     .then(data => {
         //console.log(data)

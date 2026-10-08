@@ -1,9 +1,11 @@
 const express = require('express')
 require('dotenv').config()
 
+
 const app = express()
 const cors = require('cors')
 const { MongoClient, ObjectId } = require('mongodb')
+const admin = require("firebase-admin");
 const port = process.env.PORT || 3000
 
 
@@ -11,7 +13,47 @@ app.use(cors())
 app.use(express.json())
 
 
+
+const serviceAccount = require("./down-work-9-firebase-adminsdk.json");
+const { getAuth } = require('firebase-admin/auth')
+
+admin.initializeApp({
+  credential: admin.cert(serviceAccount)
+});
+//console.log("admin --> ",admin.credential)
+
+const firebaseVerification = async(req,res,next) =>{
+// console.log("hello , i am form firebaseVerification middleware")
+ const authorization = req.headers.authorization
+ //console.log(authorization)
+
+ if(!authorization){
+    return res.status(401).send({message : "Unauthorize Access"})
+ }
+
+ const token = authorization.split(" ")[1]
+ if(!token){
+    return res.status(401).send({message : "Unauthorize Access"})
+ }
+ //console.log(token)
+
+ const decode =await getAuth().verifyIdToken(token)
+ //console.log(decode)
+ if(decode){
+    const tokenEmail = decode.email
+ //console.log(tokenEmail)
+ req.headers.token_email = tokenEmail
+ next()
+ }
+ else{
+    res.status(401).send({message : "Unauthorize Access"})
+ }
+}
+
+
 const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.5xpfw1y.mongodb.net/?appName=Cluster0`)
+
+
 
  async function connectToMongoDB() {
     try{
@@ -164,8 +206,13 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             res.send(result)
         })
 
-        app.get('/myappliedjobs', async(req, res) => {
+        app.get('/myappliedjobs',firebaseVerification, async(req, res) => {
+            //console.log("from __-->",req.headers.token_email)
+           // const tokenEmail = req.headers.token_email
             const email = req.query.email
+            // if(tokenEmail != email){
+            //    //  return res.status(403).send({message : "Forbidden Access"})
+            // }
             const query = {email : email}
             //console.log(email)
 
