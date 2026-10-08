@@ -4,16 +4,19 @@ import { RiArrowRightWideFill } from 'react-icons/ri';
 import { Link, useLoaderData } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import Loading from '../Loading';
+import useAxios from '../../hooks/useAxios';
 
 
 const Featuredjobs = () => {
     const [allJobsData,setAllJobsData] = useState([])
+    const axios = useAxios()
     const {loading} = useAuth()
    useEffect(() => {
-    fetch('http://localhost:3000/jobs')
-    .then(res => res.json())
-    .then(data => setAllJobsData(data))
+    axios.get('/jobs')
+   .then(result => setAllJobsData(result.data))
    },[])
+
+   
     //console.log(allJobsData)
     const featuredJob = allJobsData?.filter( jobs => jobs.featured == true)
     //console.log(featuredJob)
