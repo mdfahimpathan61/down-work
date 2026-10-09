@@ -143,7 +143,7 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 mx-auto max-w-360  ">
 
-      <div className="navbar rounded-b-lg border-b border-base-200 bg-base-100/95 shadow-md backdrop-blur-md">
+      <div className="navbar rounded-b-lg border-b border-base-200 bg-base-300/70 shadow-md backdrop-blur-md">
 
         {/* =====================================
             LOGO

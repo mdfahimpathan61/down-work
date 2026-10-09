@@ -3,14 +3,17 @@ import { auth } from "../firebase.config";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 
 export const AuthContext = createContext(null);
+
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
  const [loading,setLoading] = useState(true)
  const [searchTextContext, setSearchTextContext] = useState()
  const [role, setRole] = useState("")
+ 
 
 
 
@@ -61,7 +64,7 @@ const AuthProvider = ({ children }) => {
         setLoading(false)
     })
     return () => unsubscribe()
-  },[])
+  },[activeUser])
 
   const successAlert = (title) => {
     Swal.fire({
@@ -75,7 +78,11 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if(activeUser){
-      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
+      fetch(`http://localhost:3000/user?email=${activeUser.email}`,{
+        headers : {
+          authorization : `Bearer ${activeUser.accessToken}`
+        }
+      })
       .then(res => res.json())
       .then(data => {
         if(data?.role){
@@ -83,8 +90,16 @@ const AuthProvider = ({ children }) => {
          setRole(data.role)
         }
       })
+
+      // axiosSecure.get(`/user?email=${activeUser.email}`)
+      // .then(result => {
+      //   if(result.data?.role){
+      //     setRole(result.data.role)
+      //   }
+      // })
     }
   },[activeUser])
+
   const value = {
     signUpWithEmail,
     updateUser,

@@ -51,13 +51,15 @@ const Notfound = () => {
               Go Home
             </Link>
 
-            <button
-              onClick={() => window.history.back()}
+            <Link to={-1}>
+              <button
+              
               className="btn btn-outline rounded-xl px-6"
             >
               <FiArrowLeft className="text-lg" />
               Go Back
             </button>
+            </Link>
 
           </div>
 

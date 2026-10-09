@@ -12,9 +12,12 @@ const Featuredjobs = () => {
     const axios = useAxios()
     const {loading} = useAuth()
    useEffect(() => {
-    axios.get('/jobs')
-   .then(result => setAllJobsData(result.data))
-   },[])
+    axios.get('/getjobs')
+   .then(result => {
+    //console.log(result.data)
+    setAllJobsData(result.data)
+   })
+   },[axios])
 
    
     //console.log(allJobsData)

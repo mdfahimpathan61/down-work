@@ -10,6 +10,8 @@ import {
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxios from "../../hooks/useAxios";
 
 const Profile = () => {
   const { freelancerId } = useParams();
@@ -18,19 +20,26 @@ const Profile = () => {
 
   const { activeUser, role } = useAuth();
 
+  const axiosSecure = useAxiosSecure()
+  const axios = useAxios()
+
   useEffect(() => {
     if (freelancerId) {
-      fetch(`http://localhost:3000/user?id=${freelancerId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setUser(data);
-        });
+      axios.get(`/profile?id=${freelancerId}`)
+      .then(result => {
+        setUser(result.data)
+      })
+      // fetch(`http://localhost:3000/profile?id=${freelancerId}`)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setUser(data);
+      //   });
     } else if (activeUser?.email) {
-      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setUser(data);
-        });
+      axiosSecure.get(`/user?email=${activeUser.email}`)
+      .then(result => {
+        setUser(result.data)
+      })
+      
     }
   }, [activeUser, freelancerId]);
 

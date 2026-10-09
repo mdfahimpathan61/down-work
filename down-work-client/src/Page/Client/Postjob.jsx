@@ -11,13 +11,13 @@ import {
   Send,
   Plus,
   Trash2,
-  Upload,
   ChevronRight,
   Check,
   Sparkles,
 } from "lucide-react";
 import useAuth from "../../hooks/useAuth";
-import { data, useLoaderData, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const initialForm = {
   title: "",
@@ -28,7 +28,7 @@ const initialForm = {
   companyName: "",
   companyWebsite: "",
   industry: "",
-  companySize: "",
+  company_size: "",
   companyLogo: "",
 
   country: "",
@@ -61,8 +61,8 @@ const initialForm = {
   benefits: [""],
 
   workingDays: "",
-  startTime: "09:00 AM",
-  endTime: "06:00 PM",
+  startTime: "09:00",
+  endTime: "18:00",
 
   vacancy: 1,
 
@@ -282,6 +282,51 @@ function Repeater({ label, values, setValues, placeholder, required = false }) {
   );
 }
 
+// Convert the database's nested job document into the flat structure used by this form.
+function jobToForm(job) {
+  return {
+    ...initialForm,
+    ...job,
+    title: job.title ?? "",
+    category: job.category ?? "",
+    companyName: job.company?.name ?? "",
+    companyWebsite: job.company?.website ?? "",
+    industry: job.company?.industry ?? "",
+    company_size: job.company?.company_size ?? "",
+    companyLogo: job.company?.logo ?? "",
+    country: job.location?.country ?? "",
+    city: job.location?.city ?? "",
+    address: job.location?.address ?? "",
+    work_mode: job.location?.work_mode ?? "",
+    experienceLevel: job.experience?.level ?? "",
+    minExperience: job.experience?.minimum ?? "",
+    maxExperience: job.experience?.maximum ?? "",
+    currency: job.salary?.currency ?? "BDT",
+    minSalary: job.salary?.minimum ?? "",
+    maxSalary: job.salary?.maximum ?? "",
+    salaryPeriod: job.salary?.period ?? "Monthly",
+    negotiable: job.salary?.negotiable ?? true,
+    degree: job.education?.degree ?? "",
+    educationField: job.education?.field ?? "",
+    educationRequired: job.education?.required ?? false,
+    workingDays: job.working_hours?.days ?? "",
+    startTime: job.working_hours?.start ?? "09:00",
+    endTime: job.working_hours?.end ?? "18:00",
+    applicationMethod: job.application?.method ?? "Online",
+    applicationEmail: job.application?.email ?? "",
+    applyUrl: job.application?.apply_url ?? "",
+    deadline: job.application?.deadline ?? "",
+    responsibilities: Array.isArray(job.responsibilities) && job.responsibilities.length ? job.responsibilities : [""],
+    requirements: Array.isArray(job.requirements) && job.requirements.length ? job.requirements : [""],
+    preferred_qualifications: Array.isArray(job.preferred_qualifications) && job.preferred_qualifications.length ? job.preferred_qualifications : [""],
+    benefits: Array.isArray(job.benefits) && job.benefits.length ? job.benefits : [""],
+    skills: Array.isArray(job.skills) ? job.skills : [],
+    vacancy: job.vacancy ?? 1,
+    status: job.status ?? "Open",
+    featured: job.featured ?? false,
+  };
+}
+
 export default function Postjob({ mode }) {
   const [form, setForm] = useState(initialForm);
   const [activeSection, setActiveSection] = useState("basic");
@@ -290,26 +335,44 @@ export default function Postjob({ mode }) {
   const [date, setDate] = useState("posted_date");
   const { activeUser, successAlert } = useAuth();
   const { id } = useParams();
+  const axiosSecure = useAxiosSecure()
 
   const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:3000/category")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllCategories(data);
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load categories");
+        return res.json();
+      })
+      .then(setAllCategories)
+      .catch((error) => console.error("Category load error:", error));
+
+    if (mode !== "update" || !id || !activeUser) return;
+
+    let cancelled = false;
+    axiosSecure
+      .get(`/jobs?id=${id}&email=${encodeURIComponent(activeUser.email)}`)
+      .then((result) => {
+        if (cancelled) return;
+        if (result.data?._id) {
+          setForm(jobToForm(result.data));
+          setDate("updated_date");
+        } else {
+          navigate("/client/notfound");
+        }
+      })
+      .catch((error) => {
+        if (!cancelled) {
+          console.error("Job load error:", error);
+          if (error.response?.status === 404) navigate("/client/notfound");
+        }
       });
 
-    if (mode == "update") {
-      fetch(`http://localhost:3000/jobs?id=${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setForm(data);
-          setDate("updated_date");
-        });
-    }
-  }, [id, mode]);
+    return () => {
+      cancelled = true;
+    };
+  }, [id, mode, activeUser, axiosSecure, navigate]);
   // console.log(allCategories)
   const update = (field, value) => {
     if (field == "category") {
@@ -362,80 +425,68 @@ export default function Postjob({ mode }) {
 
     const payload = {
       category_id: form.category_id,
-
       title: form.title,
-
+      category: form.category,
       company: {
+        ...(form.company || {}),
         name: form.companyName,
         website: form.companyWebsite,
         industry: form.industry,
-        company_size: form.companySize,
+        company_size: form.company_size,
         logo: form.companyLogo,
       },
-
       location: {
+        ...(form.location || {}),
         city: form.city,
         country: form.country,
         address: form.address,
         work_mode: form.work_mode,
       },
-
       job_type: form.job_type,
-
       employment_type: form.employment_type,
-
       experience: {
-        minimum: Number(form.minExperience) || 0,
-        maximum: Number(form.maxExperience) || 0,
+        ...(form.experience || {}),
+        minimum: form.minExperience === "" ? (form.experience?.minimum ?? 0) : Number(form.minExperience),
+        maximum: form.maxExperience === "" ? (form.experience?.maximum ?? 0) : Number(form.maxExperience),
         level: form.experienceLevel,
       },
-
       salary: {
+        ...(form.salary || {}),
         currency: form.currency,
-        minimum: Number(form.minSalary) || 0,
-        maximum: Number(form.maxSalary) || 0,
+        minimum: form.minSalary === "" ? (form.salary?.minimum ?? 0) : Number(form.minSalary),
+        maximum: form.maxSalary === "" ? (form.salary?.maximum ?? 0) : Number(form.maxSalary),
         period: form.salaryPeriod,
         negotiable: form.negotiable,
       },
-
       description: form.description,
-
       responsibilities: form.responsibilities,
-
       requirements: form.requirements,
-
       preferred_qualifications: form.preferred_qualifications,
-
       skills: form.skills,
-
-      education: [
-        {
-          degree: form.degree,
-          field: form.educationField,
-          required: form.educationRequired,
-        },
-      ],
-
+      education: {
+        ...(form.education || {}),
+        degree: form.degree,
+        field: form.educationField,
+        required: form.educationRequired,
+      },
       benefits: form.benefits,
-
       working_hours: {
+        ...(form.working_hours || {}),
         days: form.workingDays,
         start: form.startTime,
         end: form.endTime,
       },
-
-      vacancy: Number(form.vacancy) || 0,
-
+      vacancy: form.vacancy === "" ? 1 : Number(form.vacancy),
       application: {
+        ...(form.application || {}),
         deadline: form.deadline,
         method: form.applicationMethod,
         email: form.applicationEmail,
         apply_url: form.applyUrl,
       },
       status: form.status,
-
+      featured: form.featured,
       client: activeUser.email,
-
       [date]: new Date(),
     };
 
@@ -457,21 +508,32 @@ export default function Postjob({ mode }) {
           }
         });
     } else {
-      fetch(`http://localhost:3000/updatejob?id=${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          //console.log(data.acknowledged)
-          if (data.acknowledged) {
-            successAlert("Your job is updated.");
-          }
-        });
+      // fetch(`http://localhost:3000/updatejob?id=${id}&email=${activeUser.email}`, {
+      //   method: "PATCH",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(payload),
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     //console.log(data.acknowledged)
+      //     if (data.acknowledged) {
+      //       successAlert("Your job is updated.");
+      //     }
+      //   });
       //console.log(payload);
+      axiosSecure
+        .patch(`/updatejob?id=${id}&email=${encodeURIComponent(activeUser.email)}`, payload)
+        .then((result) => {
+          if (result.data?.acknowledged || result.data?.modifiedCount >= 0) {
+            successAlert("Your job is updated.");
+            navigate("/client/mypostedjobs");
+          }
+        })
+        .catch((error) => {
+          console.error("Job update error:", error);
+        });
     }
   };
 
@@ -621,10 +683,8 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Company Name"
                   required
-                  required
-                  value={
-                    mode == "update" ? form.company?.name : form.companyName
-                  }
+                  
+                  value={form.companyName}
                   onChange={(e) => update("companyName", e.target.value)}
                   placeholder="e.g. DigitalEdge Solutions"
                 />
@@ -632,11 +692,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Company Website"
                   required
-                  value={
-                    mode == "update"
-                      ? form.company?.website
-                      : form.companyWebsite
-                  }
+                  value={form.companyWebsite}
                   onChange={(e) => update("companyWebsite", e.target.value)}
                   placeholder="https://company.com"
                 />
@@ -644,21 +700,15 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Industry"
                   required
-                  value={
-                    mode == "update" ? form.company?.industry : form.industry
-                  }
+                  value={form.industry}
                   onChange={(e) => update("industry", e.target.value)}
                   placeholder="e.g. Software & IT"
                 />
 
                 <Select
                   label="Company Size"
-                  value={
-                    mode == "update"
-                      ? form.company?.companySize
-                      : form.companySize
-                  }
-                  onChange={(e) => update("companySize", e.target.value)}
+                  value={form.company_size}
+                  onChange={(e) => update("company_size", e.target.value)}
                 >
                   <option value="">Select company size</option>
                   <option>1-10 employees</option>
@@ -671,9 +721,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Company Logo URL"
                   required
-                  value={
-                    mode == "update" ? form.company?.logo : form.companyLogo
-                  }
+                  value={form.companyLogo}
                   placeholder="Upload company logo URL"
                   className=""
                   onChange={(e) => update("companyLogo", e.target.value)}
@@ -692,9 +740,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Country"
                   required
-                  value={
-                    mode == "update" ? form.location?.country : form.country
-                  }
+                  value={form.country}
                   onChange={(e) => update("country", e.target.value)}
                   placeholder="Bangladesh"
                 />
@@ -702,7 +748,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="City"
                   required
-                  value={mode == "update" ? form.location?.city : form.city}
+                  value={form.city}
                   onChange={(e) => update("city", e.target.value)}
                   placeholder="Dhaka"
                 />
@@ -711,9 +757,7 @@ export default function Postjob({ mode }) {
                   <Input
                     label="Address"
                     required
-                    value={
-                      mode == "update" ? form.location?.address : form.address
-                    }
+                    value={form.address}
                     onChange={(e) => update("address", e.target.value)}
                     placeholder="e.g. Dhanmondi, Dhaka"
                   />
@@ -725,17 +769,15 @@ export default function Postjob({ mode }) {
                   </label>
 
                   <div className="grid grid-cols-3 gap-3">
-                    {["On-site", "Hybrid", "Remote"].map((mode) => {
+                    {["On-site", "Hybrid", "Remote"].map((modee) => {
                       const active =
-                        mode == "update"
-                          ? form.location?.work_mode
-                          : form.work_mode === mode;
+                        form.work_mode === modee
 
                       return (
                         <button
-                          key={mode}
+                          key={modee}
                           type="button"
-                          onClick={() => update("work_mode", mode)}
+                          onClick={() => update("work_mode", modee)}
                           className={`rounded-xl border px-4 py-3 text-sm font-medium transition ${
                             active
                               ? "border-primary bg-primary/10 text-primary ring-2 ring-primary/10"
@@ -745,7 +787,7 @@ export default function Postjob({ mode }) {
                           {active && (
                             <Check size={15} className="mr-1.5 inline" />
                           )}
-                          {mode}
+                          {modee}
                         </button>
                       );
                     })}
@@ -765,11 +807,7 @@ export default function Postjob({ mode }) {
                 <Select
                   label="Experience Level"
                   required
-                  value={
-                    mode == "update"
-                      ? form.experience?.level
-                      : form.experienceLevel
-                  }
+                  value={form.experienceLevel}
                   onChange={(e) => update("experienceLevel", e.target.value)}
                 >
                   <option value="">Select level</option>
@@ -785,11 +823,7 @@ export default function Postjob({ mode }) {
                   label="Minimum Experience"
                   required
                   type="number"
-                  value={
-                    mode == "update"
-                      ? form.experience?.minimum
-                      : form.minExperience
-                  }
+                  value={form.minExperience}
                   onChange={(e) => update("minExperience", e.target.value)}
                   placeholder="0"
                 />
@@ -798,11 +832,7 @@ export default function Postjob({ mode }) {
                   label="Maximum Experience"
                   required
                   type="number"
-                  value={
-                    mode == "update"
-                      ? form.experience?.maximum
-                      : form.maxExperience
-                  }
+                  value={form.maxExperience}
                   onChange={(e) => update("maxExperience", e.target.value)}
                   placeholder="5"
                 />
@@ -813,9 +843,7 @@ export default function Postjob({ mode }) {
               <div className="grid gap-5 md:grid-cols-4">
                 <Select
                   label="Currency"
-                  value={
-                    mode == "update" ? form.salary?.currency : form.currency
-                  }
+                  value={form.currency}
                   onChange={(e) => update("currency", e.target.value)}
                 >
                   <option>BDT</option>
@@ -828,9 +856,7 @@ export default function Postjob({ mode }) {
                   label="Minimum Salary"
                   required
                   type="number"
-                  value={
-                    mode == "update" ? form.salary?.minimum : form.minSalary
-                  }
+                  value={form.minSalary}
                   onChange={(e) => update("minSalary", e.target.value)}
                   placeholder="30000"
                 />
@@ -839,18 +865,14 @@ export default function Postjob({ mode }) {
                   label="Maximum Salary"
                   required
                   type="number"
-                  value={
-                    mode == "update" ? form.salary?.maximum : form.maxSalary
-                  }
+                  value={form.maxSalary}
                   onChange={(e) => update("maxSalary", e.target.value)}
                   placeholder="50000"
                 />
 
                 <Select
                   label="Salary Period"
-                  value={
-                    mode == "update" ? form.salary?.period : form.salaryPeriod
-                  }
+                  value={form.salaryPeriod}
                   onChange={(e) => update("salaryPeriod", e.target.value)}
                 >
                   <option>Monthly</option>
@@ -863,9 +885,7 @@ export default function Postjob({ mode }) {
               <label className="mt-5 flex cursor-pointer items-center gap-3">
                 <input
                   type="checkbox"
-                  checked={
-                    mode == "update" ? form.salary?.negotiable : form.negotiable
-                  }
+                  checked={form.negotiable}
                   onChange={(e) => update("negotiable", e.target.checked)}
                   className="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary"
                 />
@@ -901,7 +921,7 @@ export default function Postjob({ mode }) {
 
                 <Repeater
                   label="Preferred Qualifications"
-                  values={form.preferred_qualifications}
+                  values={form?.preferred_qualifications}
                   setValues={(value) =>
                     update("preferred_qualifications", value)
                   }
@@ -1070,7 +1090,7 @@ export default function Postjob({ mode }) {
                 <Input
                   label="Number of Vacancies"
                   required
-                  required
+                  
                   type="number"
                   value={form.vacancy}
                   onChange={(e) => update("vacancy", Number(e.target.value))}
@@ -1107,10 +1127,12 @@ export default function Postjob({ mode }) {
                 <Select
                   label="Status"
                   value={form.status}
-                  onChange={(e) => update("status", e.target.value)}
+                  onChange={(e) => {
+                   
+                    update("status", e.target.value)}}
                 >
-                  <option value="open">Open</option>
-                  <option value="hired">Hired</option>
+                  <option value="Open">Open</option>
+                  <option value="Hired">Hired</option>
                 </Select>
               </div>
 
@@ -1154,7 +1176,7 @@ export default function Postjob({ mode }) {
 
               <button
                 type="submit"
-                onClick={() => update("status", "Open")}
+                
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary"
               >
                 {mode == "update" ? "Update" : " Publish Job"}

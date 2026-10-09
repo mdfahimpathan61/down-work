@@ -5,6 +5,7 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 import { IoAddOutline, IoCloseOutline } from "react-icons/io5";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const Updateprofile = () => {
@@ -14,6 +15,7 @@ const Updateprofile = () => {
   const [skillInput, setSkillInput] = useState("");
   const [id,setId] = useState(null)
   const navigate = useNavigate()
+  const axiosSecure = useAxiosSecure()
 
   const [form, setForm] = useState({
     name: "",
@@ -32,23 +34,40 @@ const Updateprofile = () => {
 
   useEffect(() => {
     if (activeUser?.email) {
-      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setForm({
-            name: data?.name || "",
-            email: data?.email || activeUser.email,
-            phone: data?.phone || "",
-            image: data?.image || "",
-            location: data?.location || "",
-            bio: data?.bio || "",
-            experience: data?.experience || "",
-            degree: data?.education?.degree || "",
-            educationField: data?.education?.field || "",
+      axiosSecure.get(`/user?email=${activeUser.email}`)
+      .then(result => {
+        console.log(result.data)
+        setForm({
+            name: result.data?.name || "",
+            email: result.data?.email || activeUser.email,
+            phone: result.data?.phone || "",
+            image: result.data?.image || "",
+            location: result.data?.location || "",
+            bio: result.data?.bio || "",
+            experience: result.data?.experience || "",
+            degree: result.data?.education?.degree || "",
+            educationField: result.data?.education?.field || "",
           });
-          setId(data._id)
-          setSkills(data?.skills || []);
-        });
+          setId(result.data._id)
+          setSkills(result.data?.skills || []);
+      })
+      // fetch(`http://localhost:3000/user?email=${activeUser.email}`)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setForm({
+      //       name: data?.name || "",
+      //       email: data?.email || activeUser.email,
+      //       phone: data?.phone || "",
+      //       image: data?.image || "",
+      //       location: data?.location || "",
+      //       bio: data?.bio || "",
+      //       experience: data?.experience || "",
+      //       degree: data?.education?.degree || "",
+      //       educationField: data?.education?.field || "",
+      //     });
+      //     setId(data._id)
+      //     setSkills(data?.skills || []);
+      //   });
     }
   }, [activeUser?.email]);
 

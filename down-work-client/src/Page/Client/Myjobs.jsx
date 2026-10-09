@@ -12,6 +12,7 @@ import { useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import Loading from "../../Component/Loading";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 
@@ -25,15 +26,20 @@ export default function MyJobs() {
   const [nojobText, setNoJobText] = useState(
     "You have not create any job yet!",
   );
+  const axiosSecure = useAxiosSecure()
 
   useEffect(() => {
-    fetch(`http://localhost:3000/myjobs?email=${activeUser.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setJobs(data);
+    axiosSecure(`/myjobs?email=${activeUser.email}`)
+    .then(result => {
+      setJobs(result.data);
+    })
+    // fetch(`http://localhost:3000/myjobs?email=${activeUser.email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setJobs(data);
 
-        //console.log(data);
-      });
+    //     //console.log(data);
+    //   });
   }, [activeUser]);
 
   const filteredJobs = useMemo(() => {
@@ -75,16 +81,10 @@ export default function MyJobs() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed)
-        fetch(
-          `http://localhost:3000/deletemyjob?email=${activeUser.email}&&id=${jobId}`,
-          {
-            method: "DELETE",
-          },
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount) {
+
+        axiosSecure.delete(`deletemyjob?email=${activeUser.email}&id=${jobId}`)
+        .then(result => {
+          if (result.data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
@@ -92,9 +92,27 @@ export default function MyJobs() {
               });
               setJobs((prev) => prev.filter((job) => job._id !== jobId));
             }
-          });
-    });
-  };
+        })
+  //       fetch(
+  //         `http://localhost:3000/deletemyjob?email=${activeUser.email}&&id=${jobId}`,
+  //         {
+  //           method: "DELETE",
+  //         },
+  //       )
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           console.log(data);
+  //           if (data.deletedCount) {
+  //             Swal.fire({
+  //               title: "Deleted!",
+  //               text: "Your file has been deleted.",
+  //               icon: "success",
+  //             });
+  //             setJobs((prev) => prev.filter((job) => job._id !== jobId));
+  //           }
+  //         });
+     });
+   };
 
   const getStatusStyle = (jobStatus) => {
     if (jobStatus === "open") {
@@ -149,8 +167,8 @@ export default function MyJobs() {
               />
 
               <SummaryCard
-                label="Draft Jobs"
-                value={jobs.filter((job) => job.status === "draft").length}
+                label="Hired Jobs"
+                value={jobs.filter((job) => job.status.toLocaleLowerCase() === "hired").length}
               />
             </div>
 

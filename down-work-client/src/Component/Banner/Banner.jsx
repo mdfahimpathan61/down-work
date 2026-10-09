@@ -43,7 +43,7 @@ const Banner = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/30 via-black/10 to-white/5" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary/10 via-primary/5 to-white/5" />
 
         {/* Decorative circles */}
         <div className="absolute -top-24 -right-24 w-64 h-64 sm:w-80 sm:h-80 bg-primary/30 rounded-full blur-3xl" />
@@ -75,7 +75,7 @@ const Banner = () => {
                 border
                 border-white/20
                 backdrop-blur-md
-                text-white
+                text-black/50
                 text-xs
                 sm:text-sm
                 font-medium
@@ -95,13 +95,13 @@ const Banner = () => {
                 lg:text-6xl
                 xl:text-7xl
                 font-extrabold
-                text-white
+                text-black/70
                 leading-tight
               "
             >
               <Typewriter
                 options={{
-                  delay: 120,
+                  delay: 320,
                   cursor: "|",
                 }}
                 onInit={(typewriter) => {
@@ -115,7 +115,7 @@ const Banner = () => {
             {/* Description */}
             <p
               className="
-                text-white/80
+                text-black/60
                 text-sm
                 sm:text-base
                 md:text-xl
@@ -233,7 +233,7 @@ const Banner = () => {
                   sm:text-sm
                 "
               >
-                <span className="text-white/60">
+                <span className="text-black/60">
                   Popular:
                 </span>
 
@@ -246,12 +246,12 @@ const Banner = () => {
                     sm:px-3
                     py-1
                     rounded-full
-                    bg-white/10
+                    bg-primary/20
                     hover:bg-white/20
                     border
                     border-white/10
-                    text-white/80
-                    hover:text-white
+                    text-white
+                   
                     backdrop-blur-sm
                     transition
                   "
@@ -268,12 +268,12 @@ const Banner = () => {
                     sm:px-3
                     py-1
                     rounded-full
-                    bg-white/10
+                    bg-primary/20
                     hover:bg-white/20
                     border
                     border-white/10
-                    text-white/80
-                    hover:text-white
+                    text-white
+                   
                     backdrop-blur-sm
                     transition
                   "
@@ -286,16 +286,16 @@ const Banner = () => {
                     handlePopularSearch("Marketing")
                   }
                   className="
-                    px-2.5
+                   px-2.5
                     sm:px-3
                     py-1
                     rounded-full
-                    bg-white/10
+                    bg-primary/20
                     hover:bg-white/20
                     border
                     border-white/10
-                    text-white/80
-                    hover:text-white
+                    text-white
+                   
                     backdrop-blur-sm
                     transition
                   "

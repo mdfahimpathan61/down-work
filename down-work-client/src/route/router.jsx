@@ -71,7 +71,7 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
         Component: CategoriesJobs,
-        loader: () => fetch("http://localhost:3000/jobs"),
+        loader: () => fetch("http://localhost:3000/getjobs"),
         hydrateFallbackElement: Loading,
       },
     ],
@@ -91,13 +91,13 @@ const router = createBrowserRouter([
         path: "/details/job/:id",
         element: <JobDetails></JobDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/jobs?id=${params.id}`),
+          fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
         hydrateFallbackElement: Loading,
       },
       {
         path: "/details/company/:id",
         element: <CompanyDetails></CompanyDetails>,
-        loader: () => fetch("http://localhost:3000/jobs"),
+        loader: ({ params }) => fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
         hydrateFallbackElement: Loading,
       },
     ],
@@ -129,7 +129,11 @@ const router = createBrowserRouter([
       {
         path: "/client/candidate/:freelancerId",
         element: <Profile></Profile>
-      }
+      },
+      {
+    path: "/client/notfound",
+    element: <Notfound></Notfound>,
+  },
     ],
   },
   {
@@ -152,6 +156,10 @@ const router = createBrowserRouter([
         path: "/freelancer/profile",
         element: <Profile></Profile>,
       },
+      {
+    path: "/freelancer/notfound",
+    element: <Notfound></Notfound>,
+  },
     ],
   },
   {
@@ -162,5 +170,6 @@ const router = createBrowserRouter([
     path: "/notfound",
     element: <Notfound></Notfound>,
   },
+  
 ]);
 export default router;

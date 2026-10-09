@@ -8,30 +8,37 @@ import {
 } from "react-icons/fi";
 import { Link, useLoaderData } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Myappliedjobs = () => {
     const [applicationsData,setApplicationsData]  = useState([])
   
 
   const {activeUser} = useAuth()
-  console.log(activeUser)
+  const axiosSecure = useAxiosSecure()
+  //console.log(activeUser)
 
   useEffect(() => {
     if(!activeUser){
         return
     }
 
-    fetch(`http://localhost:3000/myappliedjobs?email=${activeUser.email}`,{
-      headers : {
-        authorization : `Bearer ${activeUser.accessToken}`
+    axiosSecure.get(`/myappliedjobs?email=${activeUser.email}`)
+    .then(result => {
+      setApplicationsData(result.data)
+    })
+
+    // fetch(`http://localhost:3000/myappliedjobs?email=${activeUser.email}`,{
+    //   headers : {
+    //     authorization : `Bearer ${activeUser.accessToken}`
       
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-        //console.log(data)
-        setApplicationsData(data)
-    })
+    //   }
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //     //console.log(data)
+    //     setApplicationsData(data)
+    // })
   },[activeUser])
 
   const applications = Array.isArray(applicationsData)

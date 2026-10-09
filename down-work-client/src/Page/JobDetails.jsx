@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaHouseFlag } from "react-icons/fa6";
-import {
-  HiOutlineCurrencyDollar,
-  HiOutlineAcademicCap,
-} from "react-icons/hi2";
+import { HiOutlineCurrencyDollar, HiOutlineAcademicCap } from "react-icons/hi2";
 import { LiaIndustrySolid } from "react-icons/lia";
-import {
-  MdOutlineAccessTime,
-  MdWorkOutline,
-} from "react-icons/md";
-import {
-  SlLocationPin,
-  SlBriefcase,
-} from "react-icons/sl";
+import { MdOutlineAccessTime, MdWorkOutline } from "react-icons/md";
+import { SlLocationPin, SlBriefcase } from "react-icons/sl";
 import {
   FiArrowLeft,
   FiCalendar,
@@ -25,67 +16,62 @@ import { Link, useLoaderData, useParams } from "react-router";
 import useAuth from "../hooks/useAuth";
 
 const JobDetails = () => {
-  const { role,activeUser,successAlert } = useAuth();
+  const { role, activeUser, successAlert } = useAuth();
   const { id } = useParams();
-  console.log(id)
+  //console.log(id)
   const job = useLoaderData();
-  const [applyed, setApplyed] = useState(false)
-  const [freelancer, setFreelancer] = useState(null)
+  const [applyed, setApplyed] = useState(false);
+  const [freelancer, setFreelancer] = useState(null);
 
   //console.log(job)
 
   useEffect(() => {
-    if(role == 'freelancer'){
+    if (role == "freelancer") {
       fetch(`http://localhost:3000/applyed?email=${activeUser.email}&id=${id}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data._id){
-        setApplyed(true)
-      }
-      console.log(data)
-    })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data._id) {
+            setApplyed(true);
+          }
+          console.log(data);
+        });
 
-
-    fetch(`http://localhost:3000/user?email=${activeUser.email}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data._id){
-        setFreelancer(data)
-      }
-    })
+      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data._id) {
+            setFreelancer(data);
+          }
+        });
     }
-  },[activeUser,id,role]) 
+  }, [activeUser, id, role]);
 
-//console.log(applyed)
-  const handleApplyed = () =>{
+  //console.log(applyed)
+  const handleApplyed = () => {
     const payload = {
-      freelancer_id : freelancer._id,
-      job_id : id,
+      freelancer_id: freelancer._id,
+      job_id: id,
       email: freelancer.email,
-     
-    }
-    fetch(`http://localhost:3000/applyjob`,{
-      method:"POST",
-      headers:{
-        "Content-Type" : "application/json"
+    };
+    fetch(`http://localhost:3000/applyjob`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     })
-    .then(res=> res.json())
-    .then(data => {
-      console.log(data)
-      if(data.acknowledged){
-        successAlert("You Applied the Job")
-        setApplyed(true)
-      }
-    })
-
-    
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          successAlert("You Applied the Job");
+          setApplyed(true);
+        }
+      });
+  };
   // -----------------------------------
   // Find current job safely
   // -----------------------------------
- 
 
   // -----------------------------------
   // If job doesn't exist
@@ -98,13 +84,10 @@ const JobDetails = () => {
             <SlBriefcase className="text-2xl text-slate-400" />
           </div>
 
-          <h2 className="text-2xl font-bold text-slate-900">
-            Job Not Found
-          </h2>
+          <h2 className="text-2xl font-bold text-slate-900">Job Not Found</h2>
 
           <p className="mt-2 text-sm text-slate-500">
-            The job you are looking for doesn't exist
-            or has been removed.
+            The job you are looking for doesn't exist or has been removed.
           </p>
 
           <Link
@@ -140,32 +123,22 @@ const JobDetails = () => {
     updated_date,
   } = job;
 
-  const safeResponsibilities =
-    Array.isArray(responsibilities)
-      ? responsibilities
-      : [];
-
-  const safeRequirements =
-    Array.isArray(requirements)
-      ? requirements
-      : [];
-
-  const safePreferredQualifications =
-    Array.isArray(preferred_qualifications)
-      ? preferred_qualifications
-      : [];
-
-  const safeSkills = Array.isArray(skills)
-    ? skills
+  const safeResponsibilities = Array.isArray(responsibilities)
+    ? responsibilities
     : [];
 
-  const safeEducation = Array.isArray(education)
+  const safeRequirements = Array.isArray(requirements) ? requirements : [];
+
+  const safePreferredQualifications = Array.isArray(preferred_qualifications)
+    ? preferred_qualifications
+    : [];
+
+  const safeSkills = Array.isArray(skills) ? skills : [];
+
+  const safeEducation =
+  education && typeof education === "object" && !Array.isArray(education)
     ? education
-    : [];
-
-
-   
-
+    : {};
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -188,7 +161,6 @@ const JobDetails = () => {
         <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
           <div className="bg-gradient-to-r from-primary/10 via-white to-white p-5 sm:p-8 lg:p-10">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              
               {/* Company + Job */}
               <div className="flex items-start gap-4 sm:gap-5">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:h-20 sm:w-20">
@@ -226,8 +198,7 @@ const JobDetails = () => {
                   >
                     <LiaIndustrySolid className="text-lg" />
 
-                    {company?.name ||
-                      "Company not available"}
+                    {company?.name || "Company not available"}
                   </Link>
 
                   <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
@@ -240,8 +211,7 @@ const JobDetails = () => {
 
                     <span className="inline-flex items-center gap-1.5">
                       <FiCalendar />
-                      Posted{" "}
-                      {posted_date || "N/A"}
+                      Posted {posted_date || "N/A"}
                     </span>
                   </div>
                 </div>
@@ -264,8 +234,7 @@ const JobDetails = () => {
                 </div>
 
                 <p className="mt-1 text-xs text-slate-500">
-                  {salary?.currency || "N/A"} /{" "}
-                  {salary?.period || "N/A"}
+                  {salary?.currency || "N/A"} / {salary?.period || "N/A"}
                 </p>
 
                 {salary?.negotiable && (
@@ -284,11 +253,7 @@ const JobDetails = () => {
             <InfoItem
               icon={<SlLocationPin />}
               label="Location"
-              value={
-                location?.address ||
-                location?.city ||
-                "N/A"
-              }
+              value={location?.address || location?.city || "N/A"}
             />
 
             <InfoItem
@@ -312,9 +277,7 @@ const JobDetails = () => {
             <InfoItem
               icon={<FiUsers />}
               label="Vacancy"
-              value={`${vacancy ?? 0} Position${
-                vacancy === 1 ? "" : "s"
-              }`}
+              value={`${vacancy ?? 0} Position${vacancy === 1 ? "" : "s"}`}
             />
           </div>
         </section>
@@ -323,10 +286,8 @@ const JobDetails = () => {
             MAIN CONTENT
         ================================= */}
         <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          
           {/* LEFT / MAIN */}
           <main className="space-y-6 lg:col-span-2">
-            
             {/* Description */}
             <ContentCard title="Job Description">
               {description ? (
@@ -342,14 +303,9 @@ const JobDetails = () => {
             <ContentCard title="Responsibilities">
               {safeResponsibilities.length > 0 ? (
                 <ul className="space-y-3">
-                  {safeResponsibilities.map(
-                    (responsibility, index) => (
-                      <ListItem
-                        key={index}
-                        text={responsibility}
-                      />
-                    )
-                  )}
+                  {safeResponsibilities.map((responsibility, index) => (
+                    <ListItem key={index} text={responsibility} />
+                  ))}
                 </ul>
               ) : (
                 <EmptyText text="No responsibilities provided." />
@@ -360,14 +316,9 @@ const JobDetails = () => {
             <ContentCard title="Requirements">
               {safeRequirements.length > 0 ? (
                 <ul className="space-y-3">
-                  {safeRequirements.map(
-                    (requirement, index) => (
-                      <ListItem
-                        key={index}
-                        text={requirement}
-                      />
-                    )
-                  )}
+                  {safeRequirements.map((requirement, index) => (
+                    <ListItem key={index} text={requirement} />
+                  ))}
                 </ul>
               ) : (
                 <EmptyText text="No requirements provided." />
@@ -375,18 +326,12 @@ const JobDetails = () => {
             </ContentCard>
 
             {/* Preferred Qualifications */}
-            {safePreferredQualifications.length >
-              0 && (
+            {safePreferredQualifications.length > 0 && (
               <ContentCard title="Preferred Qualifications">
                 <ul className="space-y-3">
-                  {safePreferredQualifications.map(
-                    (qualification, index) => (
-                      <ListItem
-                        key={index}
-                        text={qualification}
-                      />
-                    )
-                  )}
+                  {safePreferredQualifications.map((qualification, index) => (
+                    <ListItem key={index} text={qualification} />
+                  ))}
                 </ul>
               </ContentCard>
             )}
@@ -414,43 +359,34 @@ const JobDetails = () => {
               SIDEBAR
           ================================= */}
           <aside className="space-y-6">
-            
             {/* Education */}
             <ContentCard title="Education">
-              {safeEducation.length > 0 ? (
-                <div className="space-y-4">
-                  {safeEducation.map(
-                    (item, index) => (
-                      <div
-                        key={index}
-                        className="rounded-xl bg-slate-50 p-4"
-                      >
-                        <div className="flex gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                            <HiOutlineAcademicCap className="text-xl" />
-                          </div>
+              {safeEducation &&
+              !Array.isArray(safeEducation) &&
+              typeof safeEducation === "object" &&
+              Object.keys(safeEducation).length > 0 ? (
+                <div className="rounded-xl bg-slate-50 p-4">
+                  <div className="flex gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <HiOutlineAcademicCap className="text-xl" />
+                    </div>
 
-                          <div>
-                            <p className="font-semibold text-slate-800">
-                              {item?.degree ||
-                                "Degree not specified"}
-                            </p>
+                    <div>
+                      <p className="font-semibold text-slate-800">
+                        {safeEducation.degree || "Degree not specified"}
+                      </p>
 
-                            <p className="mt-1 text-sm text-slate-500">
-                              {item?.field ||
-                                "Field not specified"}
-                            </p>
+                      <p className="mt-1 text-sm text-slate-500">
+                        {safeEducation.field || "Field not specified"}
+                      </p>
 
-                            {item?.required && (
-                              <span className="mt-2 inline-block text-xs font-medium text-primary">
-                                Required
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  )}
+                      {safeEducation.required && (
+                        <span className="mt-2 inline-block text-xs font-medium text-primary">
+                          Required
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <EmptyText text="No education information provided." />
@@ -464,11 +400,7 @@ const JobDetails = () => {
                   icon={<FiMapPin />}
                   label="Location"
                   value={
-                    [
-                      location?.address,
-                      location?.city,
-                      location?.country,
-                    ]
+                    [location?.address, location?.city, location?.country]
                       .filter(Boolean)
                       .join(", ") || "N/A"
                   }
@@ -558,24 +490,31 @@ const JobDetails = () => {
             APPLY SECTION
         ================================= */}
         {role !== "client" && (
-          <div className={`mt-8 rounded-3xl  p-5 shadow-lg sm:p-7 ${applyed ? "bg-gray-500" : "bg-linear-to-r from-primary to-primary/80"}`}>
+          <div
+            className={`mt-8 rounded-3xl  p-5 shadow-lg sm:p-7 ${applyed ? "bg-gray-500" : "bg-linear-to-r from-primary to-primary/80"}`}
+          >
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              {
-                applyed ? <h3 className="text-gray-50 text-xl font-bold sm:text-2xl">
+              {applyed ? (
+                <h3 className="text-gray-50 text-xl font-bold sm:text-2xl">
                   You applied this job.
-                </h3> :<div className="text-white">
-                <h3 className="text-xl font-bold sm:text-2xl">
-                  Interested in this position?
                 </h3>
+              ) : (
+                <div className="text-white">
+                  <h3 className="text-xl font-bold sm:text-2xl">
+                    Interested in this position?
+                  </h3>
 
-                <p className="mt-1 text-sm text-white/80">
-                  Apply now and take the next step in your
-                  career.
-                </p>
-              </div>
-              }
+                  <p className="mt-1 text-sm text-white/80">
+                    Apply now and take the next step in your career.
+                  </p>
+                </div>
+              )}
 
-              <button disabled={applyed} onClick={() => handleApplyed()} className={`w-full rounded-xl ${applyed ? "bg-gray-300 text-gray-600" :'bg-white text-primary hover:bg-slate-100'} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}>
+              <button
+                disabled={applyed}
+                onClick={() => handleApplyed()}
+                className={`w-full rounded-xl ${applyed ? "bg-gray-300 text-gray-600" : "bg-white text-primary hover:bg-slate-100"} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}
+              >
                 {applyed ? "Applied" : "Apply Now"}
               </button>
             </div>
@@ -600,9 +539,7 @@ const InfoItem = ({ icon, label, value }) => {
         </span>
       </div>
 
-      <p className="truncate text-sm font-semibold text-slate-700">
-        {value}
-      </p>
+      <p className="truncate text-sm font-semibold text-slate-700">{value}</p>
     </div>
   );
 };
@@ -648,9 +585,7 @@ const SideInfo = ({ icon, label, value }) => {
       </div>
 
       <div className="min-w-0">
-        <p className="text-xs font-medium text-slate-400">
-          {label}
-        </p>
+        <p className="text-xs font-medium text-slate-400">{label}</p>
 
         <p className="mt-1 break-words text-sm font-medium text-slate-700">
           {value}
@@ -664,14 +599,8 @@ const SideInfo = ({ icon, label, value }) => {
    EMPTY TEXT
 ========================================= */
 
-const EmptyText = ({
-  text = "No information provided.",
-}) => {
-  return (
-    <p className="text-sm italic text-slate-400">
-      {text}
-    </p>
-  );
+const EmptyText = ({ text = "No information provided." }) => {
+  return <p className="text-sm italic text-slate-400">{text}</p>;
 };
 
 export default JobDetails;

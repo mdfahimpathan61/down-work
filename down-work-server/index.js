@@ -106,12 +106,19 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
         })
         
 
-        app.patch('/updatejob', async(req,res) =>{
+        app.patch('/updatejob',firebaseVerification, async(req,res) =>{
             const id = req.query.id
+            const clientEmail = req.query.email
+            const tokenEmail = req.headers.token_email
+            console.log(clientEmail,tokenEmail)
+
+            if(clientEmail != tokenEmail){
+                return res.status(403).send.apply({message : "Forbidden Access"})
+            }
             const updatedJob = req.body
             //console.log(id)
-            console.log(updatedJob)
-            const query = {_id : new ObjectId(id)}
+            //console.log(updatedJob)
+            const query = {_id : new ObjectId(id), client:clientEmail}
             const update = { $set : updatedJob}
             const result = await postedJobs.updateOne(query, update)
             res.send(result)
@@ -138,12 +145,16 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
         
 
 
-        app.get('/jobs', async(req,res) => {
+        app.get('/jobs',firebaseVerification, async(req,res) => {
+            const id = req.query.id
+            const clientEmail = req.query.email
             
-            if(req.query.id){
-                const id = req.query.id
+                const tokenEmail = req.headers.token_email
+                if(tokenEmail != clientEmail){
+                    return res.status(403).send({message : "Forbidden Access"})
+                }
                 
-                const query = {_id : new ObjectId(id)}
+                const query = {_id : new ObjectId(id), client : clientEmail}
                 const result =await postedJobs.findOne(query)
                 //console.log(result)
                 if(result){
@@ -153,25 +164,36 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
                     res.status(404).send({message : "Job not found"})
                 }
                 
-            }
-             else{
-                const cursor =await postedJobs.find().toArray()
-             res.send(cursor)
-             }
+            
+             
         })
+
+        app.get('/getjobs', async(req, res) => {
+            const cursor =await postedJobs.find().toArray()
+             res.send(cursor)
+        })
+
+        app.get('/jobdetails', async(req, res) => {
+            const id = req.query.id
+            //console.log(id)
+            const query = {_id : new ObjectId(id)}
+            const result = await postedJobs.findOne(query)
+            res.send(result)
+        })
+
         app.get('/category', async(req,res) => {
             const cursor = await category.find().toArray()
             res.send(cursor)
         })
-        app.get("/user", async(req,res) => {
-            const freelancerId = req.query.id 
-            if(freelancerId){
-                const query = {_id : new ObjectId(freelancerId)}
-                const result = await users.findOne(query)
-                return res.send(result)
-            }
+        app.get("/user",firebaseVerification, async(req,res) => {
+            
 
             const email = req.query.email
+            const tokenEmail = req.headers.token_email
+            console.log(email, tokenEmail)
+            if(email != tokenEmail){
+                res.status(403).send({message : "Forbidden Access"})
+            }
             //const role = req.query.role
             //console.log(email)
             const query = {email : email}
@@ -182,9 +204,24 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             }
             res.send(result)
         })
-        app.get('/myjobs', async(req,res) => {
+
+        app.get('/profile',async(req,res) => {
+            const freelancerId = req.query.id 
+            if(freelancerId){
+                const query = {_id : new ObjectId(freelancerId)}
+                const result = await users.findOne(query)
+                return res.send(result)
+            }
+        })
+
+
+        app.get('/myjobs',firebaseVerification, async(req,res) => {
             const email = req.query.email
             const query = {client : email}
+            const tokenEmail = req.headers.token_email
+            if(email != tokenEmail){
+                res.status(403).send({message : "Forbidden Access"})
+            }
             const projectField = {_id:1, location:1, title : 1,jobType:1, posted_date : 1, vacancy : 1, status:1,  }
             const cursor =  postedJobs.find(query).project(projectField)
             const result = await cursor.toArray()
@@ -213,6 +250,10 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             // if(tokenEmail != email){
             //    //  return res.status(403).send({message : "Forbidden Access"})
             // }
+            const tokenEmail = req.headers.token_email
+            if(email != tokenEmail){
+                res.status(403).send({message : "Forbidden Access"})
+            }
             const query = {email : email}
             //console.log(email)
 
@@ -308,10 +349,15 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             
        
 
-        app.delete('/deletemyjob', async(req,res) =>{
+        app.delete('/deletemyjob',firebaseVerification, async(req,res) =>{
                 const id = req.query.id
                 const email = req.query.email
-                console.log(id, email)
+                const tokenEmail = req.headers.token_email
+
+                if(email != tokenEmail){
+                    res.status(403).send({message : "Forbidden Access"})
+                }
+                //console.log(id, email)
                 const query = {_id : new ObjectId(id), client:email}
                 const result = await postedJobs.deleteOne(query)
                 res.send(result)
