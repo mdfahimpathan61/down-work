@@ -1,10 +1,10 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import {Fragment, useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { IoBriefcaseOutline } from "react-icons/io5";
+import { IoBriefcaseOutline, IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { FiSearch, FiSliders } from "react-icons/fi";
 import NojobFound from "./NojobFound";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -53,6 +53,29 @@ const CategoriesJobs = () => {
   }, [skip, page]);
 
   const searchRef = useRef();
+
+  
+const getPaginationPages = (currentPage, totalPages) => {
+  const pages = new Set();
+
+  // প্রথম দুইটি পেজ
+  pages.add(0);
+  pages.add(1);
+
+  // Active page-এর আশেপাশে পেজ
+  pages.add(currentPage - 1);
+  pages.add(currentPage);
+  pages.add(currentPage + 1);
+
+  // শেষের দুইটি পেজ
+  pages.add(totalPages - 2);
+  pages.add(totalPages - 1);
+
+  return [...pages]
+    .filter((p) => p >= 0 && p < totalPages)
+    .sort((a, b) => a - b);
+};
+
 
   const handleSearch = (event) => {
     if (event) {
@@ -399,19 +422,39 @@ const CategoriesJobs = () => {
         </div>
       ))}
 
-      <div className="flex flex-wrap justify-center gap-2">
-        {[...Array(totalPage).keys()].map((i) => (
-          <button
-            key={i}
-            onClick={() => setPage(i)}
-            className={`btn ${
-              page === i ? "bg-primary text-white" : ""
-            }`}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+      
+      
+<div className="mt-6 flex w-full flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+  {
+          page >= 1 && <button title="Previous Page" onClick={() => setPage(page-1)} className=" btn border-0 bg-transparent text-md md:text-lg hover:text-primary"><IoChevronBack /> </button>
+        }
+  {getPaginationPages(page, totalPage).map((p, index, pages) => (
+    <Fragment key={p}>
+      {index > 0 && p - pages[index - 1] > 1 && (
+        <span className="px-0.5 text-sm text-accent sm:px-1 sm:text-base">
+          ...
+        </span>
+      )}
+
+      <button
+        onClick={() => setPage(p)}
+        aria-current={page === p ? "page" : undefined}
+        className={`btn btn-xs min-w-8 px-2 sm:btn-sm sm:min-w-10 sm:px-3 ${
+          page === p
+            ? "border-primary bg-primary text-white"
+            : "border-base-300 bg-base-100"
+        }`}
+      >
+        {p + 1}
+      </button>
+    </Fragment>
+  ))}
+  {
+          page+1 < totalPage && <button title="Next Page" onClick={() => setPage(page+1)} className=" btn border-0 bg-transparent  text-md md:text-lg hover:text-primary"><IoChevronForward /></button>
+        }
+        
+</div>
+
     </>
   ) : (
     <div className="flex flex-col items-center justify-center rounded-2xl border border-base-300 bg-base-200/40 px-5 py-12 text-center">
