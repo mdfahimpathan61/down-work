@@ -71,8 +71,8 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
         Component: CategoriesJobs,
-        loader: () => fetch("http://localhost:3000/getjobs"),
-        hydrateFallbackElement: Loading,
+        
+        
       },
     ],
   },

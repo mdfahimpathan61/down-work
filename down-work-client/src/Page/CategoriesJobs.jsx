@@ -1,6 +1,5 @@
-
 import { useContext, useEffect, useRef, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
@@ -10,17 +9,48 @@ import { FiSearch, FiSliders } from "react-icons/fi";
 import NojobFound from "./NojobFound";
 import { AuthContext } from "../Provider/AuthProvider";
 import Loading from "../Component/Loading";
+import useAxios from "../hooks/useAxios";
 
 const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
   const [sortActive, setSortActive] = useState("Sort By");
-  const { loading, searchTextContext, setSearchTextContext } =
+  const { loading, searchTextContext, setSearchTextContext, setLoading } =
     useContext(AuthContext);
 
   const { id } = useParams();
-  const allJobsData = useLoaderData();
+
+  const [allJobsData, setAllJobsData] = useState([]);
+  const [totalJob, setTotaljob] = useState(0);
+
+  const axios = useAxios();
+  const jobLimit = 10;
+
+  const totalPage = Math.ceil(totalJob / jobLimit);
+  const [page, setPage] = useState(0);
+  const skip = page * jobLimit;
+  //console.log(totalPage)
+
+  useEffect(() => {
+    //setLoading(true)
+
+    axios
+      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}`)
+      .then((result) => {
+        console.log(result);
+
+        const jobs = result.data.jobsData || [];
+        setAllJobsData(jobs);
+        setTotaljob(result.data.totalJobCount || 0);
+
+        const categoryJobs =
+          id === "all" ? jobs : jobs.filter((job) => job.category_id == id);
+
+        setFilteredJobs(categoryJobs);
+        setCatigoriesAllJobs(categoryJobs);
+      });
+  }, [skip, page]);
 
   const searchRef = useRef();
 
@@ -33,17 +63,17 @@ const CategoriesJobs = () => {
 
     const searchText = searchRef.current.value?.toLowerCase();
 
-    const searchResult = catigoriesAllJobs &&
-     catigoriesAllJobs.filter((job) => {
-      return (
-        job.title?.toLowerCase().includes(searchText) ||
-        job.company.name?.toLowerCase().includes(searchText) ||
-        job.company.industry?.toLowerCase().includes(searchText) ||
-        job.location.city?.toLowerCase().includes(searchText) ||
-        job.job_type?.toLowerCase().includes(searchText)
-      );
-    });
-    
+    const searchResult =
+      catigoriesAllJobs &&
+      catigoriesAllJobs.filter((job) => {
+        return (
+          job.title?.toLowerCase().includes(searchText) ||
+          job.company.name?.toLowerCase().includes(searchText) ||
+          job.company.industry?.toLowerCase().includes(searchText) ||
+          job.location.city?.toLowerCase().includes(searchText) ||
+          job.job_type?.toLowerCase().includes(searchText)
+        );
+      });
 
     setNoJob(false);
     setFilteredJobs(searchResult);
@@ -54,21 +84,7 @@ const CategoriesJobs = () => {
   };
 
   useEffect(() => {
-    if (id == "all") {
-      setFilteredJobs(allJobsData);
-      setCatigoriesAllJobs(allJobsData);
-    } else {
-      const categoryJobs = allJobsData.filter(
-        (job) => job.category_id == id
-      );
-
-      setFilteredJobs(categoryJobs);
-      setCatigoriesAllJobs(categoryJobs);
-    }
-  }, [id]);
-
-  useEffect(() => {
-    if (searchTextContext && catigoriesAllJobs) {
+    if (searchTextContext && catigoriesAllJobs > 0) {
       handleSearch();
     }
   }, [catigoriesAllJobs]);
@@ -78,13 +94,13 @@ const CategoriesJobs = () => {
 
     if (sortName == "salary") {
       const sortedJobs = [...filteredJobs].sort(
-        (a, b) => b.salary.minimum - a.salary.minimum
+        (a, b) => b.salary.minimum - a.salary.minimum,
       );
 
       setFilteredJobs(sortedJobs);
     } else if (sortName == "experience") {
       const sortedJobs = [...filteredJobs].sort(
-        (a, b) => a.experience.minimum - b.experience.minimum
+        (a, b) => a.experience.minimum - b.experience.minimum,
       );
 
       setFilteredJobs(sortedJobs);
@@ -104,16 +120,11 @@ const CategoriesJobs = () => {
 
     const filterResult = filteredJobs.filter((job) => {
       return (
-        (!salary ||
-          job.salary.maximum <= Number(salary)) &&
-        (!jobType ||
-          job.job_type.toLowerCase().includes(jobType)) &&
-        (!workMode ||
-          job.work_mode?.toLowerCase().includes(workMode)) &&
-        (!industry ||
-          job.industry.toLowerCase().includes(industry)) &&
-        (!location ||
-          job.location.city.toLowerCase().includes(location))
+        (!salary || job.salary.maximum <= Number(salary)) &&
+        (!jobType || job.job_type.toLowerCase().includes(jobType)) &&
+        (!workMode || job.work_mode?.toLowerCase().includes(workMode)) &&
+        (!industry || job.industry.toLowerCase().includes(industry)) &&
+        (!location || job.location.city.toLowerCase().includes(location))
       );
     });
 
@@ -138,16 +149,13 @@ const CategoriesJobs = () => {
       ) : (
         <div className="min-h-screen bg-base-100">
           <div className="max-w-360 mx-auto px-3 sm:px-5 lg:px-7 pb-10">
-
             {/* ---------------------------------- */}
             {/* Search Header */}
             {/* ---------------------------------- */}
 
             <div className="pt-5 sm:pt-8">
               <div className="rounded-2xl sm:rounded-3xl border border-base-300 bg-base-200/40 p-3 sm:p-5 shadow-sm">
-
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-
                   <div className="flex items-center gap-3">
                     <div className="flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <IoBriefcaseOutline className="text-xl sm:text-2xl" />
@@ -168,7 +176,6 @@ const CategoriesJobs = () => {
 
                   <div className="w-full lg:w-115">
                     <div className="flex h-12 sm:h-14 overflow-hidden rounded-xl sm:rounded-2xl border border-base-300 bg-base-100 shadow-sm transition focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10">
-
                       <div className="flex items-center pl-3 sm:pl-4 text-accent">
                         <FiSearch className="text-lg sm:text-xl" />
                       </div>
@@ -190,7 +197,6 @@ const CategoriesJobs = () => {
                       </button>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -200,22 +206,20 @@ const CategoriesJobs = () => {
             {/* ---------------------------------- */}
 
             <div className="mt-6 sm:mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-accent">
                   Available Opportunities
                 </p>
 
                 <h2 className="mt-1 text-lg sm:text-xl font-bold text-base-content">
-                  {filteredJobs.length}{" "}
+                  {totalJob}{" "}
                   <span className="font-normal text-accent">
-                    {filteredJobs.length === 1 ? "Job Found" : "Jobs Found"}
+                    {totalJob === 1 ? "Job Found" : "Jobs Found"}
                   </span>
                 </h2>
               </div>
 
               <div className="flex items-center justify-between sm:justify-end gap-2">
-
                 {/* Filter */}
 
                 <div className="drawer drawer-end w-auto">
@@ -251,30 +255,23 @@ const CategoriesJobs = () => {
                       className="menu min-h-screen w-[85%] max-w-sm bg-base-100 p-5 sm:p-6 shadow-2xl"
                     >
                       <div className="mb-5 border-b border-base-300 pb-4">
-
                         <div className="flex items-center gap-3">
                           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                             <FiSliders className="text-lg" />
                           </div>
 
                           <div>
-                            <h3 className="text-lg font-bold">
-                              Filter Jobs
-                            </h3>
+                            <h3 className="text-lg font-bold">Filter Jobs</h3>
 
                             <p className="text-xs text-accent">
                               Refine your job search
                             </p>
                           </div>
                         </div>
-
                       </div>
 
                       <fieldset className="fieldset gap-1">
-
-                        <label className="label mt-1">
-                          Expected Salary
-                        </label>
+                        <label className="label mt-1">Expected Salary</label>
 
                         <input
                           type="text"
@@ -283,9 +280,7 @@ const CategoriesJobs = () => {
                           name="salary"
                         />
 
-                        <label className="label mt-3">
-                          Job Type
-                        </label>
+                        <label className="label mt-3">Job Type</label>
 
                         <input
                           type="text"
@@ -294,9 +289,7 @@ const CategoriesJobs = () => {
                           name="jobType"
                         />
 
-                        <label className="label mt-3">
-                          Work Mode
-                        </label>
+                        <label className="label mt-3">Work Mode</label>
 
                         <input
                           type="text"
@@ -305,9 +298,7 @@ const CategoriesJobs = () => {
                           name="workMode"
                         />
 
-                        <label className="label mt-3">
-                          Industry
-                        </label>
+                        <label className="label mt-3">Industry</label>
 
                         <input
                           type="text"
@@ -316,9 +307,7 @@ const CategoriesJobs = () => {
                           name="industry"
                         />
 
-                        <label className="label mt-3">
-                          Location
-                        </label>
+                        <label className="label mt-3">Location</label>
 
                         <input
                           type="text"
@@ -326,14 +315,10 @@ const CategoriesJobs = () => {
                           placeholder="City"
                           name="location"
                         />
-
                       </fieldset>
 
                       <div className="mt-8 grid grid-cols-2 gap-2">
-
-                        <button
-                          className="btn btn-primary text-white"
-                        >
+                        <button className="btn btn-primary text-white">
                           Apply Filter
                           <HiOutlineAdjustmentsHorizontal />
                         </button>
@@ -345,7 +330,6 @@ const CategoriesJobs = () => {
                         >
                           Reset
                         </button>
-
                       </div>
                     </form>
                   </div>
@@ -373,9 +357,7 @@ const CategoriesJobs = () => {
                         setSortActive("Salary");
                       }}
                     >
-                      <a className="rounded-xl">
-                        Salary
-                      </a>
+                      <a className="rounded-xl">Salary</a>
                     </li>
 
                     <li
@@ -384,9 +366,7 @@ const CategoriesJobs = () => {
                         setSortActive("Experience");
                       }}
                     >
-                      <a className="rounded-xl">
-                        Experience
-                      </a>
+                      <a className="rounded-xl">Experience</a>
                     </li>
 
                     <li
@@ -395,13 +375,10 @@ const CategoriesJobs = () => {
                         setSortActive("Default");
                       }}
                     >
-                      <a className="rounded-xl">
-                        Default
-                      </a>
+                      <a className="rounded-xl">Default</a>
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
 
@@ -409,19 +386,50 @@ const CategoriesJobs = () => {
             {/* Job List */}
             {/* ---------------------------------- */}
 
-            <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
+            
+<div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
+  {filteredJobs?.length > 0 ? (
+    <>
+      {filteredJobs.map((job) => (
+        <div
+          key={job._id}
+          className="rounded-2xl transition duration-200 hover:-translate-y-0.5"
+        >
+          <Job job={job} />
+        </div>
+      ))}
 
-              {filteredJobs.length > 0 &&
-                filteredJobs.map((job) => (
-                  <div
-                    key={job._id}
-                    className="rounded-2xl transition duration-200 hover:-translate-y-0.5"
-                  >
-                    <Job job={job}></Job>
-                  </div>
-                ))}
+      <div className="flex flex-wrap justify-center gap-2">
+        {[...Array(totalPage).keys()].map((i) => (
+          <button
+            key={i}
+            onClick={() => setPage(i)}
+            className={`btn ${
+              page === i ? "bg-primary text-white" : ""
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+      </div>
+    </>
+  ) : (
+    <div className="flex flex-col items-center justify-center rounded-2xl border border-base-300 bg-base-200/40 px-5 py-12 text-center">
+      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-base-300/70">
+        <IoBriefcaseOutline className="text-3xl text-accent" />
+      </div>
 
-            </div>
+      <h3 className="text-xl font-bold text-base-content">
+        No Jobs Found
+      </h3>
+
+      <p className="mt-2 max-w-sm text-sm leading-6 text-accent">
+        Sorry, we couldn't find any jobs at the moment.
+        Try changing your search or filter to find more opportunities.
+      </p>
+    </div>
+  )}
+</div>
 
             {/* ---------------------------------- */}
             {/* Empty State */}
@@ -432,8 +440,8 @@ const CategoriesJobs = () => {
                 <NojobFound></NojobFound>
               </div>
             )}
-
           </div>
+          
         </div>
       )}
     </>
@@ -441,4 +449,3 @@ const CategoriesJobs = () => {
 };
 
 export default CategoriesJobs;
-

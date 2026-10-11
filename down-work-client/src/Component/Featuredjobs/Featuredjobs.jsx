@@ -8,20 +8,20 @@ import useAxios from '../../hooks/useAxios';
 
 
 const Featuredjobs = () => {
-    const [allJobsData,setAllJobsData] = useState([])
+    const [featuredJobs,setFeaturedJobsData] = useState([])
     const axios = useAxios()
     const {loading} = useAuth()
    useEffect(() => {
-    axios.get('/getjobs')
+    axios.get(`/getjobs?id=${'all'}&featured=${true}`)
    .then(result => {
-    //console.log(result.data)
-    setAllJobsData(result.data)
+    //console.log(result.data.jobsData)
+    setFeaturedJobsData(result.data.jobsData)
    })
    },[axios])
 
    
     //console.log(allJobsData)
-    const featuredJob = allJobsData?.filter( jobs => jobs.featured == true)
+    //const featuredJob = allJobsData?.filter( jobs => jobs.featured == true)
     //console.log(featuredJob)
     return (
         <>
@@ -37,7 +37,7 @@ const Featuredjobs = () => {
             </div>
             <div className='max-w-360 mx-auto card'>
                 {
-                featuredJob.map(job => <Featuredjob key={job._id} job={job}></Featuredjob>)
+                featuredJobs.map(job => <Featuredjob key={job._id} job={job}></Featuredjob>)
             }
             </div>
             

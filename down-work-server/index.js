@@ -169,8 +169,25 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
         })
 
         app.get('/getjobs', async(req, res) => {
-            const cursor =await postedJobs.find().toArray()
-             res.send(cursor)
+
+            const {limit=0,skip=0, id, featured} = req.query
+            //console.log(limit, skip)
+            //console.log(featured)
+            let query = {}
+            if(id != 'all' ){
+                query.category_id = id
+            }
+            if(featured){
+                query.featured = true
+            }
+
+            const projectField = {_id : 1,title : 1, company : 1, location : 1, job_type : 1, posted_date : 1,salary : 1, description: 1, experience:1, category_id: 1, featured: 1}
+            const cursor = postedJobs.find(query).project(projectField).limit(Number(limit)).skip(Number(skip))
+            const jobsData =await cursor.toArray()
+
+            const totalJobCount =await postedJobs.countDocuments(query)
+            //console.log(totalJobCount)
+             res.send({jobsData, totalJobCount})
         })
 
         app.get('/jobdetails', async(req, res) => {
@@ -190,7 +207,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
             const email = req.query.email
             const tokenEmail = req.headers.token_email
-            console.log(email, tokenEmail)
+            //console.log(email, tokenEmail)
             if(email != tokenEmail){
                 res.status(403).send({message : "Forbidden Access"})
             }
@@ -239,7 +256,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
                 job_id : new ObjectId(id)
             }
             const result = await appliedJobs.findOne(query)
-            console.log(result)
+            //console.log(result)
             res.send(result)
         })
 
@@ -264,7 +281,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             //console.log(freelancer)
 
             const result = await appliedJobs.find({freelancer_id : freelancer._id}).toArray()
-            console.log(result)
+            //console.log(result)
 
             
 
