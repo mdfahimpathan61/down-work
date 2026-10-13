@@ -1,10 +1,14 @@
-import {Fragment, useContext, useEffect, useRef, useState } from "react";
+import { Fragment, useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp, FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { IoBriefcaseOutline, IoChevronBack, IoChevronForward } from "react-icons/io5";
+import {
+  IoBriefcaseOutline,
+  IoChevronBack,
+  IoChevronForward,
+} from "react-icons/io5";
 import { FiSearch, FiSliders } from "react-icons/fi";
 import NojobFound from "./NojobFound";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -15,13 +19,13 @@ const CategoriesJobs = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
-  const [sortActive, setSortActive] = useState("Sort By");
+  
   const { loading, searchTextContext, setSearchTextContext, setLoading } =
     useContext(AuthContext);
 
+
   const { id } = useParams();
 
-  const [allJobsData, setAllJobsData] = useState([]);
   const [totalJob, setTotaljob] = useState(0);
 
   const axios = useAxios();
@@ -32,16 +36,19 @@ const CategoriesJobs = () => {
   const skip = page * jobLimit;
   //console.log(totalPage)
 
+   const [sortActive, setSortActive] = useState("Default");
+  const [sortOrder, setSortOrder] = useState(1);
+
   useEffect(() => {
     //setLoading(true)
 
     axios
-      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}`)
+      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}&sortvalue=${sortActive}&sortorder=${sortOrder}`)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
 
         const jobs = result.data.jobsData || [];
-        setAllJobsData(jobs);
+        //setAllJobsData(jobs);
         setTotaljob(result.data.totalJobCount || 0);
 
         const categoryJobs =
@@ -50,32 +57,30 @@ const CategoriesJobs = () => {
         setFilteredJobs(categoryJobs);
         setCatigoriesAllJobs(categoryJobs);
       });
-  }, [skip, page]);
+  }, [skip, page, sortActive, sortOrder]);
 
   const searchRef = useRef();
 
-  
-const getPaginationPages = (currentPage, totalPages) => {
-  const pages = new Set();
+  const getPaginationPages = (currentPage, totalPages) => {
+    const pages = new Set();
 
-  // প্রথম দুইটি পেজ
-  pages.add(0);
-  pages.add(1);
+    // প্রথম দুইটি পেজ
+    pages.add(0);
+    pages.add(1);
 
-  // Active page-এর আশেপাশে পেজ
-  pages.add(currentPage - 1);
-  pages.add(currentPage);
-  pages.add(currentPage + 1);
+    // Active page-এর আশেপাশে পেজ
+    pages.add(currentPage - 1);
+    pages.add(currentPage);
+    pages.add(currentPage + 1);
 
-  // শেষের দুইটি পেজ
-  pages.add(totalPages - 2);
-  pages.add(totalPages - 1);
+    // শেষের দুইটি পেজ
+    pages.add(totalPages - 2);
+    pages.add(totalPages - 1);
 
-  return [...pages]
-    .filter((p) => p >= 0 && p < totalPages)
-    .sort((a, b) => a - b);
-};
-
+    return [...pages]
+      .filter((p) => p >= 0 && p < totalPages)
+      .sort((a, b) => a - b);
+  };
 
   const handleSearch = (event) => {
     if (event) {
@@ -360,7 +365,7 @@ const getPaginationPages = (currentPage, totalPages) => {
 
                 {/* Sort */}
 
-                <div className="dropdown dropdown-end">
+                {/* <div className="dropdown dropdown-end">
                   <div
                     tabIndex={0}
                     role="button"
@@ -401,6 +406,73 @@ const getPaginationPages = (currentPage, totalPages) => {
                       <a className="rounded-xl">Default</a>
                     </li>
                   </ul>
+                </div> */}
+
+                <div className="dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-sm md:btn-md rounded-xl border-base-300 bg-base-100"
+                  >
+                    Sort: {sortActive}
+                    <FaAngleDown className="text-xs" />
+                  </div>
+
+                  <ul className="dropdown-content menu z-20 mt-2 w-48 rounded-xl border border-base-300 bg-base-100 p-2 shadow-lg">
+                    {["Salary", "Experience"].map((item) => (
+                      <li key={item}>
+                        <div className="flex flex-row items-center justify-between">
+                          <button
+                            type="button"
+                            className={`flex-1 text-left ${
+                              sortActive === item
+                                ? "font-semibold text-primary "
+                                : ""
+                            }`}
+                            onClick={() => {
+                              if (sortActive !== item) {
+                                setSortActive(item);
+                                setSortOrder(1);
+                              }
+                            }}
+                          >
+                            {item}
+                          </button>
+
+                          {sortActive === item && (
+                            <div
+                              type="button"
+                              className="px-2 text-primary"
+                              aria-label="Toggle sort order"
+                              onClick={() =>
+                                setSortOrder((prev) =>
+                                  prev === 1 ? -1 : 1,
+                                )
+                              }
+                            >
+                              {sortOrder === 1 ? (
+                                <button title="Ascending Order" className="btn btn-sm"><FaAngleDown /></button>
+                              ) : (
+                                <button title="Descending Order" className="btn btn-sm"><FaAngleUp /></button>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSortActive("Default");
+                          setSortOrder(1);
+                        }}
+                      >
+                        Default
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -409,70 +481,79 @@ const getPaginationPages = (currentPage, totalPages) => {
             {/* Job List */}
             {/* ---------------------------------- */}
 
-            
-<div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
-  {filteredJobs?.length > 0 ? (
-    <>
-      {filteredJobs.map((job) => (
-        <div
-          key={job._id}
-          className="rounded-2xl transition duration-200 hover:-translate-y-0.5"
-        >
-          <Job job={job} />
-        </div>
-      ))}
+            <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
+              {filteredJobs?.length > 0 ? (
+                <>
+                  {filteredJobs.map((job) => (
+                    <div
+                      key={job._id}
+                      className="rounded-2xl transition duration-200 hover:-translate-y-0.5"
+                    >
+                      <Job job={job} />
+                    </div>
+                  ))}
 
-      
-      
-<div className="mt-6 flex w-full flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-  {
-          page >= 1 && <button title="Previous Page" onClick={() => setPage(page-1)} className=" btn border-0 bg-transparent text-md md:text-lg hover:text-primary"><IoChevronBack /> </button>
-        }
-  {getPaginationPages(page, totalPage).map((p, index, pages) => (
-    <Fragment key={p}>
-      {index > 0 && p - pages[index - 1] > 1 && (
-        <span className="px-0.5 text-sm text-accent sm:px-1 sm:text-base">
-          ...
-        </span>
-      )}
+                  <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+                    {page >= 1 && (
+                      <button
+                        title="Previous Page"
+                        onClick={() => setPage(page - 1)}
+                        className=" btn border-0 bg-transparent text-md md:text-lg hover:text-primary"
+                      >
+                        <IoChevronBack />{" "}
+                      </button>
+                    )}
+                    {getPaginationPages(page, totalPage).map(
+                      (p, index, pages) => (
+                        <Fragment key={p}>
+                          {index > 0 && p - pages[index - 1] > 1 && (
+                            <span className="px-0.5 text-sm text-accent sm:px-1 sm:text-base">
+                              ...
+                            </span>
+                          )}
 
-      <button
-        onClick={() => setPage(p)}
-        aria-current={page === p ? "page" : undefined}
-        className={`btn btn-xs min-w-8 px-2 sm:btn-sm sm:min-w-10 sm:px-3 ${
-          page === p
-            ? "border-primary bg-primary text-white"
-            : "border-base-300 bg-base-100"
-        }`}
-      >
-        {p + 1}
-      </button>
-    </Fragment>
-  ))}
-  {
-          page+1 < totalPage && <button title="Next Page" onClick={() => setPage(page+1)} className=" btn border-0 bg-transparent  text-md md:text-lg hover:text-primary"><IoChevronForward /></button>
-        }
-        
-</div>
+                          <button
+                            onClick={() => setPage(p)}
+                            aria-current={page === p ? "page" : undefined}
+                            className={`btn btn-xs min-w-8 px-2 sm:btn-sm sm:min-w-10 sm:px-3 ${
+                              page === p
+                                ? "border-primary bg-primary text-white"
+                                : "border-base-300 bg-base-100"
+                            }`}
+                          >
+                            {p + 1}
+                          </button>
+                        </Fragment>
+                      ),
+                    )}
+                    {page + 1 < totalPage && (
+                      <button
+                        title="Next Page"
+                        onClick={() => setPage(page + 1)}
+                        className=" btn border-0 bg-transparent  text-md md:text-lg hover:text-primary"
+                      >
+                        <IoChevronForward />
+                      </button>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="flex flex-col items-center justify-center rounded-2xl border border-base-300 bg-base-200/40 px-5 py-12 text-center">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-base-300/70">
+                    <IoBriefcaseOutline className="text-3xl text-accent" />
+                  </div>
 
-    </>
-  ) : (
-    <div className="flex flex-col items-center justify-center rounded-2xl border border-base-300 bg-base-200/40 px-5 py-12 text-center">
-      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-base-300/70">
-        <IoBriefcaseOutline className="text-3xl text-accent" />
-      </div>
+                  <h3 className="text-xl font-bold text-base-content">
+                    No Jobs Found
+                  </h3>
 
-      <h3 className="text-xl font-bold text-base-content">
-        No Jobs Found
-      </h3>
-
-      <p className="mt-2 max-w-sm text-sm leading-6 text-accent">
-        Sorry, we couldn't find any jobs at the moment.
-        Try changing your search or filter to find more opportunities.
-      </p>
-    </div>
-  )}
-</div>
+                  <p className="mt-2 max-w-sm text-sm leading-6 text-accent">
+                    Sorry, we couldn't find any jobs at the moment. Try changing
+                    your search or filter to find more opportunities.
+                  </p>
+                </div>
+              )}
+            </div>
 
             {/* ---------------------------------- */}
             {/* Empty State */}
@@ -484,7 +565,6 @@ const getPaginationPages = (currentPage, totalPages) => {
               </div>
             )}
           </div>
-          
         </div>
       )}
     </>

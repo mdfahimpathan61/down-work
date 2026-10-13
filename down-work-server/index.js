@@ -170,7 +170,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
         app.get('/getjobs', async(req, res) => {
 
-            const {limit=0,skip=0, id, featured} = req.query
+            const {limit=0,skip=0, id, featured,sortvalue="posted_date", sortorder=-1} = req.query
             //console.log(limit, skip)
             //console.log(featured)
             let query = {}
@@ -180,9 +180,17 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             if(featured){
                 query.featured = true
             }
+            const sortField = {}
+            if(sortvalue == "Experience"){
+                sortField["experience.minimum"] = sortorder
+            }
+            else if(sortvalue == "Salary"){
+                sortField["salary.minimum"] = sortorder
+            }
+            console.log(sortField)
 
             const projectField = {_id : 1,title : 1, company : 1, location : 1, job_type : 1, posted_date : 1,salary : 1, description: 1, experience:1, category_id: 1, featured: 1}
-            const cursor = postedJobs.find(query).project(projectField).limit(Number(limit)).skip(Number(skip))
+            const cursor = postedJobs.find(query).project(projectField).limit(Number(limit)).skip(Number(skip)).sort(sortField)
             const jobsData =await cursor.toArray()
 
             const totalJobCount =await postedJobs.countDocuments(query)
