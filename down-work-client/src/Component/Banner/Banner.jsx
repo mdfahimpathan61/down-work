@@ -5,21 +5,21 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useNavigate } from "react-router";
 
 const Banner = () => {
-  const { setSearchTextContext } = useContext(AuthContext);
+  const { searchText, setSearchText } = useContext(AuthContext);
   const searchRef = useRef();
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    const searchText = searchRef.current.value;
+    const value = searchRef.current.value;
 
-    if (searchText) {
-      setSearchTextContext(searchText);
+    if (value) {
+      setSearchText(value);
       navigate("/category/all");
     }
   };
 
   const handlePopularSearch = (text) => {
-    setSearchTextContext(text);
+    setSearchText(text);
     navigate("/category/all");
   };
 

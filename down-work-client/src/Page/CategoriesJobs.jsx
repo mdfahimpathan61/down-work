@@ -20,7 +20,8 @@ const CategoriesJobs = () => {
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
   
-  const { loading, searchTextContext, setSearchTextContext, setLoading } =
+  
+  const { loading, searchText, setSearchText} =
     useContext(AuthContext);
 
 
@@ -39,11 +40,31 @@ const CategoriesJobs = () => {
    const [sortActive, setSortActive] = useState("Default");
   const [sortOrder, setSortOrder] = useState(1);
 
+    const searchRef = useRef();
+     
+const handleSearch = (event) => {
+    
+    if (event) {
+      const value = searchRef.current.value
+      //console.log(value)
+       if(value){
+         setSearchText(value);
+       }
+      
+    }
+    else{
+      searchRef.current.value = searchText;
+      //console.log("seeeee", searchText)
+      
+    } 
+  }    
+  
+
   useEffect(() => {
     //setLoading(true)
 
     axios
-      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}&sortvalue=${sortActive}&sortorder=${sortOrder}`)
+      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}&sortvalue=${sortActive}&sortorder=${sortOrder}&searchtext=${searchText}`)
       .then((result) => {
         // console.log(result);
 
@@ -56,10 +77,13 @@ const CategoriesJobs = () => {
 
         setFilteredJobs(categoryJobs);
         setCatigoriesAllJobs(categoryJobs);
+        if(searchText){
+          handleSearch();
+        }
       });
-  }, [skip, page, sortActive, sortOrder]);
+  }, [skip, page, sortActive, sortOrder,searchText]);
 
-  const searchRef = useRef();
+
 
   const getPaginationPages = (currentPage, totalPages) => {
     const pages = new Set();
@@ -82,60 +106,38 @@ const CategoriesJobs = () => {
       .sort((a, b) => a - b);
   };
 
-  const handleSearch = (event) => {
-    if (event) {
-      setSearchTextContext("");
-    } else if (searchTextContext) {
-      searchRef.current.value = searchTextContext;
-    }
+  
 
-    const searchText = searchRef.current.value?.toLowerCase();
+    
+     
 
-    const searchResult =
-      catigoriesAllJobs &&
-      catigoriesAllJobs.filter((job) => {
-        return (
-          job.title?.toLowerCase().includes(searchText) ||
-          job.company.name?.toLowerCase().includes(searchText) ||
-          job.company.industry?.toLowerCase().includes(searchText) ||
-          job.location.city?.toLowerCase().includes(searchText) ||
-          job.job_type?.toLowerCase().includes(searchText)
-        );
-      });
+    // const searchResult =
+    //   catigoriesAllJobs &&
+    //   catigoriesAllJobs.filter((job) => {
+    //     return (
+    //       job.title?.toLowerCase().includes(searchText) ||
+    //       job.company.name?.toLowerCase().includes(searchText) ||
+    //       job.company.industry?.toLowerCase().includes(searchText) ||
+    //       job.location.city?.toLowerCase().includes(searchText) ||
+    //       job.job_type?.toLowerCase().includes(searchText)
+    //     );
+    //   });
 
-    setNoJob(false);
-    setFilteredJobs(searchResult);
+    // setNoJob(false);
+    // setFilteredJobs(searchResult);
 
-    if (searchResult.length == 0) {
-      setNoJob(true);
-    }
-  };
+    // if (searchResult.length == 0) {
+    //   setNoJob(true);
+    // }
 
-  useEffect(() => {
-    if (searchTextContext && catigoriesAllJobs > 0) {
-      handleSearch();
-    }
-  }, [catigoriesAllJobs]);
 
-  const sortBy = (sortName) => {
-    setNoJob(false);
+  // useEffect(() => {
+  //   if (searchText && catigoriesAllJobs > 0) {
+  //     handleSearch();
+  //   }
+  // }, [catigoriesAllJobs,searchText]);
 
-    if (sortName == "salary") {
-      const sortedJobs = [...filteredJobs].sort(
-        (a, b) => b.salary.minimum - a.salary.minimum,
-      );
 
-      setFilteredJobs(sortedJobs);
-    } else if (sortName == "experience") {
-      const sortedJobs = [...filteredJobs].sort(
-        (a, b) => a.experience.minimum - b.experience.minimum,
-      );
-
-      setFilteredJobs(sortedJobs);
-    } else {
-      handleSearch();
-    }
-  };
 
   const handleFilter = (event) => {
     event.preventDefault();

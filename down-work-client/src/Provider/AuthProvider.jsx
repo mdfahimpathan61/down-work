@@ -11,7 +11,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
  const [activeUser, setActiveuser] = useState(null)
  const [loading,setLoading] = useState(true)
- const [searchTextContext, setSearchTextContext] = useState()
+ const [searchText, setSearchText] = useState("")
  const [role, setRole] = useState("")
  
 
@@ -111,8 +111,7 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     signInWitGoogle,
-    searchTextContext,
-    setSearchTextContext,
+    searchText, setSearchText,
     forgotPassword,
     role, 
     setRole,

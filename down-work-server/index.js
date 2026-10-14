@@ -170,7 +170,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
 
         app.get('/getjobs', async(req, res) => {
 
-            const {limit=0,skip=0, id, featured,sortvalue="posted_date", sortorder=-1} = req.query
+            const {limit=0,skip=0, id, featured,sortvalue="posted_date", sortorder=-1, searchtext} = req.query
             //console.log(limit, skip)
             //console.log(featured)
             let query = {}
@@ -180,6 +180,18 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             if(featured){
                 query.featured = true
             }
+            //console.log(searchtext)
+            if(searchtext?.trim()){
+                const words = searchtext.trim().split(/\s+/)
+                query.$and = words.map((word) => ({
+                    $or : [
+                        {title : {$regex : word, $options : "i"}},
+                        {"company.name" : {$regex : word, $options : "i"}},
+                        {"company.industry" : {$regex : word, $options: "i"}},
+                        {"job_type" : {$regex : word, $options : "i"}}
+                    ],
+                }));
+            }
             const sortField = {}
             if(sortvalue == "Experience"){
                 sortField["experience.minimum"] = sortorder
@@ -187,7 +199,7 @@ const client = new MongoClient(`mongodb+srv://${process.env.MONGODB_USER}:${proc
             else if(sortvalue == "Salary"){
                 sortField["salary.minimum"] = sortorder
             }
-            console.log(sortField)
+            //console.log(sortField)
 
             const projectField = {_id : 1,title : 1, company : 1, location : 1, job_type : 1, posted_date : 1,salary : 1, description: 1, experience:1, category_id: 1, featured: 1}
             const cursor = postedJobs.find(query).project(projectField).limit(Number(limit)).skip(Number(skip)).sort(sortField)
