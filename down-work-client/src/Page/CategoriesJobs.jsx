@@ -2,7 +2,7 @@ import { Fragment, useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import Job from "../Component/Job";
 import { MdOutlineSearch } from "react-icons/md";
-import { FaAngleDown, FaAngleUp, FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import {
   IoBriefcaseOutline,
@@ -16,7 +16,7 @@ import Loading from "../Component/Loading";
 import useAxios from "../hooks/useAxios";
 
 const CategoriesJobs = () => {
-  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState(null);
   const [catigoriesAllJobs, setCatigoriesAllJobs] = useState([]);
   const [noJob, setNoJob] = useState(false);
   
@@ -64,24 +64,29 @@ const handleSearch = (event) => {
     //setLoading(true)
 
     axios
-      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}&sortvalue=${sortActive}&sortorder=${sortOrder}&searchtext=${searchText}`)
+      .get(`/getjobs?limit=${jobLimit}&skip=${skip}&id=${id}&sortvalue=${sortActive}&sortorder=${sortOrder}&searchtext=${searchText}`,{
+        params:{
+          filterjobs : JSON.stringify(filteredJobs)
+        }
+      })
       .then((result) => {
         // console.log(result);
-
+       // console.log("Backend response:", result.data);
         const jobs = result.data.jobsData || [];
         //setAllJobsData(jobs);
         setTotaljob(result.data.totalJobCount || 0);
 
-        const categoryJobs =
-          id === "all" ? jobs : jobs.filter((job) => job.category_id == id);
+        //const categoryJobs =
+          //id === "all" ? jobs : jobs.filter((job) => job.category_id == id);
 
-        setFilteredJobs(categoryJobs);
-        setCatigoriesAllJobs(categoryJobs);
+        //setFilteredJobs(categoryJobs);
+        setCatigoriesAllJobs(jobs);
         if(searchText){
+          //console.log(searchText)
           handleSearch();
         }
       });
-  }, [skip, page, sortActive, sortOrder,searchText]);
+  }, [skip, page, sortActive, sortOrder,searchText,filteredJobs]);
 
 
 
@@ -148,24 +153,31 @@ const handleSearch = (event) => {
     const industry = event.target.industry.value.toLowerCase();
     const location = event.target.location.value.toLowerCase();
 
-    const filterResult = filteredJobs.filter((job) => {
-      return (
-        (!salary || job.salary.maximum <= Number(salary)) &&
-        (!jobType || job.job_type.toLowerCase().includes(jobType)) &&
-        (!workMode || job.work_mode?.toLowerCase().includes(workMode)) &&
-        (!industry || job.industry.toLowerCase().includes(industry)) &&
-        (!location || job.location.city.toLowerCase().includes(location))
-      );
-    });
+    const filterPayload = {
+      salary, jobType, workMode, industry, location
+    } 
+    //console.log(filterPayload)
 
-    console.log(filterResult);
+    // axios
+    //   .get(`/getjobs`,{
+    //     params:{
+    //       filterjobs : JSON.stringify(filterPayload)
+    //     }
+    //   })
+    //   .then(result => {
+    //      const jobs = result.data.jobsData || [];
+        
+    //     setTotaljob(result.data.totalJobCount || 0);
+
+    //     setCatigoriesAllJobs(jobs);
+    //   })
+
+   
 
     setNoJob(false);
-    setFilteredJobs(filterResult);
+    setFilteredJobs(filterPayload);
 
-    if (filterResult.length == 0) {
-      setNoJob(true);
-    }
+    
   };
 
   const resetFilter = () => {
@@ -484,9 +496,9 @@ const handleSearch = (event) => {
             {/* ---------------------------------- */}
 
             <div className="mt-5 sm:mt-6 space-y-3 sm:space-y-4">
-              {filteredJobs?.length > 0 ? (
+              {catigoriesAllJobs?.length > 0 ? (
                 <>
-                  {filteredJobs.map((job) => (
+                  {catigoriesAllJobs.map((job) => (
                     <div
                       key={job._id}
                       className="rounded-2xl transition duration-200 hover:-translate-y-0.5"
