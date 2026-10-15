@@ -1,21 +1,19 @@
-
 import React, { useEffect, useState } from "react";
 import { FiUser, FiMail, FiPhone, FiMapPin, FiBookOpen } from "react-icons/fi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { IoAddOutline, IoCloseOutline } from "react-icons/io5";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const Updateprofile = () => {
-  const { activeUser,successAlert } = useAuth();
+  const { activeUser, successAlert,role } = useAuth();
 
   const [skills, setSkills] = useState([]);
   const [skillInput, setSkillInput] = useState("");
-  const [id,setId] = useState(null)
-  const navigate = useNavigate()
-  const axiosSecure = useAxiosSecure()
+  const [id, setId] = useState(null);
+  const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
 
   const [form, setForm] = useState({
     name: "",
@@ -34,23 +32,22 @@ const Updateprofile = () => {
 
   useEffect(() => {
     if (activeUser?.email) {
-      axiosSecure.get(`/user?email=${activeUser.email}`)
-      .then(result => {
-        console.log(result.data)
+      axiosSecure.get(`/user?email=${activeUser.email}`).then((result) => {
+        console.log(result.data);
         setForm({
-            name: result.data?.name || "",
-            email: result.data?.email || activeUser.email,
-            phone: result.data?.phone || "",
-            image: result.data?.image || "",
-            location: result.data?.location || "",
-            bio: result.data?.bio || "",
-            experience: result.data?.experience || "",
-            degree: result.data?.education?.degree || "",
-            educationField: result.data?.education?.field || "",
-          });
-          setId(result.data._id)
-          setSkills(result.data?.skills || []);
-      })
+          name: result.data?.name || "",
+          email: result.data?.email || activeUser.email,
+          phone: result.data?.phone || "",
+          image: result.data?.image || "",
+          location: result.data?.location || "",
+          bio: result.data?.bio || "",
+          experience: result.data?.experience || "",
+          degree: result.data?.education?.degree || "",
+          educationField: result.data?.education?.field || "",
+        });
+        setId(result.data._id);
+        setSkills(result.data?.skills || []);
+      });
       // fetch(`http://localhost:3000/user?email=${activeUser.email}`)
       //   .then((res) => res.json())
       //   .then((data) => {
@@ -108,9 +105,7 @@ const Updateprofile = () => {
   // -----------------------------------
 
   const handleRemoveSkill = (skillToRemove) => {
-    setSkills((prev) =>
-      prev.filter((skill) => skill !== skillToRemove)
-    );
+    setSkills((prev) => prev.filter((skill) => skill !== skillToRemove));
   };
 
   // -----------------------------------
@@ -145,38 +140,35 @@ const Updateprofile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       // console.log(data);
 
         if (data.modifiedCount > 0 || data.matchedCount > 0) {
-          
-          successAlert("Profile updated successfully!")
-          navigate('/freelancer/profile')
+          successAlert("Profile updated successfully!");
+          navigate(`/${role}/profile`);
         }
       });
   };
 
   return (
     <div className="min-h-screen bg-base-100 px-3 py-6 sm:px-5 sm:py-10">
-
       <div className="mx-auto max-w-230">
-
         {/* -------------------------------- */}
         {/* Header */}
         {/* -------------------------------- */}
 
         <div className="mb-6 rounded-3xl border border-base-300 bg-base-200/50 p-5 shadow-sm sm:p-7">
-
           <div className="flex items-center gap-4">
-
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary sm:h-16 sm:w-16">
-              {
-                form?.image ? <img src={form.image} alt="" /> : <FiUser className="text-2xl sm:text-3xl" />
-              }
+              {form?.image ? (
+                <img src={form.image} alt="" />
+              ) : (
+                <FiUser className="text-2xl sm:text-3xl" />
+              )}
             </div>
 
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                Freelancer Profile
+                {role} Profile
               </p>
 
               <h1 className="mt-1 text-2xl font-bold sm:text-3xl">
@@ -187,9 +179,7 @@ const Updateprofile = () => {
                 Keep your professional information up to date.
               </p>
             </div>
-
           </div>
-
         </div>
 
         {/* -------------------------------- */}
@@ -200,11 +190,9 @@ const Updateprofile = () => {
           onSubmit={handleSubmit}
           className="rounded-3xl border border-base-300 bg-base-100 p-4 shadow-sm sm:p-7"
         >
-
           {/* Personal Information */}
 
           <section>
-
             <div className="mb-5">
               <h2 className="text-lg font-bold sm:text-xl">
                 Personal Information
@@ -216,7 +204,6 @@ const Updateprofile = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
               {/* Name */}
 
               <div>
@@ -242,9 +229,7 @@ const Updateprofile = () => {
               {/* Email */}
 
               <div>
-                <label className="mb-2 block text-sm font-medium">
-                  Email
-                </label>
+                <label className="mb-2 block text-sm font-medium">Email</label>
 
                 <div className="relative">
                   <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
@@ -262,9 +247,7 @@ const Updateprofile = () => {
               {/* Phone */}
 
               <div>
-                <label className="mb-2 block text-sm font-medium">
-                  Phone
-                </label>
+                <label className="mb-2 block text-sm font-medium">Phone</label>
 
                 <div className="relative">
                   <FiPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
@@ -300,7 +283,6 @@ const Updateprofile = () => {
                   />
                 </div>
               </div>
-
             </div>
 
             {/* Bio */}
@@ -318,15 +300,16 @@ const Updateprofile = () => {
                 className="textarea min-h-30 w-full"
               ></textarea>
             </div>
-
           </section>
 
-          <div className="my-8 border-t border-base-300"></div>
+          
 
           {/* Professional Information */}
 
-          <section>
-
+          {
+            role == 'client' ? "" : <>
+            <div className="my-8 border-t border-base-300"></div>
+             <section>
             <div className="mb-5">
               <h2 className="text-lg font-bold sm:text-xl">
                 Professional Information
@@ -362,13 +345,9 @@ const Updateprofile = () => {
             {/* Skills */}
 
             <div className="mt-5">
-
-              <label className="mb-2 block text-sm font-medium">
-                Skills
-              </label>
+              <label className="mb-2 block text-sm font-medium">Skills</label>
 
               <div className="flex gap-2">
-
                 <input
                   type="text"
                   value={skillInput}
@@ -389,16 +368,12 @@ const Updateprofile = () => {
                   className="btn btn-primary text-white"
                 >
                   <IoAddOutline className="text-lg" />
-                  <span className="hidden sm:inline">
-                    Add
-                  </span>
+                  <span className="hidden sm:inline">Add</span>
                 </button>
-
               </div>
 
               {skills.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-2">
-
                   {skills.map((skill, index) => (
                     <div
                       key={`${skill}-${index}`}
@@ -415,12 +390,9 @@ const Updateprofile = () => {
                       </button>
                     </div>
                   ))}
-
                 </div>
               )}
-
             </div>
-
           </section>
 
           <div className="my-8 border-t border-base-300"></div>
@@ -428,11 +400,8 @@ const Updateprofile = () => {
           {/* Education */}
 
           <section>
-
             <div className="mb-5">
-              <h2 className="text-lg font-bold sm:text-xl">
-                Education
-              </h2>
+              <h2 className="text-lg font-bold sm:text-xl">Education</h2>
 
               <p className="text-sm text-accent">
                 Add your educational background.
@@ -440,11 +409,8 @@ const Updateprofile = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
               <div>
-                <label className="mb-2 block text-sm font-medium">
-                  Degree
-                </label>
+                <label className="mb-2 block text-sm font-medium">Degree</label>
 
                 <div className="relative">
                   <FiBookOpen className="absolute left-3 top-1/2 -translate-y-1/2 text-accent" />
@@ -474,40 +440,29 @@ const Updateprofile = () => {
                   className="input w-full"
                 />
               </div>
-
             </div>
-
           </section>
+            
+            </>
+          }
 
           {/* -------------------------------- */}
           {/* Submit */}
           {/* -------------------------------- */}
 
           <div className="mt-8 flex flex-col-reverse gap-3 border-t border-base-300 pt-6 sm:flex-row sm:justify-end">
-
-            <button
-              type="button"
-              className="btn btn-ghost"
-            >
+            <button type="button" className="btn btn-ghost">
               Cancel
             </button>
 
-            <button
-              type="submit"
-              className="btn btn-primary px-8 text-white"
-            >
+            <button type="submit" className="btn btn-primary px-8 text-white">
               Save Changes
             </button>
-
           </div>
-
         </form>
-
       </div>
-
     </div>
   );
 };
 
 export default Updateprofile;
-

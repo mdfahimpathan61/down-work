@@ -32,6 +32,13 @@ const Navbar = () => {
 
   const clientRole = (
     <>
+    <Link
+        to="/client/profile"
+        className="group flex items-center gap-2 rounded-xl px-3 py-2 text-accent transition-all duration-200 hover:bg-primary/10 hover:text-primary"
+      >
+        <MdPerson className="text-lg transition-transform group-hover:scale-110" />
+        <span>My Profile</span>
+      </Link>
       <Link
         to="/client/postjob"
         className="group flex items-center gap-2 rounded-xl px-3 py-2 text-accent transition-all duration-200 hover:bg-primary/10 hover:text-primary"

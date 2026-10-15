@@ -23,9 +23,9 @@ import MyJobs from "../Page/Client/Myjobs";
 import FreelancerLayout from "../Layout/FreelancerLayout";
 import Myappliedjobs from "../Page/Freelancer/Myappliedjobs";
 
-import Updateprofile from "../Page/Freelancer/Updateprofile";
+import Updateprofile from "../Page/Updateprofile";
 import Notfound from "../Page/Notfound";
-import Profile from "../Page/Freelancer/Profile";
+import Profile from "../Page/Profile";
 import ViewApplication from "../Page/Client/ViewApplication";
 
 const router = createBrowserRouter([
@@ -71,8 +71,6 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
         Component: CategoriesJobs,
-        
-        
       },
     ],
   },
@@ -97,7 +95,8 @@ const router = createBrowserRouter([
       {
         path: "/details/company/:id",
         element: <CompanyDetails></CompanyDetails>,
-        loader: ({ params }) => fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
         hydrateFallbackElement: Loading,
       },
     ],
@@ -111,8 +110,16 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "/client/profile",
+        element: <Profile></Profile>,
+      },
+      {
         path: "/client/postjob",
         element: <Postjob mode="create"></Postjob>,
+      },
+      {
+        path: "/client/profile/update",
+        element: <Updateprofile></Updateprofile>,
       },
       {
         path: "/client/mypostedjobs",
@@ -124,16 +131,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/client/mypostedjobs/application/:jobId",
-        element: <ViewApplication></ViewApplication>
+        element: <ViewApplication></ViewApplication>,
       },
       {
         path: "/client/candidate/:freelancerId",
-        element: <Profile></Profile>
+        element: <Profile></Profile>,
       },
       {
-    path: "/client/notfound",
-    element: <Notfound></Notfound>,
-  },
+        path: "/client/notfound",
+        element: <Notfound></Notfound>,
+      },
     ],
   },
   {
@@ -157,9 +164,9 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-    path: "/freelancer/notfound",
-    element: <Notfound></Notfound>,
-  },
+        path: "/freelancer/notfound",
+        element: <Notfound></Notfound>,
+      },
     ],
   },
   {
@@ -170,6 +177,5 @@ const router = createBrowserRouter([
     path: "/notfound",
     element: <Notfound></Notfound>,
   },
-  
 ]);
 export default router;

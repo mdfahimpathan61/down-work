@@ -247,7 +247,10 @@ const Banner = () => {
                     py-1
                     rounded-full
                     bg-primary/20
-                    hover:bg-white/20
+                    hover:bg-white/50
+                    hover:text-primary/40
+                    hover:shadow-md
+                    hover:shadow-primary/20
                     border
                     border-white/10
                     text-white
@@ -269,10 +272,13 @@ const Banner = () => {
                     py-1
                     rounded-full
                     bg-primary/20
-                    hover:bg-white/20
+                    hover:bg-white/50
                     border
                     border-white/10
                     text-white
+                    hover:text-primary/40
+                    hover:shadow-md
+                    hover:shadow-primary/20
                    
                     backdrop-blur-sm
                     transition
@@ -291,11 +297,13 @@ const Banner = () => {
                     py-1
                     rounded-full
                     bg-primary/20
-                    hover:bg-white/20
+                    hover:bg-white/50
                     border
                     border-white/10
                     text-white
-                   
+                    hover:text-primary/40
+                    hover:shadow-md
+                    hover:shadow-primary/20
                     backdrop-blur-sm
                     transition
                   "
