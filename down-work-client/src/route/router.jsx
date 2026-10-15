@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         element: <ForgotPassword></ForgotPassword>,
       },
       {
-        path: "/auth/registration/:role",
+        path: "/auth/registration/:role?",
         Component: Registration,
       },
     ],

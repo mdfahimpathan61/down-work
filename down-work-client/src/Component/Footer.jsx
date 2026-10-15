@@ -1,57 +1,157 @@
-import React from 'react';
-import logo from '/logo3.png'
+
+import React from "react";
+import { Link } from "react-router";
+import { FaLinkedinIn, FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import logo from "/logo3.png";
+
 const Footer = () => {
-    return (
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 max-w-360 mx-auto">
-  <aside>
-    <img className='w-14 sm:w-20  rounded-full' src={logo} alt="" />
-    <p className='text-lg font-bold'>
-      Down Work
-      
-      
-    </p>
-    <p>Best Job Finding Online Platform</p>
-  </aside>
-  <nav>
-    <h6 className="footer-title">Social</h6>
-    <div className="grid grid-flow-col gap-4">
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className="fill-current">
-          <path
-            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-        </svg>
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className="fill-current">
-          <path
-            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-        </svg>
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          className="fill-current">
-          <path
-            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-        </svg>
-      </a>
-    </div>
-  </nav>
-</footer>
-    );
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/in/mdfahimpathan61/",
+    },
+    {
+      name: "Facebook",
+      icon: <FaFacebookF />,
+      url: "https://www.facebook.com/mdfahimpathan61",
+    },
+    {
+      name: "X",
+      icon: <FaXTwitter />,
+      url: "https://x.com/mdfahimpathan61",
+    },
+  ];
+
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#0B1733] text-white">
+      <div className="max-w-360 mx-auto px-5 sm:px-8 lg:px-12 pt-12 pb-6">
+
+        {/* Main Footer */}
+        <div className="flex flex-col md:flex-row justify-between gap-10 pb-10">
+
+          {/* Brand Section */}
+          <div className="max-w-sm">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Down Work logo"
+                className="w-12 h-12 rounded-full object-cover"
+              />
+
+              <span className="text-2xl font-bold tracking-tight">
+                Down <span className="text-primary">Work</span>
+              </span>
+            </Link>
+
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Find your next opportunity. Build your next chapter.
+              Your journey to a better career starts here.
+            </p>
+
+            <div className="flex items-center gap-3 mt-5">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit Down Work on ${social.name}`}
+                  title={social.name}
+                  className="flex items-center justify-center w-10 h-10 rounded-xl
+                  border border-white/15 text-slate-300
+                  hover:bg-secondary hover:text-white
+                  hover:border-primary/70 hover:-translate-y-1
+                  transition-all duration-300 shadow-sm shadow-primary/50"
+                >
+                  <span className="text-lg">{social.icon}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-primary">
+              Explore
+            </h3>
+
+            <ul className="mt-5 space-y-3 text-sm text-slate-300">
+              <li>
+                <Link
+                  to="/"
+                  className="hover:text-primary transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/category/all"
+                  className="hover:text-primary transition-colors"
+                >
+                  Browse Jobs
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/auth/login"
+                  className="hover:text-primary transition-colors"
+                >
+                  Login
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/auth/role"
+                  className="hover:text-primary transition-colors"
+                >
+                  Create Account
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Footer Message */}
+          <div className="max-w-xs">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-primary">
+              Our Purpose
+            </h3>
+
+            <p className="mt-5 text-sm leading-7 text-slate-300">
+              Every career has a beginning. We are here to help you
+              discover opportunities and take the next step forward.
+            </p>
+
+            <p className="mt-3 text-sm font-medium italic text-white/80">
+              "Your next opportunity starts here."
+            </p>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/10" />
+
+        {/* Copyright */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-6 text-xs sm:text-sm text-slate-400">
+          <p>
+            © {currentYear} Down Work. All rights reserved.
+          </p>
+
+          <p>
+            Built with <span className="text-red-400">♥</span> for your
+            next career move.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -146,7 +146,7 @@ const Login = () => {
                 </button>
 
                 <div>
-                  <Link to={"/auth/registration"}>
+                  <Link to={"/auth/role"}>
                     Don't have an account?{" "}
                     <span className="text-primary hover:underline">
                       Registar

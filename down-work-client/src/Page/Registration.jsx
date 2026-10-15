@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TbPhotoUp } from "react-icons/tb";
 import {  ToastContainer } from "react-toastify";
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, Navigate, useNavigate, useParams } from "react-router";
 
 const Registration = () => {
   const { signUpWithEmail, updateUser,toastSuccess } = useContext(AuthContext);
@@ -10,7 +10,7 @@ const Registration = () => {
   const [successReg, setSuccessReg] = useState(false);
   const navigate = useNavigate()
 const {role} = useParams()
-console.log(role)
+//console.log(role)
 
 
   const handleOnSubmit = (event) => {
@@ -40,10 +40,10 @@ console.log(role)
     setError("");
     setSuccessReg(false);
 
-    fetch(`http://localhost:3000/user?email=${email}&role=${role}`)
+    fetch(`http://localhost:3000/existinguser?email=${email}`)
     .then(res => res.json())
     .then(data => {
-     // console.log(data)
+      //console.log(data)
       if(data?._id){
         setError("This Email is Already Registared!")
         return;
@@ -98,9 +98,12 @@ console.log(role)
     }
     
   }
+  
+  //console.log(role)
 
-  return (
-    <div>
+  if(role){
+    return(
+      <div>
       <div className="hero bg-base-200 min-h-screen">
         <div className="card bg-base-100  md:w-full max-w-sm  shadow-2xl">
           <div className="card-body max-w-9/10 p-10">
@@ -153,7 +156,12 @@ console.log(role)
       </div>
       
     </div>
-  );
+    )
+  }
+  else{
+    return <Navigate to={"/auth/role"}></Navigate>
+  }
+
 };
 
 export default Registration;

@@ -254,7 +254,7 @@ async function connectToMongoDB() {
         category_id: 1,
         featured: 1,
       };
-      console.log("Final query:", JSON.stringify(query, null, 2));
+      //console.log("Final query:", JSON.stringify(query, null, 2));
       const cursor = postedJobs
         .find(query)
         .project(projectField)
@@ -298,6 +298,15 @@ async function connectToMongoDB() {
       }
       res.send(result);
     });
+
+    app.get("/existinguser",async(req, res) =>{
+        const email = req.query.email
+
+        const query = {email : email}
+        const result = await users.findOne(query)
+        //console.log("user ",result)
+        res.send(result)
+    })
 
     app.get("/profile", async (req, res) => {
       const freelancerId = req.query.id;
