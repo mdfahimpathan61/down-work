@@ -22,7 +22,7 @@ import { FiUser } from "react-icons/fi";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
-  const { activeUser, signout, role } = useContext(AuthContext);
+  const { activeUser, signout, role,successAlert } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -92,7 +92,8 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     if (activeUser) {
-      signout();
+      signout()
+      .then(successAlert("You are Logged Out"))
     } else {
       navigate("/auth/login");
     }

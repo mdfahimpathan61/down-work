@@ -239,7 +239,7 @@ const Banner = () => {
 
                 <button
                   onClick={() =>
-                    handlePopularSearch("Web Development")
+                    handlePopularSearch("Web Developer")
                   }
                   className="
                     px-2.5

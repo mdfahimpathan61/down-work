@@ -8,6 +8,8 @@ import {
   useLocation,
   useNavigate,
 } from "react-router";
+import useAxios from "../hooks/useAxios";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const Login = () => {
   const {setActiveuser, signinWithEmail, toastSuccess, activeUser,signInWitGoogle } = useContext(AuthContext);
@@ -15,20 +17,30 @@ const Login = () => {
   const [successLogin, setSuccessLogin] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const axios = useAxios()
+  const axiosSecure = useAxiosSecure()
 
-  const handleOnSubmit = (event) => {
+  const handleOnSubmit =async (event) => {
     event.preventDefault();
 
     const email = event.target.email.value;
 
     const password = event.target.password.value;
     //console.log(name, email, url, password)
+    const result =await axios.get(`/existinguser?email=${email}`)
+    //console.log(result)
+      if(!result.data.isExist){
+        setError("This email is not Registared!")
+        return
+      }
+    
 
     //reset state
     setError("");
     setSuccessLogin(false);
 
     signinWithEmail(email, password)
+    //.then(res => res.json())
       .then((result) => {
         //console.log(result);
         setSuccessLogin(true);
@@ -54,12 +66,12 @@ const Login = () => {
       //console.log(firebaseUser)
       setActiveuser({...firebaseUser,role:""})
       
-      await fetch(`http://localhost:3000/user?email=${firebaseUser.email}`)
-      .then(res => res.json())
-      .then(data => {
-        //console.log(data)
+      await axios.get(`/existinguser?email=${firebaseUser.email}`)
+      
+      .then(result => {
+        //console.log(result.data)
          toastSuccess("Log in successful");
-        if(data?.role){
+        if(result.data.user?.role){
          
           location?.state ? navigate(location.state) : navigate('/')
           

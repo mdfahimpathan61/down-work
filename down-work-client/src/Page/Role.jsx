@@ -5,12 +5,21 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import Loading from '../Component/Loading';
+import useAxios from '../hooks/useAxios';
 
 const Role = () => {
-    const {activeUser,loading,toastSuccess} = useAuth()
+    const {activeUser,loading,toastSuccess,role} = useAuth()
     //const location = useLocation()
     //console.log(location)
     const navigate =  useNavigate()
+    //const axios = useAxios()
+
+    useEffect(() => {
+        // 
+        if(activeUser && role){
+            navigate('/')
+        }
+    }, [activeUser,role])
 
     const handleLoginWithGoogle = (role) =>{
         const newUser = {

@@ -304,8 +304,15 @@ async function connectToMongoDB() {
 
         const query = {email : email}
         const result = await users.findOne(query)
-        //console.log("user ",result)
-        res.send(result)
+        console.log("user ",result)
+
+        if(result){
+            res.send({user:result, isExist : true})
+        }
+        else{
+            res.send({user:result, isExist : false})
+        }
+        
     })
 
     app.get("/profile", async (req, res) => {

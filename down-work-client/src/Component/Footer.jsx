@@ -3,8 +3,11 @@ import React from "react";
 import { Link } from "react-router";
 import { FaLinkedinIn, FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import logo from "/logo3.png";
+import useAuth from "../hooks/useAuth";
 
 const Footer = () => {
+  const {activeUser} = useAuth()
+  //console.log(activeUser)
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -97,7 +100,9 @@ const Footer = () => {
                 </Link>
               </li>
 
-              <li>
+              {
+                activeUser ? "" : <>
+                <li>
                 <Link
                   to="/auth/login"
                   className="hover:text-primary transition-colors"
@@ -114,6 +119,9 @@ const Footer = () => {
                   Create Account
                 </Link>
               </li>
+                
+                </>
+              }
             </ul>
           </div>
 
