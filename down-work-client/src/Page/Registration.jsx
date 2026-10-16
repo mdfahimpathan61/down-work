@@ -4,6 +4,9 @@ import { TbPhotoUp } from "react-icons/tb";
 import { ToastContainer } from "react-toastify";
 import { Link, Navigate, useNavigate, useParams } from "react-router";
 import useAxios from "../hooks/useAxios";
+import { Eye, EyeOff } from "lucide-react";
+
+
 
 const Registration = () => {
   const { signUpWithEmail, updateUser, toastSuccess } = useContext(AuthContext);
@@ -11,6 +14,7 @@ const Registration = () => {
   const [successReg, setSuccessReg] = useState(false);
   const navigate = useNavigate();
   const { role } = useParams();
+    const [showPassword, setShowPassword] = useState(false);
   //console.log(role)
   const axios = useAxios();
 
@@ -133,14 +137,30 @@ const Registration = () => {
                     placeholder="Email"
                   />
                   <label className="label">Password</label>
+                  
+                  <div className="relative">
                   <input
-                    type="password"
-                    className="input"
+                    type={showPassword ? "text" : "password"}
+                    className="input "
                     placeholder="Password"
                     name="password"
                     required
                     onChange={handlePassword}
                   />
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 cursor-pointer"
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
+                  >
+                    {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
+                  </button>
+                </div>
+
+                  
                   <div>
                     <Link className="text-sm text-accent" to={"/auth/login"}>
                       Already have an account?{" "}

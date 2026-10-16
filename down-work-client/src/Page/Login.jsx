@@ -1,55 +1,55 @@
-import  { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
-import {
-  Link,
-  Navigate,
-  
-  useLocation,
-  useNavigate,
-} from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import useAxios from "../hooks/useAxios";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
-  const {setActiveuser, signinWithEmail, toastSuccess, activeUser,signInWitGoogle } = useContext(AuthContext);
+  const {
+    setActiveuser,
+    signinWithEmail,
+    toastSuccess,
+    activeUser,
+    signInWitGoogle,
+  } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const [successLogin, setSuccessLogin] = useState(false);
+  const [ setSuccessLogin] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const axios = useAxios()
-  const axiosSecure = useAxiosSecure()
+  const axios = useAxios();
+  
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleOnSubmit =async (event) => {
+  const handleOnSubmit = async (event) => {
     event.preventDefault();
 
     const email = event.target.email.value;
 
     const password = event.target.password.value;
     //console.log(name, email, url, password)
-    const result =await axios.get(`/existinguser?email=${email}`)
+    const result = await axios.get(`/existinguser?email=${email}`);
     //console.log(result)
-      if(!result.data.isExist){
-        setError("This email is not Registared!")
-        return
-      }
-    
+    if (!result.data.isExist) {
+      setError("This email is not Registared!");
+      return;
+    }
 
     //reset state
     setError("");
     setSuccessLogin(false);
 
     signinWithEmail(email, password)
-    //.then(res => res.json())
+      //.then(res => res.json())
       .then((result) => {
         //console.log(result);
         setSuccessLogin(true);
         event.target.reset();
-        
+
         //console.log(location.state)
         toastSuccess("Log in successful");
         location?.state ? navigate(location.state) : navigate("/");
-        
       })
 
       .catch((error) => {
@@ -57,37 +57,30 @@ const Login = () => {
       });
   };
 
-
-  const handleSignInWithGoogle = async() =>{
+  const handleSignInWithGoogle = async () => {
     signInWitGoogle()
-    
-    .then(async data => {
-      const firebaseUser = data.user
-      //console.log(firebaseUser)
-      setActiveuser({...firebaseUser,role:""})
-      
-      await axios.get(`/existinguser?email=${firebaseUser.email}`)
-      
-      .then(result => {
-        //console.log(result.data)
-         toastSuccess("Log in successful");
-        if(result.data.user?.role){
-         
-          location?.state ? navigate(location.state) : navigate('/')
-          
-        }
-        else{
-          navigate('/auth/role')
-        }
-      })
+      .then(async (data) => {
+        const firebaseUser = data.user;
+        //console.log(firebaseUser)
+        setActiveuser({ ...firebaseUser, role: "" });
 
-      
-      
-    })
-    .catch(error =>{
-      setError(error.message)
-    })
-  }
+        await axios
+          .get(`/existinguser?email=${firebaseUser.email}`)
+
+          .then((result) => {
+            //console.log(result.data)
+            toastSuccess("Log in successful");
+            if (result.data.user?.role) {
+              location?.state ? navigate(location.state) : navigate("/");
+            } else {
+              navigate("/auth/role");
+            }
+          });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
 
   return (
     <div>
@@ -107,15 +100,31 @@ const Login = () => {
                   required
                 />
                 <label className="label">Password</label>
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                  name="password"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="input "
+                    placeholder="Password"
+                    name="password"
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 md:right-9 top-1/2 -translate-y-1/2 cursor-pointer"
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
+                  >
+                    {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
+                  </button>
+                </div>
                 <div>
-                  <Link to={"/auth/forgotpassword"} className="text-[12px] text-accent hover:text-black hover:underline">
+                  <Link
+                    to={"/auth/forgotpassword"}
+                    className="text-[12px] text-accent hover:text-black hover:underline"
+                  >
                     Forgot password
                   </Link>
                 </div>
@@ -126,7 +135,11 @@ const Login = () => {
                   Log in
                 </button>
 
-                <button type="button" onClick={handleSignInWithGoogle} className="btn bg-white text-black hover:border-primary border-[#e5e5e5]">
+                <button
+                  type="button"
+                  onClick={handleSignInWithGoogle}
+                  className="btn bg-white text-black hover:border-primary border-[#e5e5e5]"
+                >
                   <svg
                     aria-label="Google logo"
                     width="16"
@@ -170,7 +183,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
