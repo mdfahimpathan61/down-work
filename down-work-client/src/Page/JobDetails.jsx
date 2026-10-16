@@ -41,7 +41,7 @@ const JobDetails = () => {
 
       axiosSecure.get(`/user?email=${activeUser.email}`)  
         .then((result) => {
-          console.log(result.data)
+          //console.log(result.data)
           if (result.data._id) {
             setFreelancer(result.data);
           }
@@ -56,10 +56,10 @@ const JobDetails = () => {
       job_id: id,
       email: freelancer.email,
     };
-    console.log(payload)
+    //console.log(payload)
     axios.post('/applyjob',payload)
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         if (result.data.acknowledged) {
           successAlert("You Applied the Job");
           setApplyed(true);
@@ -509,7 +509,7 @@ const JobDetails = () => {
 
               <button
                 disabled={applyed}
-                onClick={() => handleApplyed()}
+                onClick={() => {handleApplyed(); setApplyed(true)}}
                 className={`w-full rounded-xl ${applyed ? "bg-gray-300 text-gray-600" : "bg-white text-primary hover:bg-slate-100"} px-8 py-3 text-sm font-bold  shadow-sm transition  sm:w-auto`}
               >
                 {applyed ? "Applied" : "Apply Now"}

@@ -353,6 +353,13 @@ const Navbar = () => {
                     </div>
 
                   </div>
+                  <div>
+                    {role && (
+                      <span className="mt-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold capitalize text-primary ">
+                        {role}
+                      </span>
+                    )}
+                  </div>
 
                   <hr className="my-3 border-base-300" />
 

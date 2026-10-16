@@ -15,7 +15,7 @@ const Categories = () => {
       //console.log(result.data)
       setCategoriesData(result.data)
     })
-  },[])
+  },[axios])
   
   //console.log(categoriesData)
 

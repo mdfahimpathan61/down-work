@@ -60,7 +60,7 @@ const ViewApplication = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
 
         setLoading(false);
 
@@ -234,7 +234,7 @@ const ViewApplication = () => {
         throw new Error("Status was not updated");
       }
     } catch (error) {
-      console.log(error);
+      //console.log(error);
 
       // Reset dropdown to original status
       setSelectedStatuses((prev) => ({
