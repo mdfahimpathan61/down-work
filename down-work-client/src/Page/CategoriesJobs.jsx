@@ -57,6 +57,7 @@ const handleSearch = (event) => {
       //console.log("seeeee", searchText)
       
     } 
+    
   }    
   
 
@@ -86,7 +87,11 @@ const handleSearch = (event) => {
           handleSearch();
         }
       });
-  }, [skip, page, sortActive, sortOrder,searchText,filteredJobs]);
+
+      return () => {
+      setSearchText("");
+      };
+  }, [skip, page, sortActive, sortOrder,searchText,filteredJobs,id]);
 
 
 

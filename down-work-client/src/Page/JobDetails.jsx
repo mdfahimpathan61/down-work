@@ -14,6 +14,7 @@ import {
 } from "react-icons/fi";
 import { Link, useLoaderData, useParams } from "react-router";
 import useAuth from "../hooks/useAuth";
+import useAxios from "../hooks/useAxios";
 
 const JobDetails = () => {
   const { role, activeUser, successAlert } = useAuth();
@@ -24,23 +25,22 @@ const JobDetails = () => {
   const [freelancer, setFreelancer] = useState(null);
 
   //console.log(job)
+  const axios = useAxios()
 
   useEffect(() => {
     if (role == "freelancer") {
-      fetch(`http://localhost:3000/applyed?email=${activeUser.email}&id=${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data._id) {
+      axios.get(`/applyed?email=${activeUser.email}&id=${id}`)
+        .then((result) => {
+          if (result.data._id) {
             setApplyed(true);
           }
-          console.log(data);
+          //console.log(data);
         });
 
-      fetch(`http://localhost:3000/user?email=${activeUser.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data._id) {
-            setFreelancer(data);
+      axios.get(`/user?email=${activeUser.email}`)  
+        .then((result) => {
+          if (result.data._id) {
+            setFreelancer(result.data);
           }
         });
     }
@@ -53,17 +53,12 @@ const JobDetails = () => {
       job_id: id,
       email: freelancer.email,
     };
-    fetch(`http://localhost:3000/applyjob`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
+
+    axios.post('/applyjob',payload)
+    
+      .then((result) => {
+        //console.log(data);
+        if (result.data.acknowledged) {
           successAlert("You Applied the Job");
           setApplyed(true);
         }

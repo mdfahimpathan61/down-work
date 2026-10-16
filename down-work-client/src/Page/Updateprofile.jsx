@@ -5,6 +5,7 @@ import { IoAddOutline, IoCloseOutline } from "react-icons/io5";
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAxios from "../hooks/useAxios";
 
 const Updateprofile = () => {
   const { activeUser, successAlert,role } = useAuth();
@@ -14,6 +15,7 @@ const Updateprofile = () => {
   const [id, setId] = useState(null);
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
+  const axios = useAxios()
 
   const [form, setForm] = useState({
     name: "",
@@ -33,7 +35,7 @@ const Updateprofile = () => {
   useEffect(() => {
     if (activeUser?.email) {
       axiosSecure.get(`/user?email=${activeUser.email}`).then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         setForm({
           name: result.data?.name || "",
           email: result.data?.email || activeUser.email,
@@ -115,8 +117,10 @@ const Updateprofile = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const payload = {
-      name: form.name,
+    let payload;
+    if(role == 'freelancer'){
+      payload = {
+        name: form.name,
       email: form.email,
       phone: form.phone,
       location: form.location,
@@ -128,21 +132,25 @@ const Updateprofile = () => {
       education: {
         degree: form.degree,
         field: form.educationField,
-      },
-    };
-
-    fetch(`http://localhost:3000/updateuser?id=${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((data) => {
+      }
+      }
+    }
+    else{
+      payload = {
+        name: form.name,
+      email: form.email,
+      phone: form.phone,
+      location: form.location,
+      bio: form.bio,
+      }
+    }
+   
+     axiosSecure.patch(`/updateuser?id=${id}&clientemail=${activeUser.email}`,payload)
+    
+      .then((result) => {
        // console.log(data);
 
-        if (data.modifiedCount > 0 || data.matchedCount > 0) {
+        if (result.data.modifiedCount > 0 || result.data.matchedCount > 0) {
           successAlert("Profile updated successfully!");
           navigate(`/${role}/profile`);
         }

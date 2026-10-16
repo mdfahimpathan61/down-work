@@ -18,6 +18,7 @@ import {
 import useAuth from "../../hooks/useAuth";
 import { useNavigate, useParams } from "react-router";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxios from "../../hooks/useAxios";
 
 const initialForm = {
   title: "",
@@ -336,16 +337,17 @@ export default function Postjob({ mode }) {
   const { activeUser, successAlert } = useAuth();
   const { id } = useParams();
   const axiosSecure = useAxiosSecure()
+  const axios = useAxios()
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:3000/category")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load categories");
-        return res.json();
-      })
-      .then(setAllCategories)
+    
+    axios("/category")
+    .then((result) => {
+      //console.log(result.data)
+      setAllCategories(result.data);
+    })
       .catch((error) => console.error("Category load error:", error));
 
     if (mode !== "update" || !id || !activeUser) return;
@@ -491,17 +493,11 @@ export default function Postjob({ mode }) {
     };
 
     if (mode == "create") {
-      fetch("http://localhost:3000/jobpost", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.insertedId) {
+      axiosSecure.post(`/jobpost?clientemail=${activeUser.email}`,payload)
+      
+        .then((result) => {
+          
+          if (result.data.insertedId) {
             successAlert("You Successfully Create a job");
             e.target.reset()
             navigate('/client/mypostedjobs')

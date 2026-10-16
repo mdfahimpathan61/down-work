@@ -4,7 +4,7 @@ require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const { MongoClient, ObjectId } = require("mongodb");
-const admin = require("firebase-admin");
+
 const port = process.env.PORT || 3000;
 
 app.use(cors());
@@ -12,11 +12,15 @@ app.use(express.json());
 
 const serviceAccount = require("./down-work-9-firebase-adminsdk.json");
 const { getAuth } = require("firebase-admin/auth");
+const { initializeApp, cert } = require("firebase-admin/app");
 
-admin.initializeApp({
-  credential: admin.cert(serviceAccount),
-});
+// admin.initializeApp({
+//   credential: admin.cert(serviceAccount),
+// });
 //console.log("admin --> ",admin.credential)
+initializeApp({
+  credential: cert(serviceAccount),
+});
 
 const firebaseVerification = async (req, res, next) => {
   // console.log("hello , i am form firebaseVerification middleware")
@@ -51,7 +55,7 @@ const client = new MongoClient(
 
 async function connectToMongoDB() {
   try {
-    await client.connect();
+    //await client.connect();
 
     const database = client.db("downwork_database");
     const postedJobs = database.collection("postedJobs");
@@ -59,7 +63,12 @@ async function connectToMongoDB() {
     const users = database.collection("downWork_users");
     const appliedJobs = database.collection("applied_jobs");
 
-    app.post("/jobpost", async (req, res) => {
+    app.post("/jobpost",firebaseVerification, async (req, res) => {
+      const clientEmail = req.query.clientemail
+      const tokenEmail = req.headers.token_email
+      if(clientEmail != tokenEmail){
+        res.status(403).send({message : "Forbidden Access"})
+      }
       const newJob = req.body;
       const inserAJob = await postedJobs.insertOne(newJob);
       res.send(inserAJob);
@@ -105,7 +114,7 @@ async function connectToMongoDB() {
       const id = req.query.id;
       const clientEmail = req.query.email;
       const tokenEmail = req.headers.token_email;
-      console.log(clientEmail, tokenEmail);
+      //console.log(clientEmail, tokenEmail);
 
       if (clientEmail != tokenEmail) {
         return res.status(403).send.apply({ message: "Forbidden Access" });
@@ -119,7 +128,14 @@ async function connectToMongoDB() {
       res.send(result);
     });
 
-    app.patch("/updateuser", async (req, res) => {
+    app.patch("/updateuser",firebaseVerification, async (req, res) => {
+      const clientEmail = req.query.clientemail;
+      const tokenEmail = req.headers.token_email;
+      //console.log(clientEmail, tokenEmail);
+
+      if (clientEmail != tokenEmail) {
+        return res.status(403).send.apply({ message: "Forbidden Access" });
+      }
       const updateUser = req.body;
       const id = req.query.id;
       const query = { _id: new ObjectId(id) };
@@ -128,9 +144,14 @@ async function connectToMongoDB() {
       res.send(result);
     });
 
-    app.patch("/application", async (req, res) => {
+    app.patch("/application",firebaseVerification ,async (req, res) => {
+      const clientEmail = req.query.clientemail 
+      const tokenEmail =  req.headers.token_email
+      if(clientEmail != tokenEmail){
+        res.status(401).send({message : "Unauthorize Access"})
+      }
       const applicationId = req.query.id;
-      console.log(applicationId);
+      //console.log(applicationId);
       const newInfo = req.body;
       const query = { _id: new ObjectId(applicationId) };
       const update = { $set: newInfo };
@@ -304,7 +325,7 @@ async function connectToMongoDB() {
 
         const query = {email : email}
         const result = await users.findOne(query)
-        console.log("user ",result)
+       // console.log("user ",result)
 
         if(result){
             res.send({user:result, isExist : true})
@@ -425,7 +446,12 @@ async function connectToMongoDB() {
 
     //console.log(application[0].jobs)
 
-    app.get("/jobapplications", async (req, res) => {
+    app.get("/jobapplications",firebaseVerification, async (req, res) => {
+      const clientEmail = req.query.clientemail
+      const tokenEmail = req.headers.token_email
+      if(clientEmail != tokenEmail){
+        res.status(404).send({message : "Forbidden Access"})
+      }
       const jobId = req.query.id;
 
       const applications = await appliedJobs
@@ -472,18 +498,24 @@ async function connectToMongoDB() {
       res.send(result);
     });
 
-    console.log("You successfully connected to MongoDB!");
+    //console.log("You successfully connected to MongoDB!");
     return client;
   } catch (err) {
-    console.dir(err);
+    //console.dir(err);
   }
 }
+
+app.get("/test", (req, res) => {
+  res.send("API routing works");
+});
+
 connectToMongoDB();
 
-app.get("/", (req, res) => {
-  res.send("Down down work");
-});
+// app.get("/", (req, res) => {
+//   res.send("Down down work");
+// });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+module.exports = app;

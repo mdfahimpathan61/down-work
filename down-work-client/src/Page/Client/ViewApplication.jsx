@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import Swal from "sweetalert2";
 import {
@@ -13,12 +13,19 @@ import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import Loading from "../../Component/Loading";
 
+
+import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 const ViewApplication = () => {
   const { jobId } = useParams();
 
   const [applications, setApplications] = useState([]);
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const axiosSecure = useAxiosSecure()
+  const {activeUser} = useAuth()
 
   // Temporary status for each application
   const [selectedStatuses, setSelectedStatuses] = useState({});
@@ -31,22 +38,14 @@ const ViewApplication = () => {
   // ---------------------------------------
   useEffect(() => {
     setLoading(true);
+    axiosSecure(`/jobapplications?id=${jobId}&clientemail=${activeUser.email}`)
+    .then((result) => {
+        //console.log(result);
 
-    fetch(`http://localhost:3000/jobapplications?id=${jobId}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch applications");
-        }
-
-        return res.json();
-      })
-      .then((data) => {
-        //console.log(data);
-
-        const applicationData = data?.applications || [];
+        const applicationData = result.data?.applications || [];
 
         setApplications(applicationData);
-        setJob(data?.job || null);
+        setJob(result.data?.job || null);
 
         // Set temporary status according to database status
         const initialStatuses = {};
@@ -192,31 +191,17 @@ const ViewApplication = () => {
     setUpdatingId(applicationId);
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/application?id=${applicationId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
+      const result = await axiosSecure.patch(`/application?id=${applicationId}&clientemail=${activeUser.email}`,{
             status: newStatus,
-          }),
-        }
-      );
+          })
+      
 
-      if (!response.ok) {
-        throw new Error("Failed to update application status");
-      }
-
-      const data = await response.json();
-
-      console.log(data);
+      
 
       // ---------------------------------------
       // Update frontend application status
       // ---------------------------------------
-      if (data?.modifiedCount > 0) {
+      if (result.data?.modifiedCount > 0) {
         setApplications((prev) =>
           prev.map((item) =>
             item?._id === applicationId

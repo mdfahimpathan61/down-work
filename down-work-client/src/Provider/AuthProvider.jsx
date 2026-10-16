@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
  const [searchText, setSearchText] = useState("")
  const [role, setRole] = useState("")
  
+ 
 
 
 
@@ -62,6 +63,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth,(user) => {
         setActiveuser(user)
         setLoading(false)
+        
     })
     return () => unsubscribe()
   },[activeUser])
@@ -78,7 +80,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if(activeUser){
-      fetch(`http://localhost:3000/user?email=${activeUser.email}`,{
+      fetch(`https://down-work-backend.vercel.app/user?email=${activeUser.email}`,{
         headers : {
           authorization : `Bearer ${activeUser.accessToken}`
         }

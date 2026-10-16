@@ -12,7 +12,7 @@ const Role = () => {
     //const location = useLocation()
     //console.log(location)
     const navigate =  useNavigate()
-    //const axios = useAxios()
+    const axios = useAxios()
 
     useEffect(() => {
         // 
@@ -29,16 +29,10 @@ const Role = () => {
             role:role
         }
 
-        fetch(`http://localhost:3000/user?email=${activeUser.email}`,{
-            method:"POST",
-            headers:{
-                "Content-Type" : "application/json",
-            },
-            body:JSON.stringify(newUser)
-        })
-        .then(res => res.json())
-        .then(data => {
-           if(data.acknowledged){
+        axios.post(`/user?email=${activeUser.email}`,newUser)
+        
+        .then(result => {
+           if(result.data.acknowledged){
              toastSuccess("Registration Complete");
             navigate('/')
            }

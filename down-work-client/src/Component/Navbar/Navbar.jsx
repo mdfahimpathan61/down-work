@@ -100,7 +100,10 @@ const Navbar = () => {
   const handleSignOut = () => {
     if (activeUser) {
       signout()
-      .then(successAlert("You are Logged Out"))
+      .then(() => {
+        successAlert("You are Logged Out")
+        navigate("/")
+      })
     } else {
       navigate("/auth/login");
     }

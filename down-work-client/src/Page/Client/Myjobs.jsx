@@ -115,11 +115,11 @@ export default function MyJobs() {
    };
 
   const getStatusStyle = (jobStatus) => {
-    if (jobStatus === "open") {
+    if (jobStatus === "Open") {
       return "bg-green-100 text-green-700";
     }
 
-    if (jobStatus === "hired") {
+    if (jobStatus === "Hired") {
       return "bg-slate-200 text-slate-700";
     }
 
@@ -161,14 +161,14 @@ export default function MyJobs() {
               <SummaryCard
                 label="Open Jobs"
                 value={
-                  jobs.filter((job) => job?.status.toLowerCase() === "open")
+                  jobs.filter((job) => job?.status === "Open")
                     .length
                 }
               />
 
               <SummaryCard
                 label="Hired Jobs"
-                value={jobs.filter((job) => job.status.toLocaleLowerCase() === "hired").length}
+                value={jobs.filter((job) => job.status === "Hired").length}
               />
             </div>
 
@@ -197,8 +197,8 @@ export default function MyJobs() {
                   className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"
                 >
                   <option value="All">All Status</option>
-                  <option value="open">Open</option>
-                  <option value="hired">Hired</option>
+                  <option value="Open">Open</option>
+                  <option value="Hired">Hired</option>
                 </select>
               </div>
 
@@ -263,7 +263,7 @@ export default function MyJobs() {
                         <td className="px-5 py-4">
                           <span
                             className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${getStatusStyle(
-                              job.status.toLocaleLowerCase(),
+                              job.status,
                             )}`}
                           >
                             {job.status}

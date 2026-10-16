@@ -130,7 +130,7 @@ const Profile = () => {
               </div>
 
               {/* Edit Button: Freelancer Only */}
-              {role === "freelancer" && (
+              {role === "freelancer" && user.role =="freelancer" && (
                 <Link
                   to="/freelancer/profile/update"
                   className="btn btn-primary text-white"
@@ -139,7 +139,7 @@ const Profile = () => {
                   Edit Profile
                 </Link>
               )}
-              {role === "client" && (
+              {role === "client" && user.role =="client" && (
                 <Link
                   to="/client/profile/update"
                   className="btn btn-primary text-white"
@@ -155,7 +155,7 @@ const Profile = () => {
         {/* MAIN CONTENT */}
         <div className="mt-5 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {
-            role == 'client' && <>
+            user.role == 'client' && <>
             <div className="lg:col-span-3">
               {contactInfo}
             </div>
@@ -164,7 +164,7 @@ const Profile = () => {
           {/* LEFT SIDE */}
           <div className="space-y-5 lg:col-span-2">
             {/* ABOUT ME: Freelancer Only */}
-            {role === "freelancer" && (
+            {user.role === "freelancer" && (
               <section className="rounded-3xl border border-base-300 bg-base-100 p-5 shadow-sm sm:p-7">
                 <div className="mb-4 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -182,7 +182,7 @@ const Profile = () => {
             )}
 
             {/* SKILLS: Freelancer Only */}
-            {role === "freelancer" && (
+            {user.role === "freelancer" && (
               <section className="rounded-3xl border border-base-300 bg-base-100 p-5 shadow-sm sm:p-7">
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -218,7 +218,7 @@ const Profile = () => {
             )}
 
             {/* EDUCATION: Freelancer Only */}
-            {role === "freelancer" && (
+            {user.role === "freelancer" && (
               <section className="rounded-3xl border border-base-300 bg-base-100 p-5 shadow-sm sm:p-7">
                 <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -250,7 +250,7 @@ const Profile = () => {
           {/* RIGHT SIDE */}
           <div className="space-y-5">
             {/* EXPERIENCE: Freelancer Only */}
-            {role === "freelancer" && (
+            {user.role === "freelancer" && (
               <section className="rounded-3xl border border-base-300 bg-base-100 p-5 shadow-sm sm:p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
@@ -269,10 +269,10 @@ const Profile = () => {
             )}
 
             {/* CONTACT INFORMATION: Both Roles */}
-            {role == 'freelancer' && contactInfo}
+            {user.role == 'freelancer' && contactInfo}
 
             {/* PROFILE UPDATE: Freelancer Only */}
-            {role === "freelancer" && (
+            {user.role === "freelancer" && role=="freelancer" && (
               <section className="rounded-3xl border border-primary/20 bg-primary/5 p-5">
                 <h3 className="font-bold">Keep your profile updated</h3>
 

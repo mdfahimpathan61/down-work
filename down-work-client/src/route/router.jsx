@@ -89,14 +89,14 @@ const router = createBrowserRouter([
         path: "/details/job/:id",
         element: <JobDetails></JobDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
+          fetch(`https://down-work-backend.vercel.app/jobdetails?id=${params.id}`),
         hydrateFallbackElement: Loading,
       },
       {
         path: "/details/company/:id",
         element: <CompanyDetails></CompanyDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/jobdetails?id=${params.id}`),
+          fetch(`https://down-work-backend.vercel.app/jobdetails?id=${params.id}`),
         hydrateFallbackElement: Loading,
       },
     ],
@@ -105,7 +105,9 @@ const router = createBrowserRouter([
     path: "/client",
     element: (
       <RoleGuard>
-        <ClientLayout></ClientLayout>
+        <PrivateRoute>
+          <ClientLayout></ClientLayout>
+        </PrivateRoute>
       </RoleGuard>
     ),
     children: [
@@ -147,7 +149,9 @@ const router = createBrowserRouter([
     path: "/freelancer",
     element: (
       <RoleGuard>
-        <FreelancerLayout></FreelancerLayout>
+        <PrivateRoute>
+          <FreelancerLayout></FreelancerLayout>
+        </PrivateRoute>
       </RoleGuard>
     ),
     children: [
