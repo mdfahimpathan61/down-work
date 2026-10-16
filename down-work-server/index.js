@@ -55,7 +55,7 @@ const client = new MongoClient(
 
 async function connectToMongoDB() {
   try {
-    //await client.connect();
+    await client.connect();
 
     const database = client.db("downwork_database");
     const postedJobs = database.collection("postedJobs");
@@ -91,6 +91,7 @@ async function connectToMongoDB() {
 
     app.post("/applyjob", async (req, res) => {
       const newApplyedJob = req.body;
+      console.log(newApplyedJob)
       const payload = {
         freelancer_id: new ObjectId(newApplyedJob.freelancer_id),
         job_id: new ObjectId(newApplyedJob.job_id),
@@ -515,7 +516,7 @@ connectToMongoDB();
 //   res.send("Down down work");
 // });
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
 module.exports = app;

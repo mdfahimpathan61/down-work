@@ -15,6 +15,7 @@ import {
 import { Link, useLoaderData, useParams } from "react-router";
 import useAuth from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const JobDetails = () => {
   const { role, activeUser, successAlert } = useAuth();
@@ -26,6 +27,7 @@ const JobDetails = () => {
 
   //console.log(job)
   const axios = useAxios()
+  const axiosSecure = useAxiosSecure()
 
   useEffect(() => {
     if (role == "freelancer") {
@@ -37,8 +39,9 @@ const JobDetails = () => {
           //console.log(data);
         });
 
-      axios.get(`/user?email=${activeUser.email}`)  
+      axiosSecure.get(`/user?email=${activeUser.email}`)  
         .then((result) => {
+          console.log(result.data)
           if (result.data._id) {
             setFreelancer(result.data);
           }
@@ -53,11 +56,10 @@ const JobDetails = () => {
       job_id: id,
       email: freelancer.email,
     };
-
+    console.log(payload)
     axios.post('/applyjob',payload)
-    
       .then((result) => {
-        //console.log(data);
+        console.log(result.data);
         if (result.data.acknowledged) {
           successAlert("You Applied the Job");
           setApplyed(true);

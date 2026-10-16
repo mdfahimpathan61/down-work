@@ -15,7 +15,7 @@ const Login = () => {
     signInWitGoogle,
   } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const [ setSuccessLogin] = useState(false);
+ 
   const navigate = useNavigate();
   const location = useLocation();
   const axios = useAxios();
@@ -38,13 +38,13 @@ const Login = () => {
 
     //reset state
     setError("");
-    setSuccessLogin(false);
+   // setSuccessLogin(false);
 
     signinWithEmail(email, password)
       //.then(res => res.json())
       .then((result) => {
         //console.log(result);
-        setSuccessLogin(true);
+       // setSuccessLogin(true);
         event.target.reset();
 
         //console.log(location.state)
@@ -70,7 +70,7 @@ const Login = () => {
           .then((result) => {
             //console.log(result.data)
             toastSuccess("Log in successful");
-            if (result.data.user?.role) {
+            if (result.data?.user?.role) {
               location?.state ? navigate(location.state) : navigate("/");
             } else {
               navigate("/auth/role");
