@@ -199,7 +199,7 @@ async function connectToMongoDB() {
       if (featured) {
         query.featured = true;
       }
-      //console.log(searchtext)
+      
       if (searchtext?.trim()) {
         const words = searchtext?.trim().split(/\s+/);
         query.$and = words.map((word) => ({

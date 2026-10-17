@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState ,useCallback} from "react";
 import { auth } from "../firebase.config";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { Bounce, toast } from "react-toastify";
@@ -13,6 +13,12 @@ const AuthProvider = ({ children }) => {
  const [loading,setLoading] = useState(true)
  const [searchText, setSearchText] = useState("")
  const [role, setRole] = useState("")
+
+
+
+
+
+
  
  
 
@@ -24,11 +30,13 @@ const AuthProvider = ({ children }) => {
   };
 
   const signInWitGoogle = () =>{
+    setLoading(true)
     const googleProvider = new GoogleAuthProvider()
     return signInWithPopup(auth, googleProvider)
   }
 
   const updateUser = (updateInfo) => {
+    setLoading(true)
     return updateProfile(auth.currentUser, updateInfo);
   };
 
@@ -80,6 +88,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if(activeUser){
+      
       fetch(`https://down-work-backend.vercel.app/user?email=${activeUser.email}`,{
         headers : {
           authorization : `Bearer ${activeUser.accessToken}`
@@ -91,6 +100,7 @@ const AuthProvider = ({ children }) => {
          // navigate('/auth/role')
          setRole(data.role)
         }
+        
       })
 
       // axiosSecure.get(`/user?email=${activeUser.email}`)
@@ -117,7 +127,9 @@ const AuthProvider = ({ children }) => {
     forgotPassword,
     role, 
     setRole,
-    successAlert
+    successAlert,
+    
+  
   };
 
   return <AuthContext value={value}>{children}</AuthContext>;

@@ -21,7 +21,7 @@ const CategoriesJobs = () => {
   const [noJob, setNoJob] = useState(false);
   
   
-  const { loading, searchText, setSearchText} =
+  const { loading, searchText, setSearchText,setLoading} =
     useContext(AuthContext);
 
 
@@ -50,12 +50,13 @@ const handleSearch = (event) => {
        if(value){
          setSearchText(value);
        }
+       console.log("value", value)
       
     }
     else{
       searchRef.current.value = searchText;
       //console.log("seeeee", searchText)
-      
+     
     } 
     
   }    
@@ -73,24 +74,29 @@ const handleSearch = (event) => {
       .then((result) => {
         // console.log(result);
        // console.log("Backend response:", result.data);
+       
         const jobs = result.data.jobsData || [];
         //setAllJobsData(jobs);
         setTotaljob(result.data.totalJobCount || 0);
+        
 
         //const categoryJobs =
           //id === "all" ? jobs : jobs.filter((job) => job.category_id == id);
 
         //setFilteredJobs(categoryJobs);
         setCatigoriesAllJobs(jobs);
+        //console.log("search text ---",searchText)
         if(searchText){
           //console.log(searchText)
           handleSearch();
         }
+
+        setLoading(false)
       });
 
-      return () => {
-      setSearchText("");
-      };
+      // return () => {
+      // setSearchText("");
+      // };
   }, [skip, page, sortActive, sortOrder,searchText,filteredJobs,id]);
 
 
@@ -98,16 +104,15 @@ const handleSearch = (event) => {
   const getPaginationPages = (currentPage, totalPages) => {
     const pages = new Set();
 
-    // প্রথম দুইটি পেজ
+   
     pages.add(0);
     pages.add(1);
 
-    // Active page-এর আশেপাশে পেজ
     pages.add(currentPage - 1);
     pages.add(currentPage);
     pages.add(currentPage + 1);
 
-    // শেষের দুইটি পেজ
+   
     pages.add(totalPages - 2);
     pages.add(totalPages - 1);
 
@@ -178,7 +183,7 @@ const handleSearch = (event) => {
     //   })
 
    
-
+    setPage(0)
     setNoJob(false);
     setFilteredJobs(filterPayload);
 

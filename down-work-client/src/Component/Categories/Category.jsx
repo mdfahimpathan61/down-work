@@ -10,6 +10,7 @@ import {
   FaHeadset
 } from "react-icons/fa";
 import { Link } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 
 const icons = {
   FaCode: FaCode,
@@ -23,11 +24,12 @@ const icons = {
 };
 
 const Category = ({category}) => {
+  const {setSearchText} = useAuth()
     const jobs = category.jobs
     //console.log(jobs[0])
          const Icon = icons[category.icon];
         return (
-          <Link to={`/category/${category._id}`}>
+          <Link onClick={() => setSearchText("")} to={`/category/${category._id}`}>
             <div key={category._id} className="transition-all duration-500 group p-4 max-w-70  h-full hover:bg-primary hover:text-white hover:shadow-blue-300 hover:shadow-lg shadow-sm mx-auto">
             <Icon className="mx-auto text-3xl text-primary group-hover:text-white" />
             <p className='text-md sm:text-lg mt-4 font-semibold'>{category.name}</p>

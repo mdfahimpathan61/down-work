@@ -6,13 +6,14 @@ import { FaRegUser } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import useAxios from "../hooks/useAxios";
+import Loading from "../Component/Loading";
 
 const Profile = () => {
   const { freelancerId } = useParams();
 
   const [user, setUser] = useState({});
 
-  const { activeUser, role } = useAuth();
+  const { activeUser, role,loading } = useAuth();
 
   const axiosSecure = useAxiosSecure();
   const axios = useAxios();
@@ -86,7 +87,10 @@ const Profile = () => {
   </>
 
   return (
-    <div className="min-h-screen bg-base-200/40 px-3 py-6 sm:px-5 sm:py-10">
+    <>
+      {
+        loading ? <Loading></Loading> :
+        <div className="min-h-screen bg-base-200/40 px-3 py-6 sm:px-5 sm:py-10">
       <div className="mx-auto max-w-270">
         {/* PROFILE HEADER */}
         <section className="overflow-hidden rounded-3xl border border-base-300 bg-base-100 shadow-sm">
@@ -293,6 +297,8 @@ const Profile = () => {
         </div>
       </div>
     </div>
+      }
+    </>
   );
 };
 

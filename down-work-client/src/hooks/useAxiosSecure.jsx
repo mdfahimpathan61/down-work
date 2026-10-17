@@ -4,16 +4,18 @@ import useAuth from "./useAuth";
 import { useNavigate } from "react-router";
 
 const instace = axios.create({
-  baseURL: "https://down-work-backend.vercel.app",
+  baseURL: "http://localhost:3000",
 });
 
 const useAxiosSecure = () => {
-  const { activeUser } = useAuth();
+  const { activeUser,setLoading } = useAuth();
   const navigate = useNavigate()
 
   useEffect(() => {
     const interceptorRequest = instace.interceptors.request.use(
+      
       async (config) => {
+        
         if (activeUser) {
           const token = await activeUser.getIdToken();
 
@@ -21,15 +23,20 @@ const useAxiosSecure = () => {
         }
 
         return config;
+      },
+      (error) => {
+       
+        return Promise.reject(error);
       }
     );
 
     const interceptorResponse = instace.interceptors.response.use(
       (response) => {
+        
         return response;
       },
       (error) => {
-       
+        
         if (error.response?.status === 404) {
           navigate("/notfound");
         }
